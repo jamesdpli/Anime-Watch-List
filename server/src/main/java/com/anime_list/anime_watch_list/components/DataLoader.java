@@ -11,6 +11,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 
 @Component
@@ -39,7 +40,7 @@ public class DataLoader implements ApplicationRunner {
         Anime anime8 = new Anime("Death Note", LocalDate.of(2002, 10, 03), "Ninja anime", Genre.ACTION, 4.5, 500);
         Anime anime9 = new Anime("Slam Dunk", LocalDate.of(2002, 10, 03), "Ninja anime", Genre.ACTION, 4.5, 500);
         Anime anime10 = new Anime("Jojo's Bizzare Adventure", LocalDate.of(2002, 10, 03), "Ninja anime", Genre.ACTION, 4.5, 500);
-        
+        animeRepository.saveAll(Arrays.asList(anime1, anime2, anime3, anime4, anime5, anime6, anime7, anime8, anime9, anime10));
 
 
 
@@ -50,8 +51,8 @@ public class DataLoader implements ApplicationRunner {
         User user4 = new User("Jenny", LocalDate.of(1969,3,27), "janjenny@gmail.com", List.of(anime1,anime10,anime5));
         User user5 = new User("Shiki", LocalDate.of(1999,9,2), "Shiki43@gmail.com", List.of(anime1,anime4,anime5));
         User user6 = new User("Randy", LocalDate.of(1599,4,15), "Randy432@gmail.com", List.of(anime1,anime4));
-            User user7 = new User("Shuka", LocalDate.of(1999,9,2), "onodaKun@gmail.com", List.of(anime1));
-        User user8 = new User("Onoda", LocalDate.of(1999,9,2), "onodaKun@gmail.com", List.of(anime1));
+        User user7 = new User("Shuka", LocalDate.of(1999,9,2), "onodaKun@gmail.com", List.of(anime1));
+        User user8 = new User("Obu", LocalDate.of(1999,9,2), "ObiObi@gmail.com", List.of(anime1,anime7,anime5));
         User user9 = new User("Onoda", LocalDate.of(1999,9,2), "onodaKun@gmail.com", List.of(anime1));
         User user10 = new User("Onoda", LocalDate.of(1999,9,2), "onodaKun@gmail.com", List.of(anime1));
         User user11 = new User("Onoda", LocalDate.of(1999,9,2), "onodaKun@gmail.com", List.of(anime1));
