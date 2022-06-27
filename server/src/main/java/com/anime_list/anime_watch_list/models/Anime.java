@@ -6,9 +6,10 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table
+@Table(name = "animes")
 public class Anime {
-    @Column
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
@@ -25,9 +26,9 @@ public class Anime {
     private Genre genre;
 
     @Column
-    private int rating;
+    private double rating;
 
-    @Column
+    @Column(name = "number_of_episodes")
     private int numberOfEps;
 
     @ManyToOne
@@ -39,7 +40,7 @@ public class Anime {
     public Anime() {}
 
     // Constructor
-    public Anime(String name, LocalDate releaseDate, String description, Genre genre, int rating, int numberOfEps) {
+    public Anime(String name, LocalDate releaseDate, String description, Genre genre, double rating, int numberOfEps) {
         this.name = name;
         this.releaseDate = releaseDate;
         this.description = description;
@@ -85,7 +86,7 @@ public class Anime {
         this.genre = genre;
     }
 
-    public int getRating() {
+    public double getRating() {
         return rating;
     }
 
