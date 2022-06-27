@@ -12,6 +12,7 @@ public enum Genre {
     PSYCHOLOGICAL,
     ROMANCE,
     SCI_FI,
+    SPORTS,
     SUPERNATURAL,
     MAGIC
 

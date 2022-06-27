@@ -1,15 +1,13 @@
 package com.anime_list.anime_watch_list.controllers;
 
 import com.anime_list.anime_watch_list.models.Anime;
+import com.anime_list.anime_watch_list.models.User;
 import com.anime_list.anime_watch_list.repositroies.AnimeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -38,6 +36,19 @@ public class AnimeController{
     }
 
     // POST MAPPING
+    @PostMapping
+    public ResponseEntity<List<User>> createAnime(@RequestBody Anime newAnime){
+        animeRepository.save(newAnime);
+        return new ResponseEntity(animeRepository.findAll(), HttpStatus.CREATED);
+    }
+
+    // DELETE MAPPING
+    @DeleteMapping("/{id}")
+    public ResponseEntity<List<Anime>> deleteAnime(@PathVariable Long id) {
+        var found = animeRepository.findById(id);
+        animeRepository.deleteById(id);
+        return new ResponseEntity(animeRepository.findAll(), found.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK);
+    }
 
 
 

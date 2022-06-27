@@ -41,10 +41,30 @@ public class UserController {
     }
 
 //    DELETE
+    @DeleteMapping("/{id}")
+    public ResponseEntity<List<User>> deleteUser(@PathVariable Long id) {
+        var found = userRepository.findById(id);
+        userRepository.deleteById(id);
+        return new ResponseEntity(userRepository.findAll(), found.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK);
+    }
 
+//  PUT
 
-//    PUT
-
-
+//  UPDATE
+    @PutMapping(value = "/{id}") //localhost:8080/users/1
+    public ResponseEntity<User> updateUser(@PathVariable(value = "id") Long id, @RequestBody User upUser) throws Exception{
+    Optional<User> user = userRepository.findById(id);
+    if(user.isEmpty()){
+        throw new Exception("User with id: " + id + " not found");
+    } else {
+        User u = user.get();
+        u.setName(upUser.getName());
+        u.setDob(upUser.getDob());
+        u.setEmail(upUser.getEmail());
+        u.setAnimes(upUser.getAnimes());
+        User updatedUser = userRepository.save(u);
+        return new ResponseEntity<>(updatedUser,HttpStatus.OK);
+        }
+    }
 
 }
