@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "animes")
@@ -31,22 +33,26 @@ public class Anime {
     @Column(name = "number_of_episodes")
     private int numberOfEps;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    @JsonIgnoreProperties({"animes"})
-    private User user;
+
+//    @JoinColumn(name = "user_id")
+//    @JsonIgnoreProperties({"animes"})
+    @ManyToMany(mappedBy = "animes")
+    @JsonIgnoreProperties({"users"})
+    private List<User> users;
 
     // Empty constructor
     public Anime() {}
 
     // Constructor
-    public Anime(String name, LocalDate releaseDate, String description, Genre genre, double rating, int numberOfEps) {
+    public Anime(String name, LocalDate releaseDate, String description,
+                 Genre genre, double rating, int numberOfEps) {
         this.name = name;
         this.releaseDate = releaseDate;
         this.description = description;
         this.genre = genre;
         this.rating = rating;
         this.numberOfEps = numberOfEps;
+        this.users = new ArrayList<>();
     }
 
     // Getters and Setters
@@ -101,5 +107,29 @@ public class Anime {
     public void setNumberOfEps(int numberOfEps) {
         this.numberOfEps = numberOfEps;
     }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
+
+    @Override
+    public String toString() {
+        return "Anime{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", releaseDate=" + releaseDate +
+                ", description='" + description + '\'' +
+                ", genre=" + genre +
+                ", rating=" + rating +
+                ", numberOfEps=" + numberOfEps +
+                ", users=" + users +
+                '}';
+    }
 }
+
+// add a toString() here ✅
 

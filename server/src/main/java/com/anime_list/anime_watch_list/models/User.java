@@ -1,7 +1,10 @@
 package com.anime_list.anime_watch_list.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,9 +24,15 @@ public class User {
     @Column
     String email;
 
-    @Column
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    List<Anime> animes;
+    @ManyToMany
+    @JoinTable(
+            name = "animes_users",
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "anime_id")}
+    )
+    @JsonIgnoreProperties({"users"})
+    private List<Anime> animes;
+//    private Anime anime;
 
     // Empty constructor
     public User() {
@@ -82,5 +91,16 @@ public class User {
 
     public void removeAnime(Anime anime){
         this.animes.remove(anime);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", dob=" + dob +
+                ", email='" + email + '\'' +
+                ", animes=" + animes +
+                '}';
     }
 }
