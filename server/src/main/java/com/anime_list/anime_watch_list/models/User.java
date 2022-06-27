@@ -32,7 +32,6 @@ public class User {
     )
     @JsonIgnoreProperties({"users"})
     private List<Anime> animes;
-//    private Anime anime;
 
     // Empty constructor
     public User() {

@@ -33,11 +33,8 @@ public class Anime {
     @Column(name = "number_of_episodes")
     private int numberOfEps;
 
-
-//    @JoinColumn(name = "user_id")
-//    @JsonIgnoreProperties({"animes"})
     @ManyToMany(mappedBy = "animes")
-    @JsonIgnoreProperties({"users"})
+    @JsonIgnoreProperties({"animes"})
     private List<User> users;
 
     // Empty constructor
