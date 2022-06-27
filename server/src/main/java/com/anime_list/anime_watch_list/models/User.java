@@ -23,6 +23,7 @@ public class User {
     String email;
 
     @Column
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     List<Anime> animes;
 
     // Empty constructor

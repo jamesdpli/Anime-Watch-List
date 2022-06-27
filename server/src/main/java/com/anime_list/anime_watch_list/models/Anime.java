@@ -1,5 +1,7 @@
 package com.anime_list.anime_watch_list.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -27,6 +29,11 @@ public class Anime {
 
     @Column
     private int numberOfEps;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    @JsonIgnoreProperties({"animes"})
+    private User user;
 
     // Empty constructor
     public Anime() {}
