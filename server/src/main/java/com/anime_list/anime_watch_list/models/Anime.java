@@ -28,46 +28,14 @@ public class Anime {
 
     private List <Genre> genres;
 
-//    @OneToMany(mappedBy = "watchlistAnime")
-//    @JsonIgnoreProperties({"animes"})
-//    private List<WatchList> watchLists;
-
     @Column
     private double rating;
 
     @Column(name = "number_of_episodes")
     private int numberOfEps;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-//    public List<WatchList> getWatchLists() {
-//        return watchLists;
-//    }
-//
-//    public void setWatchLists(List<WatchList> watchLists) {
-//        this.watchLists = watchLists;
-//    }
-
-    public void setRating(double rating) {
-        this.rating = rating;
-    }
-
-
-
-
-
     // Empty constructor
     public Anime() {}
-
-    public List<Genre> getGenres() {
-        return genres;
-    }
-
-    public void setGenres(List<Genre> genres) {
-        this.genres = genres;
-    }
 
     // Constructor
     public Anime(String name, LocalDate releaseDate, String description, double rating, int numberOfEps) {
@@ -80,6 +48,8 @@ public class Anime {
     }
 
     // Getters and Setters
+
+
     public Long getId() {
         return id;
     }
@@ -108,19 +78,19 @@ public class Anime {
         this.description = description;
     }
 
-//    public List<String> getGenres() {
-//        return genres;
-//    }
+    public List<Genre> getGenres() {
+        return genres;
+    }
 
-//    public void setGenres(List<String> genres) {
-//        this.genres = genres;
-//    }
+    public void setGenres(List<Genre> genres) {
+        this.genres = genres;
+    }
 
     public double getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(double rating) {
         this.rating = rating;
     }
 
@@ -132,6 +102,7 @@ public class Anime {
         this.numberOfEps = numberOfEps;
     }
 
+    // Custom methods
     public void addGenres(List<Genre> genres){
         this.genres.addAll(genres);
     }
@@ -139,8 +110,6 @@ public class Anime {
     public void removeGenres(List<Genre> genres){
         this.genres.removeAll(genres);
     }
-
-
 
     @Override
     public String toString() {
@@ -152,7 +121,6 @@ public class Anime {
                 ", genres=" + genres +
                 ", rating=" + rating +
                 ", numberOfEps=" + numberOfEps +
-
                 '}';
     }
 }

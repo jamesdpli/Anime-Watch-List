@@ -6,6 +6,7 @@ import com.anime_list.anime_watch_list.repositroies.AnimeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,8 +37,8 @@ public class AnimeController{
     }
 
     // POST MAPPING
-    @PostMapping
-    public ResponseEntity<List<User>> createAnime(@RequestBody Anime newAnime){
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Anime>> createAnime(@RequestBody Anime newAnime){
         animeRepository.save(newAnime);
         return new ResponseEntity(animeRepository.findAll(), HttpStatus.CREATED);
     }
