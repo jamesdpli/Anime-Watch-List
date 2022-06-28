@@ -8,6 +8,7 @@ const Signup = ({isLogin, setIsLogin, currentPodCastAcc, setCurrentPodCastAcc}) 
     const [allowedSignup, setAllowedSignup] = useState([false, false, false]);
 
     console.log(allowedSignup);
+    
     // to get all the users on the site
     useEffect(() => {
         fetch("//http://localhost:8080/users")
@@ -87,7 +88,47 @@ const Signup = ({isLogin, setIsLogin, currentPodCastAcc, setCurrentPodCastAcc}) 
         }
     }
 
-    
+    // ---------------- password checker ------------------
+
+     // check if the password is strong enough or not
+    const handlePasswordChecker = () => {
+
+        // initialise a checker, index 2
+        let userPasswordChecker = [allowedSignup[0], allowedSignup[1], false];
+
+        const specialSymbol = ['!', '?', '@', '.', '_', '/', '#', '$', '(', ')', '^', '%',
+            '*', ':', ';', '+'];
+
+        if (inputNewPassword.current.value == '1234' || inputNewPassword.current.value == 'abc'
+            || inputNewPassword.current.value.length < 8) {
+            document.querySelector('.new-user-password-input').innerHTML = `<img src=${weakPassword} alt="weak password"/>`;
+
+            // didn't pass the password checker
+            setAllowedSignup(userPasswordChecker);
+        }
+        else if (specialSymbol.filter(s => inputNewPassword.current.value.includes(s)).length == 0) {
+            document.querySelector('.new-user-password-input').innerHTML = `<img src=${lessStrongPassword} alt="less strong password"/>`;
+
+            // didn't pass the password checker
+            setAllowedSignup(userPasswordChecker);
+        }
+        else {
+            document.querySelector('.new-user-password-input').innerHTML = `<img src=${strongPassword} alt="strong password"/>`;
+
+            // pass password checker 
+            userPasswordChecker = [allowedSignup[0], allowedSignup[1], true];
+            setAllowedSignup(userPasswordChecker);
+
+        }
+    }
+
+     // Option to show the password or not
+    const handlePasswordShown = (event) => {
+        event.preventDefault();
+        setPasswordShown(!passwordShown);
+    }
+
+
     return(<></>);
 }
 
