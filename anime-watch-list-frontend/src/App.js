@@ -15,29 +15,31 @@ function App() {
   return (
 
     <Router>
-
-<Route path='/account' element={isLogin? <Account currentPodCastAcc={currentPodCastAcc}
-                                                            setCurrentPodCastAcc={setCurrentPodCastAcc}/>: 
+        <Routes>
+        <Route path='/home' element={<Home/>}></Route>
+          <Route path='/' element={<Cover/>}/>
+          <Route path='/explore' element={<Explore isLogin={isLogin} currentAnimeAcc={currentAnimeAcc}/>}></Route>
+          <Route path='/account' element={isLogin? <Account currentAnimeAcc={currentAnimeAcc}
+                                                            setCurrentAnimeAcc={setCurrentAnimeAcc}/>: 
                                                   <SignUp isLogin={isLogin} setIsLogin={setIsLogin}
-                                                          currentPodCastAcc={currentPodCastAcc}
-                                                          setCurrentPodCastAcc={setCurrentPodCastAcc} />}>
+                                                          currentAnimeAcc={currentAnimeAcc}
+                                                          setCurrentAnimeAcc={setCurrentAnimeAcc} />}>
 
-                <Route path='recommended' element={<RecommendList currentPodCastAcc={currentPodCastAcc} 
-                                                                  setCurrentPodCastAcc={setCurrentPodCastAcc}/>} />
-                <Route path='watched' element={<WatchedEpisodeList currentPodCastAcc={currentPodCastAcc}
-                                                                  setCurrentPodCastAcc={setCurrentPodCastAcc}/>}/>
-
-
+                <Route path='recommended' element={<RecommendList currentAnimeAcc={currentAnimeAcc} 
+                                                                  setCurrentAnimeAcc={setCurrentAnimeAcc}/>} />
+                <Route path='watched' element={<WatchedEpisodeList currentAnimeAcc={currentAnimeAcc}
+                                                                  setCurrentAnimeAcc={setCurrentAnimeAcc}/>}/>
           </Route>
 
       <div className="App">
       <Routes>
       <Route path='/login' element={<Login isLogin={isLogin} setIsLogin={setIsLogin}
-                                              currentPodCastAcc={currentPodCastAcc}
-                                              setCurrentPodCastAcc={setCurrentPodCastAcc}/>}>
+                                              currentAnimeAcc={currentAnimeAcc}
+                                              setCurrentAnimeAcc={setCurrentAnimeAcc}/>}>
           </Route>
         </Routes>
         </div>
+      </Routes>
     </Router>
 
     
