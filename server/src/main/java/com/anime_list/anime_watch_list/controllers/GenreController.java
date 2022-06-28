@@ -2,14 +2,12 @@ package com.anime_list.anime_watch_list.controllers;
 
 import com.anime_list.anime_watch_list.models.Anime;
 import com.anime_list.anime_watch_list.models.Genre;
+import com.anime_list.anime_watch_list.models.WatchList;
 import com.anime_list.anime_watch_list.repositroies.GenreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -34,4 +32,10 @@ public class GenreController {
         return new ResponseEntity<>(genre, genre.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK);
     }
 
+    // POST
+    @PostMapping
+    public ResponseEntity<Genre> createGenre (@RequestBody Genre newGenre){
+        genreRepository.save(newGenre);
+        return new ResponseEntity<>(newGenre, HttpStatus.CREATED);
+    }
 }
