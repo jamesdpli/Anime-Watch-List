@@ -1,10 +1,14 @@
+// import demonSlayer from "./assets/demonSlayer.mp4";
+// import animeAll from "./assets/animeAll.mp4";
+// import zenitsu from "./assets/zenitsu.mp4";
+
 const Cover = () =>{
     return(
         <div className="main">
 
     <div className="overlay"></div>
     
-    <video src={zenitsu} autoPlay loop muted />
+    {/* <video src={zenitsu} autoPlay loop muted /> */}
 
     <div className="content">
         <h1 className="header">Unlimited Anime and more</h1>
