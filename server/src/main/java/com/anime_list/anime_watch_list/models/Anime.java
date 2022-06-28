@@ -23,9 +23,10 @@ public class Anime {
     @Column
     private String description;
 
-    @Column
-    @Enumerated(EnumType.STRING)
-    private Genre genre;
+    @ManyToMany(mappedBy = "animes", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties(value = "animes")
+
+    private List <Genre> genres;
 
 //    @OneToMany(mappedBy = "watchlistAnime")
 //    @JsonIgnoreProperties({"animes"})
@@ -60,13 +61,20 @@ public class Anime {
     // Empty constructor
     public Anime() {}
 
+    public List<Genre> getGenres() {
+        return genres;
+    }
+
+    public void setGenres(List<Genre> genres) {
+        this.genres = genres;
+    }
+
     // Constructor
-    public Anime(String name, LocalDate releaseDate, String description,
-                 Genre genre, double rating, int numberOfEps) {
+    public Anime(String name, LocalDate releaseDate, String description, double rating, int numberOfEps) {
         this.name = name;
         this.releaseDate = releaseDate;
         this.description = description;
-        this.genre = genre;
+        this.genres = new ArrayList<>();
         this.rating = rating;
         this.numberOfEps = numberOfEps;
     }
@@ -100,13 +108,13 @@ public class Anime {
         this.description = description;
     }
 
-    public Genre getGenre() {
-        return genre;
-    }
+//    public List<String> getGenres() {
+//        return genres;
+//    }
 
-    public void setGenre(Genre genre) {
-        this.genre = genre;
-    }
+//    public void setGenres(List<String> genres) {
+//        this.genres = genres;
+//    }
 
     public double getRating() {
         return rating;
@@ -124,6 +132,14 @@ public class Anime {
         this.numberOfEps = numberOfEps;
     }
 
+    public void addGenres(List<Genre> genres){
+        this.genres.addAll(genres);
+    }
+
+    public void removeGenres(List<Genre> genres){
+        this.genres.removeAll(genres);
+    }
+
 
 
     @Override
@@ -133,7 +149,7 @@ public class Anime {
                 ", name='" + name + '\'' +
                 ", releaseDate=" + releaseDate +
                 ", description='" + description + '\'' +
-                ", genre=" + genre +
+                ", genres=" + genres +
                 ", rating=" + rating +
                 ", numberOfEps=" + numberOfEps +
 

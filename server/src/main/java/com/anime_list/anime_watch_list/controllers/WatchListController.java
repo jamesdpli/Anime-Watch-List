@@ -1,6 +1,7 @@
 package com.anime_list.anime_watch_list.controllers;
 
 import com.anime_list.anime_watch_list.models.User;
+import com.anime_list.anime_watch_list.models.WatchList;
 import com.anime_list.anime_watch_list.repositroies.WatchListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,12 +31,37 @@ public class WatchListController {
         return new ResponseEntity(watchListRepository.findById(id), found.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK);
     }
 
+    @PostMapping
+    public ResponseEntity<WatchList> createWatchList (@RequestBody WatchList newWatchList){
+        watchListRepository.save(newWatchList);
+        return new ResponseEntity<>(newWatchList, HttpStatus.CREATED);
+    }
+
     @DeleteMapping("/remove/{id}")
-    public ResponseEntity<String> deleteWathList(@PathVariable Long id) {
+    public ResponseEntity<String> deleteWatchList(@PathVariable Long id) {
         var found = watchListRepository.findById(id);
         watchListRepository.deleteById(id);
-        return new ResponseEntity("WatchList Deleted" + id, HttpStatus.NOT_FOUND);
+        return new ResponseEntity("WatchList Deleted id: " + id, HttpStatus.NOT_FOUND);
     }
+
+
+
+    @PutMapping("/{id}")
+    public ResponseEntity<WatchList> updateWatchList (@PathVariable(value = "id") Long id, @RequestBody WatchList watchListDetailUpdate){
+        var watchList = watchListRepository.findById(id);
+        if(watchList.isPresent()){
+            WatchList wl = watchList.get();
+            wl.setAnime(watchListDetailUpdate.getAnime());
+            wl.setUser(watchListDetailUpdate.getUser());
+            watchListRepository.save(wl);
+            return new ResponseEntity<>(wl, HttpStatus.OK);
+        }
+        else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+
 
 
 
