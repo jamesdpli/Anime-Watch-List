@@ -6,7 +6,7 @@ import animeAll from "./assets/animeAll.mp4";
 import zenitsu from "./assets/zenitsu.mp4";
 import './App.css';
 // add usPersistedState
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+// import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 import Home from "./containers/Home";
 import Cover from "./containers/Cover";

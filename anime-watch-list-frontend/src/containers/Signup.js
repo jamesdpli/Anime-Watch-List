@@ -1,11 +1,11 @@
-import { BsGoogle, BsTwitter, BsGithub } from 'react-icons/bs';
-import { FaLinkedinIn } from 'react-icons/fa';
-import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
-import { useRef, useEffect, useState } from 'react';
-import weakPassword from '../images/Frame_1242_(1).png';
-import lessStrongPassword from '../images/Frame 1243.png';
-import strongPassword from '../images/Frame 1244.png';
-import './SignUp.css';
+// import { BsGoogle, BsTwitter, BsGithub } from 'react-icons/bs';
+// import { FaLinkedinIn } from 'react-icons/fa';
+// import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
+// import { useRef, useEffect, useState } from 'react';
+// import weakPassword from '../images/Frame_1242_(1).png';
+// import lessStrongPassword from '../images/Frame 1243.png';
+// import strongPassword from '../images/Frame 1244.png';
+// import './SignUp.css';
 
 const Signup = ({isLogin, setIsLogin, currentPodCastAcc, setCurrentPodCastAcc}) => {
 
