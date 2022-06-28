@@ -107,3 +107,5 @@ const Cover = () =>{
     </div>
     );
 }
+
+export default Cover;
