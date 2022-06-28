@@ -14,6 +14,12 @@ const Signup = ({isLogin, setIsLogin, currentPodCastAcc, setCurrentPodCastAcc}) 
             .then(response => response.json())
             .then(data => setAllUsers(data))
     }, [])
+
+    // Creating a new user with post mapping
+    const handleSignUp = (event) => {
+        event.preventDefault();
+
+        if (allowedSignup.includes(false)) return;
     return(<></>);
 }
 
