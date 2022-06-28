@@ -1,8 +1,8 @@
 
 import demonSlayer from "./assets/demonSlayer.mp4";
 import animeAll from "./assets/animeAll.mp4";
-import TextField from "@mui/material/TextField";
-import { Button } from "@mui/material";
+// import TextField from "@mui/material/TextField";
+// import { Button } from "@mui/material";
 import zenitsu from "./assets/zenitsu.mp4";
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
           Ready to watch? Enter your email to create or restart your membership.
         </h3>
         <br />
-        <TextField
+        {/* <TextField
           id="filled-basic"
           label="Email address"
           variant="filled"
@@ -30,9 +30,9 @@ function App() {
             backgroundColor: "white",
             width: "45%",
           }}
-        />
+        /> */}
         <br />
-        <Button
+        {/* <Button
           size="large"
           style={{
             backgroundColor: "#e81515",
@@ -41,7 +41,7 @@ function App() {
           }}
         >
           Get Started
-        </Button>
+        </Button> */}
       </div>
 
       <div className="anime-container">
