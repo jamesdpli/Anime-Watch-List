@@ -8,6 +8,12 @@ import './App.css';
 // add usPersistedState
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
+import Home from "./containers/Home";
+import Cover from "./containers/Cover";
+import Login from "./containers/Login";
+import Signup from "./containers/Signup";
+import Explore from "./containers/Explore";
+
 function App() {
   // const [isLogin, setIsLogin] = usePersistedState('isLogin',false);
   // const [currentPodCastAcc, setCurrentPodCastAcc] = usePersistedState('currentPodCastAcc', {});
