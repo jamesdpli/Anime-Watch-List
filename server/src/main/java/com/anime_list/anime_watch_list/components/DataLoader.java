@@ -2,9 +2,11 @@ package com.anime_list.anime_watch_list.components;
 
 
 import com.anime_list.anime_watch_list.models.Anime;
+import com.anime_list.anime_watch_list.models.Genre;
 import com.anime_list.anime_watch_list.models.User;
 import com.anime_list.anime_watch_list.models.WatchList;
 import com.anime_list.anime_watch_list.repositroies.AnimeRepository;
+import com.anime_list.anime_watch_list.repositroies.GenreRepository;
 import com.anime_list.anime_watch_list.repositroies.UserRepository;
 import com.anime_list.anime_watch_list.repositroies.WatchListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +30,15 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     WatchListRepository watchListRepository;
 
+    @Autowired
+    GenreRepository genreRepository;
 
 
     @Override
     public void run (ApplicationArguments args) throws Exception {
+
+
+
 
         //      Add Anime
         Anime anime1 = new Anime("Naruto", LocalDate.of(2002, 10, 03), "Ninja's",  4.6, 500);
@@ -46,6 +53,15 @@ public class DataLoader implements ApplicationRunner {
         Anime anime10 = new Anime("Jojo's Bizzare Adventure", LocalDate.of(2002, 10, 03), "Ninja anime", 4.5, 500);
 
 
+
+        //      Add Genre
+        Genre genre1 = new Genre("comedy", Arrays.asList(anime1,anime2,anime3));
+        Genre genre2 = new Genre("Action", Arrays.asList(anime1,anime7,anime3));
+        Genre genre3 = new Genre("Ecchi", Arrays.asList(anime4,anime2,anime3, anime8));
+
+
+        anime1.addGenres(Arrays.asList(genre1, genre2));
+        anime2.addGenres(Arrays.asList(genre2, genre3));
 
 
 //        Anime anime1 = new Anime("Naruto", LocalDate.of(2002, 10, 03), "Ninja's", Arrays.asList("Action", "Shounen","Comedy", "SuperPower","Adventure"), 4.6, 500);
@@ -84,5 +100,7 @@ public class DataLoader implements ApplicationRunner {
         animeRepository.saveAll(Arrays.asList(anime1, anime2, anime3, anime4, anime5, anime6, anime7, anime8, anime9, anime10));
         userRepository.saveAll(Arrays.asList(user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, user11, user12));
         watchListRepository.saveAll(Arrays.asList(watchList1,watchList2,watchList3,watchList4,watchList5));
+        genreRepository.saveAll(Arrays.asList(genre1, genre2, genre3));
+
     }
 }

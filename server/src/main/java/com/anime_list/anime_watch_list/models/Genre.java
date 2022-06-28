@@ -1,6 +1,10 @@
 package com.anime_list.anime_watch_list.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import net.bytebuddy.implementation.bind.annotation.IgnoreForBinding;
+
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -14,6 +18,7 @@ public class Genre {
     private String name;
 
     @ManyToMany
+    @JsonIgnoreProperties(value = "genres")
     @JoinTable(
             name ="genres_anime",
             joinColumns = {@JoinColumn( name ="genres_id")},

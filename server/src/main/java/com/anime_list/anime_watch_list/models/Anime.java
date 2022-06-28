@@ -23,7 +23,9 @@ public class Anime {
     @Column
     private String description;
 
-    @ManyToMany(mappedBy = "animes")
+    @ManyToMany(mappedBy = "animes", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties(value = "animes")
+
     private List <Genre> genres;
 
 //    @OneToMany(mappedBy = "watchlistAnime")
