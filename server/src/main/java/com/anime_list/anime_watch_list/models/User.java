@@ -88,7 +88,7 @@ public class User {
                 ", name='" + name + '\'' +
                 ", dob=" + dob +
                 ", email='" + email + '\'' +
-                ", animes=" + watchLists +
+                ", watchLists=" + watchLists +
                 '}';
     }
 }

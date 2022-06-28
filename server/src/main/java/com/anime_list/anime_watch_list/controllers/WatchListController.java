@@ -17,9 +17,7 @@ public class WatchListController {
     @Autowired
     private WatchListRepository watchListRepository;
 
-
-
-    //    INDEX
+    // GET
     @GetMapping // localhost:8080/users
     public ResponseEntity<List<User>> getWatchLists(){
         return new ResponseEntity(watchListRepository.findAll(), HttpStatus.OK);
@@ -31,21 +29,14 @@ public class WatchListController {
         return new ResponseEntity(watchListRepository.findById(id), found.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK);
     }
 
+    // POST
     @PostMapping
     public ResponseEntity<WatchList> createWatchList (@RequestBody WatchList newWatchList){
         watchListRepository.save(newWatchList);
         return new ResponseEntity<>(newWatchList, HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/remove/{id}")
-    public ResponseEntity<String> deleteWatchList(@PathVariable Long id) {
-        var found = watchListRepository.findById(id);
-        watchListRepository.deleteById(id);
-        return new ResponseEntity("WatchList Deleted id: " + id, HttpStatus.NOT_FOUND);
-    }
-
-
-
+    // PUT
     @PutMapping("/{id}")
     public ResponseEntity<WatchList> updateWatchList (@PathVariable(value = "id") Long id, @RequestBody WatchList watchListDetailUpdate){
         var watchList = watchListRepository.findById(id);
@@ -61,8 +52,11 @@ public class WatchListController {
         }
     }
 
-
-
-
-
+    // DELETE
+    @DeleteMapping("/remove/{id}")
+    public ResponseEntity<String> deleteWatchList(@PathVariable Long id) {
+        var found = watchListRepository.findById(id);
+        watchListRepository.deleteById(id);
+        return new ResponseEntity("WatchList Deleted id: " + id, HttpStatus.NOT_FOUND);
+    }
 }

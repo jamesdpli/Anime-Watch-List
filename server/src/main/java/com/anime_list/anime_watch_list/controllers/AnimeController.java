@@ -20,17 +20,13 @@ public class AnimeController{
     @Autowired
     AnimeRepository animeRepository;
 
-
     //GET MAPPING
-
-    //localhost:8080/animes
-    @GetMapping
+    @GetMapping //localhost:8080/animes
     public ResponseEntity<List<Anime>> getAnime(){
         return new ResponseEntity(animeRepository.findAll(), HttpStatus.OK);
     }
 
-    //localhost:8080/animes/1
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "/{id}") //localhost:8080/animes/1
     public ResponseEntity<Optional<Anime>> getAnime(@PathVariable Long id) {
         Optional<Anime> anime = animeRepository.findById(id);
         return new ResponseEntity<>(anime, anime.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK);
@@ -50,7 +46,4 @@ public class AnimeController{
         animeRepository.deleteById(id);
         return new ResponseEntity(animeRepository.findAll(), found.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK);
     }
-
-
-
 }
