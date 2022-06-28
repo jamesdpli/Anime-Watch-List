@@ -12,7 +12,7 @@ import usePersistedState from './components/usePersistedState';
 import Home from "./containers/Home";
 import Cover from "./containers/Cover";
 import Login from "./containers/Login";
-import SignUp from "./containers/SignUp";
+import Signup from "./containers/Signup"
 import Explore from "./containers/Explore";
 import Account from './containers/Account';
 
@@ -35,7 +35,7 @@ function App() {
           </Route>
           <Route path='/account' element={isLogin? <Account currentAnimeAcc={currentAnimeAcc}
                                                             setCurrentAnimeAcc={setCurrentAnimeAcc}/>: 
-                                                  <SignUp isLogin={isLogin} setIsLogin={setIsLogin}
+                                                  <Signup isLogin={isLogin} setIsLogin={setIsLogin}
                                                           currentAnimeAcc={currentAnimeAcc}
                                                           setCurrentAnimeAcc={setCurrentAnimeAcc} />}>
                 <Route path='watched' element={<WatchedEpisodeList currentAnimeAcc={currentAnimeAcc}
