@@ -14,16 +14,31 @@ function App() {
 
   return (
 
-    // <Router>
-    //   <div className="App">
-    //   <Routes>
-    //   <Route path='/login' element={<Login isLogin={isLogin} setIsLogin={setIsLogin}
-    //                                           currentPodCastAcc={currentPodCastAcc}
-    //                                           setCurrentPodCastAcc={setCurrentPodCastAcc}/>}>
-    //       </Route>
-    //     </Routes>
-    //     </div>
-    // </Router>
+    <Router>
+
+<Route path='/account' element={isLogin? <Account currentPodCastAcc={currentPodCastAcc}
+                                                            setCurrentPodCastAcc={setCurrentPodCastAcc}/>: 
+                                                  <SignUp isLogin={isLogin} setIsLogin={setIsLogin}
+                                                          currentPodCastAcc={currentPodCastAcc}
+                                                          setCurrentPodCastAcc={setCurrentPodCastAcc} />}>
+
+                <Route path='recommended' element={<RecommendList currentPodCastAcc={currentPodCastAcc} 
+                                                                  setCurrentPodCastAcc={setCurrentPodCastAcc}/>} />
+                <Route path='watched' element={<WatchedEpisodeList currentPodCastAcc={currentPodCastAcc}
+                                                                  setCurrentPodCastAcc={setCurrentPodCastAcc}/>}/>
+
+
+          </Route>
+
+      <div className="App">
+      <Routes>
+      <Route path='/login' element={<Login isLogin={isLogin} setIsLogin={setIsLogin}
+                                              currentPodCastAcc={currentPodCastAcc}
+                                              setCurrentPodCastAcc={setCurrentPodCastAcc}/>}>
+          </Route>
+        </Routes>
+        </div>
+    </Router>
 
     
   );
