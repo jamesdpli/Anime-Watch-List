@@ -8,8 +8,8 @@ import java.util.List;
 public interface AnimeRepository extends JpaRepository<Anime, Long> {
 
 //    To express the inequality
-    List<Anime> findByNameNot(String name);
-
-    List<Anime> findByNumberOfEpisodes(int numberOfEps);
+//    List<Anime> findByNameNot(String name);
+//
+//    List<Anime> findByNumberOfEpisodes(int numberOfEps);
 
 }

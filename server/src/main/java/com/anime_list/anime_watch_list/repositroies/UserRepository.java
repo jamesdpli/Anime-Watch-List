@@ -7,8 +7,8 @@ import java.util.List;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    List<User> findByNameStartingWith(String prefix);
-
-    Integer countByNameContaining(String letter);
+//    List<User> findByNameStartingWith(String prefix);
+//
+//    Integer countByNameContaining(String letter);
 
 }

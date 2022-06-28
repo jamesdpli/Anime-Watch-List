@@ -27,15 +27,35 @@ public class Anime {
     @Enumerated(EnumType.STRING)
     private Genre genre;
 
+//    @OneToMany(mappedBy = "watchlistAnime")
+//    @JsonIgnoreProperties({"animes"})
+//    private List<WatchList> watchLists;
+
     @Column
     private double rating;
 
     @Column(name = "number_of_episodes")
     private int numberOfEps;
 
-    @ManyToMany(mappedBy = "animes")
-    @JsonIgnoreProperties({"animes"})
-    private List<User> users;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+//    public List<WatchList> getWatchLists() {
+//        return watchLists;
+//    }
+//
+//    public void setWatchLists(List<WatchList> watchLists) {
+//        this.watchLists = watchLists;
+//    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+
+
+
+
 
     // Empty constructor
     public Anime() {}
@@ -49,7 +69,6 @@ public class Anime {
         this.genre = genre;
         this.rating = rating;
         this.numberOfEps = numberOfEps;
-        this.users = new ArrayList<>();
     }
 
     // Getters and Setters
@@ -105,13 +124,7 @@ public class Anime {
         this.numberOfEps = numberOfEps;
     }
 
-    public List<User> getUsers() {
-        return users;
-    }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
-    }
 
     @Override
     public String toString() {
@@ -123,7 +136,7 @@ public class Anime {
                 ", genre=" + genre +
                 ", rating=" + rating +
                 ", numberOfEps=" + numberOfEps +
-                ", users=" + users +
+
                 '}';
     }
 }

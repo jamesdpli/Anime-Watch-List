@@ -15,11 +15,11 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 @SpringBootTest
 class AnimeWatchListApplicationTests {
 
-	@Autowired
-	UserRepository userRepository;
-
-	@Autowired
-	AnimeRepository animeRepository;
+//	@Autowired
+//	UserRepository userRepository;
+//
+//	@Autowired
+//	AnimeRepository animeRepository;
 
 
 	@Test
@@ -45,15 +45,15 @@ class AnimeWatchListApplicationTests {
 
 //	------------- Anime DQ Tests -----------
 
-	@Test
-	public void canIgnoreAnime(){
-		List<Anime> found = animeRepository.findByNameNot("Bleach");
-	}
-
-	@Test
-	public void canFindEpisodeNumber(){
-		List<Anime> found = animeRepository.findByNumberOfEpisodes(75);
-		assertThat(found.size()).isEqualTo(1);
-	}
+//	@Test
+//	public void canIgnoreAnime(){
+//		List<Anime> found = animeRepository.findByNameNot("Bleach");
+//	}
+//
+//	@Test
+//	public void canFindEpisodeNumber(){
+//		List<Anime> found = animeRepository.findByNumberOfEpisodes(75);
+//		assertThat(found.size()).isEqualTo(1);
+//	}
 
 }

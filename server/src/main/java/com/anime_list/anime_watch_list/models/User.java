@@ -24,25 +24,19 @@ public class User {
     @Column
     String email;
 
-    @ManyToMany
-    @JoinTable(
-            name = "animes_users",
-            joinColumns = {@JoinColumn(name = "user_id")},
-            inverseJoinColumns = {@JoinColumn(name = "anime_id")}
-    )
-    @JsonIgnoreProperties({"users"})
-    private List<Anime> animes;
+    @OneToMany(mappedBy = "user")
+    @JsonIgnoreProperties({"user"})
+    private List<WatchList> watchLists;
 
     // Empty constructor
     public User() {
     }
 
     // Constructor
-    public User(String name, LocalDate dob, String email, List<Anime> animes) {
+    public User(String name, LocalDate dob, String email) {
         this.name = name;
         this.dob = dob;
         this.email = email;
-        this.animes = animes;
     }
 
     // Getters and Setters
@@ -74,22 +68,17 @@ public class User {
         this.email = email;
     }
 
-    public List<Anime> getAnimes() {
-        return animes;
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setAnimes(List<Anime> animes) {
-        this.animes = animes;
+    public List<WatchList> getWatchLists() {
+        return watchLists;
     }
 
-//    ADD & REMOVE ANIME METHODS:
-
-    public void addAnime(Anime anime){
-        this.animes.add(anime);
-    }
-
-    public void removeAnime(Anime anime){
-        this.animes.remove(anime);
+    public void setWatchLists(List<WatchList> watchLists) {
+        this.watchLists = watchLists;
     }
 
     @Override
@@ -99,7 +88,7 @@ public class User {
                 ", name='" + name + '\'' +
                 ", dob=" + dob +
                 ", email='" + email + '\'' +
-                ", animes=" + animes +
+                ", animes=" + watchLists +
                 '}';
     }
 }

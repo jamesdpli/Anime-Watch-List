@@ -61,7 +61,7 @@ public class UserController {
         u.setName(upUser.getName());
         u.setDob(upUser.getDob());
         u.setEmail(upUser.getEmail());
-        u.setAnimes(upUser.getAnimes());
+
         User updatedUser = userRepository.save(u);
         return new ResponseEntity<>(updatedUser,HttpStatus.OK);
         }
