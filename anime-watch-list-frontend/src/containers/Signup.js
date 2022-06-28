@@ -8,7 +8,7 @@ const Signup = ({isLogin, setIsLogin, currentPodCastAcc, setCurrentPodCastAcc}) 
     const [allowedSignup, setAllowedSignup] = useState([false, false, false]);
 
     console.log(allowedSignup);
-    
+
     // to get all the users on the site
     useEffect(() => {
         fetch("//http://localhost:8080/users")
@@ -129,7 +129,45 @@ const Signup = ({isLogin, setIsLogin, currentPodCastAcc, setCurrentPodCastAcc}) 
     }
 
 
-    return(<></>);
+    return(
+        <div className="sign-up-container">
+        <form className='sign-up-form'>
+            <h1 className='sign-up-title'>SIGN UP WITH</h1>
+            <div className='other-sign-up'>
+                <ul>
+                    <li><a href="wwww.twitter.com" className="button-a-tag"><button className="other-sign-up-button-twitter"><BsTwitter className="other-sign-up-icons-twitter" /></button></a></li>
+                    <li><a href="wwww.google.co.uk" className="button-a-tag"><button className="other-sign-up-button-google"><BsGoogle className="other-sign-up-icons-google" /></button></a></li>
+                    <li><a href="wwww.linkedin.com" className="button-a-tag"><button className="other-sign-up-button-linkedin"><FaLinkedinIn className="other-sign-up-icons-linkedin" /></button></a></li>
+                    <li><a href="wwww.github.com" className="button-a-tag"><button className="other-sign-up-button-github"><BsGithub className="other-sign-up-icons-github" /></button></a></li>
+                </ul>
+            </div>
+            <p className="or-line"><span> Or </span></p>
+
+            <br />
+            <p className="sign-up-input-title">Your username</p>
+            <input type="text" ref={inputNewUsername} onChange={handleExisitedUserName} className="sign-up-input-box" />
+            <p className='new-user-username-input'></p>
+
+            <p className="sign-up-input-title">Your Email</p>
+            <input type="text" ref={inputNewEmail} onChange={handleCorrectEmail} className="sign-up-input-box" />
+            <p className='new-user-email-input'></p>
+
+            <p className="sign-up-input-title">Password</p>
+            <input type={passwordShown ? "text" : "password"} ref={inputNewPassword} onChange={handlePasswordChecker} className="sign-up-input-box" /><br />
+            <button onClick={handlePasswordShown} className="password-shown-button">{passwordShown ? <AiOutlineEye className="password-eye" /> : <AiOutlineEyeInvisible className="password-eye" />}</button>
+            <p className='new-user-password-input'></p>
+            <br />
+            <input type="checkbox" id='sign-up-condition-box' className='sign-up-terms-box' />
+            <label htmlFor="sign-up-condition-box" >I agree to terms & conditions.</label>
+            <br />
+            <button onClick={handleSignUp} className='sign-up-btn'>Sign up</button>
+
+            <p>Do you already have an account? <a href="/login">Log in</a></p>
+
+        </form>
+
+        </div>
+        );
 }
 
 export default Signup;
