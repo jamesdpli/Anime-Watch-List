@@ -27,6 +27,6 @@ public interface AnimeRepository extends JpaRepository<Anime, Long> {
 //    @Query("select t from Test t join User u where u.username = :username")
 //    List<Test> findAllByUsername(@Param("username")String username);
 
-    @Query("select a from Anime a join Genre g where g.animes =: anime")
-    List<Anime> findAllByGenres(@RequestParam("comedy")String genre);
+//    @Query("select a from Anime a join Genre g where g.animes =: anime")
+//    List<Anime> findAllByGenres(@RequestParam("comedy")String genre);
     }
