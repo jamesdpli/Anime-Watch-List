@@ -54,30 +54,24 @@ public class AnimeController{
     }
 
     // DELETE MAPPING
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<List<Anime>> deleteAnime(@PathVariable Long id) {
-//        var found = animeRepository.findById(id);
-//        animeRepository.deleteById(id);
-//        return new ResponseEntity(animeRepository.findAll(), found.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK);
-//    }
-
-    //    DELETE
-    @DeleteMapping(value = "/{id}")
-    public ResponseEntity<Long> removeAnimeById(@PathVariable("id") Long id) {
-        Optional<Anime> anime = animeRepository.findById(id);
-        List<WatchList> watchList = watchListRepository.findAll();
-        if (anime.isPresent()) {
-            Anime ani = anime.get();
-            ani.getGenres().stream()
-                    .forEach(genre -> genreRepository.deleteById(genre.getId()));
-            ani.setGenres(new ArrayList<>());
-//            animeRepository.deleteById(id);
-        }
-        if (watchList.contains(anime)) {
-            watchList.remove(watchList);
-        }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<List<Anime>> deleteAnime(@PathVariable Long id) {
+        var found = animeRepository.findById(id);
         animeRepository.deleteById(id);
-
-        return new ResponseEntity<>(id, HttpStatus.OK);
+        return new ResponseEntity(animeRepository.findAll(), found.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK);
     }
+
+//    DELETE
+//    @DeleteMapping(value = "/{id}")
+//    public ResponseEntity<Long> removeAnimeById(@PathVariable("id") Long id) {
+//        Optional<Anime> anime = animeRepository.findById(id);
+//        if (anime.isPresent()) {
+//            Anime upAnime = anime.get();
+//            upAnime.getGenres().stream()
+//                    .forEach(genre -> genreRepository.deleteById(genre.getId()));
+//            upAnime.setGenres(new ArrayList<>());
+//            animeRepository.deleteById(id);
+//        }
+//        return new ResponseEntity<>(id, HttpStatus.OK);
+//    }
 }

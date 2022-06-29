@@ -38,4 +38,12 @@ public class GenreController {
         genreRepository.save(newGenre);
         return new ResponseEntity<>(newGenre, HttpStatus.CREATED);
     }
+
+    // DELETE MAPPING
+    @DeleteMapping("/{id}")
+    public ResponseEntity<List<Genre>> deleteGenre(@PathVariable Long id) {
+        var found = genreRepository.findById(id);
+        genreRepository.deleteById(id);
+        return new ResponseEntity(genreRepository.findAll(), found.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK);
+    }
 }
