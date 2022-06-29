@@ -61,6 +61,9 @@ public class UserController {
     }
 
     // Delete -> Working ✅
+    // Deleting the user also deletes all of their "Watch Lists", this is good
+    // We want to delete all of their "Watch Lists" too as they no longer have
+    // an account, so we do not need their data anymore
     @DeleteMapping(value = "/{id}") // localhost:8080/users/X
     public ResponseEntity<Long> deleteUser(@PathVariable("id") Long id) {
         Optional<User> user = userRepository.findById(id);
