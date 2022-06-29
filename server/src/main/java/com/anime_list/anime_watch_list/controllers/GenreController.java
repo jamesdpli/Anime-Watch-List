@@ -3,12 +3,14 @@ package com.anime_list.anime_watch_list.controllers;
 import com.anime_list.anime_watch_list.models.Anime;
 import com.anime_list.anime_watch_list.models.Genre;
 import com.anime_list.anime_watch_list.models.WatchList;
+import com.anime_list.anime_watch_list.repositroies.AnimeRepository;
 import com.anime_list.anime_watch_list.repositroies.GenreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,6 +21,9 @@ public class GenreController {
 
     @Autowired
     GenreRepository genreRepository;
+
+    @Autowired
+    AnimeRepository animeRepository;
 
     // GET
     @GetMapping
@@ -56,10 +61,22 @@ public class GenreController {
     }
 
     // DELETE MAPPING
-    @DeleteMapping("/{id}")
-    public ResponseEntity<List<Genre>> deleteGenre(@PathVariable Long id) {
-        var found = genreRepository.findById(id);
-        genreRepository.deleteById(id);
-        return new ResponseEntity(genreRepository.findAll(), found.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK);
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<List<Genre>> deleteGenre(@PathVariable Long id) {
+//        var found = genreRepository.findById(id);
+//        genreRepository.deleteById(id);
+//        return new ResponseEntity(genreRepository.findAll(), found.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK);
+//    }
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Long> deleteGenre(@PathVariable("id") Long id) {
+        Optional<Genre> genre = genreRepository.findById(id);
+        if (genre.isPresent()) {
+            Genre upGenre = genre.get();
+            upGenre.getAnimes().stream()
+                    .forEach(anime -> animeRepository.deleteById(anime.getId()));
+            upGenre.setAnimes(new ArrayList<>());
+            genreRepository.deleteById(id);
+        }
+        return new ResponseEntity<>(id, HttpStatus.OK);
     }
 }
