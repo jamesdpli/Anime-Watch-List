@@ -14,6 +14,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -89,6 +90,12 @@ public class AnimeController{
     public ResponseEntity<List<Anime>> getAnimeByEpsGreaterThan(@PathVariable int numberOfEps){
         List<Anime> animeByEps = animeRepository.findAnimeByNumberOfEpsGreaterThan(numberOfEps);
         return new ResponseEntity<>(animeByEps, HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/releaseDate") // not working rn (-_-)
+    public ResponseEntity<List<Anime>> getAnimeByReleaseDateGreaterThan(@PathVariable LocalDate releaseDate){
+        List<Anime> animeRD = animeRepository.findAnimeByReleaseDateGreaterThan(releaseDate);
+        return new ResponseEntity<>(animeRD, HttpStatus.OK);
     }
 
 
