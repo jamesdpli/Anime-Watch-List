@@ -25,7 +25,7 @@ public class GenreController {
     @Autowired
     AnimeRepository animeRepository;
 
-    // GET
+    // Get
     @GetMapping
     public ResponseEntity<List<Genre>> getGenres(){
         return new ResponseEntity<>(genreRepository.findAll(), HttpStatus.OK);
@@ -37,14 +37,14 @@ public class GenreController {
         return new ResponseEntity<>(genre, genre.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK);
     }
 
-    // POST
+    // Post
     @PostMapping
     public ResponseEntity<Genre> createGenre (@RequestBody Genre newGenre){
         genreRepository.save(newGenre);
         return new ResponseEntity<>(newGenre, HttpStatus.CREATED);
     }
 
-    // PUT
+    // Put
     @PutMapping("/{id}")
     public ResponseEntity<Genre> updateGenre (@PathVariable(value = "id") Long id, @RequestBody Genre genreDetailUpdate){
         var genre = genreRepository.findById(id);
@@ -60,23 +60,11 @@ public class GenreController {
         }
     }
 
-    // DELETE MAPPING
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<List<Genre>> deleteGenre(@PathVariable Long id) {
-//        var found = genreRepository.findById(id);
-//        genreRepository.deleteById(id);
-//        return new ResponseEntity(genreRepository.findAll(), found.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK);
-//    }
-    @DeleteMapping(value = "/{id}")
-    public ResponseEntity<Long> deleteGenre(@PathVariable("id") Long id) {
-        Optional<Genre> genre = genreRepository.findById(id);
-        if (genre.isPresent()) {
-            Genre upGenre = genre.get();
-            upGenre.getAnimes().stream()
-                    .forEach(anime -> animeRepository.deleteById(anime.getId()));
-            upGenre.setAnimes(new ArrayList<>());
-            genreRepository.deleteById(id);
-        }
-        return new ResponseEntity<>(id, HttpStatus.OK);
+//  Delete -> Working ✅
+    @DeleteMapping("/{id}")
+    public ResponseEntity<List<Genre>> deleteGenre(@PathVariable Long id) {
+        var found = genreRepository.findById(id);
+        genreRepository.deleteById(id);
+        return new ResponseEntity(genreRepository.findAll(), found.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK);
     }
 }

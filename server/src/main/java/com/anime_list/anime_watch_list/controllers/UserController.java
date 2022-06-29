@@ -37,14 +37,14 @@ public class UserController {
     }
 
     // Post
-    @PostMapping
+    @PostMapping // localhost:8080/users
     public ResponseEntity<List<User>> createUser(@RequestBody User newUser){
         userRepository.save(newUser);
         return new ResponseEntity(userRepository.findAll(), HttpStatus.CREATED);
     }
 
     // Put
-    @PutMapping(value = "/{id}") //localhost:8080/users/1
+    @PutMapping(value = "/{id}") // localhost:8080/users/X
     public ResponseEntity<User> updateUser(@PathVariable(value = "id") Long id, @RequestBody User upUser) throws Exception{
         Optional<User> user = userRepository.findById(id);
         if(user.isEmpty()){
@@ -61,7 +61,7 @@ public class UserController {
     }
 
     // Delete -> Working ✅
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "/{id}") // localhost:8080/users/X
     public ResponseEntity<Long> deleteUser(@PathVariable("id") Long id) {
         Optional<User> user = userRepository.findById(id);
         if (user.isPresent()) {
