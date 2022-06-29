@@ -2,6 +2,7 @@
 // import animeAll from "./assets/animeAll.mp4";
 import zenitsu from "./assets/zenitsu.mp4";
 import Home from "./containers/Home";
+import Explore from "./containers/Explore";
 
 
 import './App.css';
@@ -14,13 +15,14 @@ return (
             <div className="App">
             <ul>
                 <li><Link to='/'>Home</Link></li>
-                <li><Link to='/'>Explore</Link></li>
+                <li><Link to='/explore'>Explore</Link></li>
                 <li><Link to='/'>Account</Link></li>
             </ul>
             </div>
 
             <Routes>
                 <Route path='/home' element={<Home/>}/>
+                <Route path='/explore' element={<Explore/>}/>
             </Routes>
     
         <div className="overlay"></div>
