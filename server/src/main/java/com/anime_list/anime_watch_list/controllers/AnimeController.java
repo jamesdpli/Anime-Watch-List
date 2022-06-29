@@ -85,6 +85,14 @@ public class AnimeController{
         return new ResponseEntity<>(animeByRating, HttpStatus.OK);
     }
 
+    @GetMapping(value = "/episodesGreaterThan={numberOfEps}")
+    public ResponseEntity<List<Anime>> getAnimeByEpsGreaterThan(@PathVariable int numberOfEps){
+        List<Anime> animeByEps = animeRepository.findAnimeByNumberOfEpsGreaterThan(numberOfEps);
+        return new ResponseEntity<>(animeByEps, HttpStatus.OK);
+    }
+
+
+
     // POST MAPPING
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Anime>> createAnime(@RequestBody Anime newAnime){
