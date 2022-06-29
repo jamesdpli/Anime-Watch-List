@@ -101,10 +101,6 @@ class AnimeWatchListApplicationTests {
 //		assertThat(foundAllAnimes.size()).isEqualTo(2);
 //	}
 
-	@Test
-	public void canFindAllByGenres(){
-
-	}
 
 
 }
