@@ -53,6 +53,25 @@ public class AnimeController{
         return new ResponseEntity(animeRepository.findAll(), HttpStatus.CREATED);
     }
 
+    //PUT
+    @PutMapping(value = "/{id}") //localhost:8080/animes/1
+    public ResponseEntity<Anime> updateAnime(@PathVariable(value = "id") Long id, @RequestBody Anime upAnime) throws Exception{
+        Optional<Anime> anime = animeRepository.findById(id);
+        if(anime.isEmpty()){
+            throw new Exception("Anime with id: " + id + " not found");
+        } else {
+            Anime a = anime.get();
+            a.setName(upAnime.getName());
+            a.setReleaseDate(upAnime.getReleaseDate());
+            a.setDescription(upAnime.getDescription());
+            a.setRating(upAnime.getRating());
+            a.setNumberOfEps(upAnime.getNumberOfEps());
+
+            Anime updatedAnime = animeRepository.save(a);
+            return new ResponseEntity<>(updatedAnime,HttpStatus.OK);
+        }
+    }
+
     // DELETE MAPPING
     @DeleteMapping("/{id}")
     public ResponseEntity<List<Anime>> deleteAnime(@PathVariable Long id) {
