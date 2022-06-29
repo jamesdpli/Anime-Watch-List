@@ -34,7 +34,7 @@ public class AnimeController{
     @Autowired
     WatchListRepository watchListRepository;
 
-    //GET MAPPING
+//    GET MAPPING
     @GetMapping //localhost:8080/animes
     public ResponseEntity<List<Anime>> getAnime(){
         return new ResponseEntity(animeRepository.findAll(), HttpStatus.OK);
@@ -44,6 +44,45 @@ public class AnimeController{
     public ResponseEntity<Optional<Anime>> getAnime(@PathVariable Long id) {
         Optional<Anime> anime = animeRepository.findById(id);
         return new ResponseEntity<>(anime, anime.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK);
+    }
+
+//    @GetMapping("/{temp}")
+//    @GetMapping
+//    public ResponseEntity<List
+//            <Anime>> getAnimeAndFilter(
+//            @RequestParam(required = false, name = "name") String name,
+//            @RequestParam(required = false, name = "description") String description,
+//            @RequestParam(required = false, name = "rating") double rating){
+//        if(name != null){
+//            return new ResponseEntity<>(animeRepository.findAnimeByName(name), HttpStatus.OK);
+//        }
+//        if(description != null){
+//            return new ResponseEntity<>(animeRepository.findAnimeByDescriptionStartingWith(description), HttpStatus.OK);
+//        }
+//        if(rating != 0){
+//            return new ResponseEntity<>(animeRepository.findAnimeByRatingGreaterThan(rating), HttpStatus.OK);
+//        }
+//        return new ResponseEntity<>(animeRepository.findAll(), HttpStatus.OK);
+//    }
+
+//    SHOW
+
+    @GetMapping(value = "/name={name}")
+    public ResponseEntity<List<Anime>> getAnimesByName(@PathVariable String name){
+        List<Anime> animeByName = animeRepository.findAnimeByName((name));
+        return new ResponseEntity<>(animeByName, HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/description={description}")
+    public ResponseEntity<List<Anime>> getAnimeByDescription(@PathVariable String description){
+        List<Anime> animeByDes = animeRepository.findAnimeByDescriptionStartingWith(description);
+        return new ResponseEntity<>(animeByDes, HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/rating>{rating}")
+    public ResponseEntity<List<Anime>> getAnimeByRatingGreaterThan(@PathVariable double rating){
+        List<Anime> animeByRating = animeRepository.findAnimeByRatingGreaterThan(rating);
+        return new ResponseEntity<>(animeByRating, HttpStatus.OK);
     }
 
     // POST MAPPING
