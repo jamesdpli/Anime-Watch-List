@@ -39,6 +39,22 @@ public class GenreController {
         return new ResponseEntity<>(newGenre, HttpStatus.CREATED);
     }
 
+    // PUT
+    @PutMapping("/{id}")
+    public ResponseEntity<Genre> updateGenre (@PathVariable(value = "id") Long id, @RequestBody Genre genreDetailUpdate){
+        var genre = genreRepository.findById(id);
+        if(genre.isPresent()){
+            Genre g = genre.get();
+            g.setName(genreDetailUpdate.getName());
+            g.setAnimes(genreDetailUpdate.getAnimes());
+            genreRepository.save(g);
+            return new ResponseEntity<>(g, HttpStatus.OK);
+        }
+        else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
     // DELETE MAPPING
     @DeleteMapping("/{id}")
     public ResponseEntity<List<Genre>> deleteGenre(@PathVariable Long id) {
