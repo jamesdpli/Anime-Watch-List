@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -18,8 +19,8 @@ class AnimeWatchListApplicationTests {
 //	@Autowired
 //	UserRepository userRepository;
 //
-//	@Autowired
-//	AnimeRepository animeRepository;
+	@Autowired
+	AnimeRepository animeRepository;
 
 
 	@Test
@@ -42,18 +43,31 @@ class AnimeWatchListApplicationTests {
 //		assertThat(found).isEqualTo(2);
 //	}
 
+//	ANIME TESTS:
 
-//	------------- Anime DQ Tests -----------
+	@Test
+	public void canFindAnimeByName(){
+		List<Anime> foundAnime = animeRepository.findAnimeByName("Naruto");
+		assertThat(foundAnime.size()).isEqualTo(1);
+	}
 
-//	@Test
-//	public void canIgnoreAnime(){
-//		List<Anime> found = animeRepository.findByNameNot("Bleach");
-//	}
-//
-//	@Test
-//	public void canFindEpisodeNumber(){
-//		List<Anime> found = animeRepository.findByNumberOfEpisodes(75);
-//		assertThat(found.size()).isEqualTo(1);
-//	}
+	@Test
+	public void canFindAnimeByReleaseDateGreaterThan(){
+		List<Anime> foundAnime = animeRepository.findAnimeByReleaseDateGreaterThan(
+				LocalDate.of(2004, 10, 05));
+				assertThat(foundAnime.size()).isEqualTo(4);
+	}
+
+	@Test
+	public void canFindAnimeByRatingGreaterThan(){
+		List<Anime> foundAnime = animeRepository.findAnimeByRatingGreaterThan(4.5);
+		assertThat(foundAnime.size()).isEqualTo(1);
+	}
+
+	@Test
+	public void canFindAnimeByNumberOfEpsGreaterThan(){
+		List<Anime> foundAnime = animeRepository.findAnimeByNumberOfEpsGreaterThan(50);
+		assertThat(foundAnime.size()).isEqualTo(10);
+	}
 
 }
