@@ -76,7 +76,7 @@ public class AnimeController{
     // If we want to delete an anime we must remove all watch lists containing that anime FIRST,
     // as a watch list cannot have a null anime
     @DeleteMapping(value = "animeInWatchList/{id}")
-    public ResponseEntity<String> removeAnimeById(@PathVariable("id") Long id) {
+    public ResponseEntity<String> removeAnimeInWatchListById(@PathVariable("id") Long id) {
         List<WatchList> AllWatchLists = watchListRepository.findAll();
         Optional<Anime> anime = animeRepository.findById(id);
 
@@ -92,7 +92,7 @@ public class AnimeController{
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteAnimeById(@PathVariable Long id) {
+    public ResponseEntity<String> removeAnimeNotInWatchListById(@PathVariable Long id) {
         var found = animeRepository.findById(id);
         animeRepository.deleteById(id);
         return new ResponseEntity("Anime Deleted id: " + id, HttpStatus.NOT_FOUND);
