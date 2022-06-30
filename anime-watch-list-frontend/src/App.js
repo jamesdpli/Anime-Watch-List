@@ -1,8 +1,9 @@
 // import demonSlayer from "./assets/demonSlayer.mp4";
 // import animeAll from "./assets/animeAll.mp4";
-import zenitsu from "./assets/zenitsu.mp4";
+// import zenitsu from "./assets/zenitsu.mp4";
 import Home from "./components/Home";
 import Explore from "./components/Explore";
+import Account from "./components/Account/Account";
 
 
 import './App.css';
@@ -19,8 +20,9 @@ return (
             </ul>
 
             <Routes>
-                <Route path='/home' element={<Home/>}/>
+                <Route path='/' element={<Home/>}/>
                 <Route path='/explore' element={<Explore/>}/>
+                <Route path='/account' element={<Account/>}/>
             </Routes>
         </div>
     </Router>
