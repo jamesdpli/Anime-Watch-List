@@ -28,21 +28,6 @@ class AnimeWatchListApplicationTests {
 	void contextLoads() {
 	}
 
-//	------------ User DQ Tests ------------
-
-//	@Test
-//	public void canFindNameStartingWith(){
-//		List<User> found = userRepository.findByNameStartingWith("O");
-//		assertThat(found.size()).isEqualTo(2);
-//	}
-
-//	Tests failing b/c : failed to load application context
-
-//	@Test
-//	public void canFindNameByLetter(){
-//		Integer found = userRepository.countByNameContaining("a");
-//		assertThat(found).isEqualTo(2);
-//	}
 
 //	USER TESTS:
 
@@ -53,18 +38,33 @@ class AnimeWatchListApplicationTests {
 	}
 
 	@Test
+	public void canFindUsersByName(){
+		List<User> foundUser = userRepository.findUsersByName("Randy");
+		assertThat(foundUser.size()).isEqualTo(1);
+	}
+
+	@Test
 	public void canFindUserByNameStartingWith(){
 		List<User> foundUser = userRepository.findUserByNameStartingWith("J");
 		assertThat(foundUser.size()).isEqualTo(2);
 	}
 
-//	@Test
-//	public void canFindUserByNameAndNameIgnoreCase(){
-//		List<User> foundUser = userRepository.findUserByNameAndNameIgnoreCase("j");
-//		assertThat(foundUser.size()).isEqualTo(1);
-//	}
+	@Test
+	public void canFindUserByEmail(){
+		List<User> foundUser = userRepository.findUserByEmail("onodaKun@gmail.com");
+		assertThat(foundUser.size()).isEqualTo(2);
+	}
+
+	@Test
+	public void canFindUsersByEmailContaining(){
+		List<User> foundUser = userRepository.findUsersByEmailContaining("o");
+		assertThat(foundUser.size()).isEqualTo(12);
+	}
+
+
 
 //	ANIME TESTS:
+
 	@Test
 	public void canFindAnimeByName(){
 		List<Anime> foundAnime = animeRepository.findAnimeByName("Naruto");
@@ -90,16 +90,11 @@ class AnimeWatchListApplicationTests {
 		assertThat(foundAnime.size()).isEqualTo(10);
 	}
 
-//	@Test
-//	public void canFindAnimeByGenreId(){
-//		List<Anime> foundAnime = animeRepository.findAnimeByGenreId(1L);
-//		assertThat(foundAnime.size()).isEqualTo(1);
-//	}
-//	@Test
-//	public void canFindAllByGenres_GenreName(){
-//		List<Anime> foundAllAnimes = animeRepository.findAllByGenres_GenreName(1L);
-//		assertThat(foundAllAnimes.size()).isEqualTo(2);
-//	}
+	@Test
+	public void canFindAnimeByDescriptionStartingWith(){
+		List<Anime> foundAnime = animeRepository.findAnimeByDescriptionStartingWith("N");
+		assertThat(foundAnime.size()).isEqualTo(4);
+	}
 
 
 

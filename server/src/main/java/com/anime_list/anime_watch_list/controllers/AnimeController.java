@@ -14,6 +14,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -34,7 +35,7 @@ public class AnimeController{
     @Autowired
     WatchListRepository watchListRepository;
 
-    //GET MAPPING
+//    GET MAPPING
     @GetMapping //localhost:8080/animes
     public ResponseEntity<List<Anime>> getAnime(){
         return new ResponseEntity(animeRepository.findAll(), HttpStatus.OK);
@@ -46,8 +47,42 @@ public class AnimeController{
         return new ResponseEntity<>(anime, anime.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK);
     }
 
-    // Post
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE) //localhost:8080/animes
+//    SHOW
+
+    @GetMapping(value = "/name={name}")
+    public ResponseEntity<List<Anime>> getAnimesByName(@PathVariable String name){
+        List<Anime> animeByName = animeRepository.findAnimeByName((name));
+        return new ResponseEntity<>(animeByName, HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/description={description}")
+    public ResponseEntity<List<Anime>> getAnimesByDescription(@PathVariable String description){
+        List<Anime> animeByDes = animeRepository.findAnimeByDescriptionStartingWith(description);
+        return new ResponseEntity<>(animeByDes, HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/rating>{rating}")
+    public ResponseEntity<List<Anime>> getAnimesByRatingGreaterThan(@PathVariable double rating){
+        List<Anime> animeByRating = animeRepository.findAnimeByRatingGreaterThan(rating);
+        return new ResponseEntity<>(animeByRating, HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/episodesGreaterThan>{numberOfEps}")
+    public ResponseEntity<List<Anime>> getAnimesByEpsGreaterThan(@PathVariable int numberOfEps){
+        List<Anime> animeByEps = animeRepository.findAnimeByNumberOfEpsGreaterThan(numberOfEps);
+        return new ResponseEntity<>(animeByEps, HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/releaseDate") // not working rn (-_-)
+    public ResponseEntity<List<Anime>> getAnimesByReleaseDateGreaterThan(@PathVariable LocalDate releaseDate){
+        List<Anime> animeRD = animeRepository.findAnimeByReleaseDateGreaterThan(releaseDate);
+        return new ResponseEntity<>(animeRD, HttpStatus.OK);
+    }
+
+
+
+    // POST MAPPING
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Anime>> createAnime(@RequestBody Anime newAnime){
         animeRepository.save(newAnime);
         return new ResponseEntity(animeRepository.findAll(), HttpStatus.CREATED);
