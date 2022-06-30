@@ -1,17 +1,17 @@
-import TextField from "@mui/material/TextField";
 // import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
 import "./SignUp.css";
-import { red } from "@mui/material/colors";
-
-import React, {useState} from "react";
+// import demonSlayer from "./demonSlayer.mp4";
+// import React, {useState} from "react";
 import {BsTwitter} from 'react-icons/bs'; // npm install react-icons
 
 
 const SignUp = () => {
   return (
+
     <div className="sign-up-container">
+      {/* <div className="overlay-login">
+      <video src={demonSlayer} autoPlay loop muted/>
+      </div> */}
       <form className="sign-up-form">
         <h1 className="sign-up-title">Sign up with</h1>
         <div className="other-sign-up">

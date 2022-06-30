@@ -1,4 +1,4 @@
-.content-signin {
+/* .content-signin {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
     color: white;
-}
+} */
 
 @media only screen and (max-width: 600px) {
     .content-signin {
@@ -16,21 +16,14 @@
     }
   }
 
-
-
-
-
-.form-border {
+/* .form-border {
     padding: 2% 8% 8%;
     border: 2px solid black;
-    background-color: rgba(0,0,0,.88);
-    
-    
-}
+    background-color: rgba(0,0,0,.88); 
+} */
 
 @media only screen and (max-width: 740px) {
     .form-border {
-   
         height: 100vh;
         width: 82%;
         overflow: hidden;
@@ -41,10 +34,10 @@
     }
   }
 
-  .header-signin {
+  /* .header-signin {
     font-size: 50px;
   text-align: center;
-}
+} */
 @media only screen and (max-width: 600px) {
     .header-signin{
         font-size: 50px;
