@@ -78,7 +78,6 @@ public class AnimeController{
     @DeleteMapping(value = "animeInWatchList/{id}")
     public ResponseEntity<String> removeAnimeById(@PathVariable("id") Long id) {
         List<WatchList> AllWatchLists = watchListRepository.findAll();
-        List<Anime> AllAnimes = animeRepository.findAll();
         Optional<Anime> anime = animeRepository.findById(id);
 
 
