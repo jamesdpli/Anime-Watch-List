@@ -4,8 +4,6 @@
 import Home from "./components/Home";
 import Explore from "./components/Explore";
 import Account from "./components/Account/Account";
-
-
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
