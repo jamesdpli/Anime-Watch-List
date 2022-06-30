@@ -52,6 +52,48 @@
   }
 
 
+  /* ----------- Sign Up page css ------------ */
 
+  .sign-up-container{
+    display: flex;
+    justify-content: center;
+    background-color:white;
+    padding-bottom: 200px;
+    font-family: 'Red Hat Mono', monospace;
+    color:white;
+  }
+
+  .sign-up-form{
+    background-color:black;
+    margin-top:100px;
+    min-height: 500px;
+    width:360px;
+    border: solid black 8px;
+    border-radius:10px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.sign-up-title{
+  text-align: center;
+  color: white;
+  font-family: 'Red Hat Mono', monospace;
+}
+
+.other-sign-up{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.other-sign-up > ul {
+    
+  margin-top:0;
+  margin-bottom:20px;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
   
-  
+  position: relative;
+  right:3%;
+}
