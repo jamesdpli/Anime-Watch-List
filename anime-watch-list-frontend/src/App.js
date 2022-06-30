@@ -18,7 +18,7 @@ return (
                 <li><Link to='/explore'>Explore</Link></li>
                 <li><Link to='/account'>Account</Link></li>
                 <li><Link to='/login'>Login</Link></li>
-                <li><Link to='/signin'>Sign in</Link></li>
+                <li><Link to='/signup'>Sign up</Link></li>
             </ul>
 
             <Routes>
@@ -26,7 +26,7 @@ return (
                 <Route path='/explore' element={<Explore/>}/>
                 <Route path='/account' element={<Account/>}/>
                 <Route path='/login' element={<LoginPage/>}/>
-                <Route path='/signin' element={<SigninForm/>}/>
+                <Route path='/signup' element={<SigninForm/>}/>
             </Routes>
         </div>
     </Router>
