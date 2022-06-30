@@ -151,17 +151,20 @@
 /* terms tick box */
 .sign-up-terms-box{
   border-radius: 20px;
+  margin-right: 10px;
+  margin-bottom: 20px;
 }
 
 /* The button */
 
 .sign-up-btn{
   margin-top:10px;
+  margin-bottom: 20px;
   height: 40px;
   width: 250px;
 
   text-align: center;
-  position: relative;
+  position: static;
   left: 14%;
 
   border-radius: 20px;
@@ -173,7 +176,11 @@
 }
 
 .sign-up-btn:hover{
-  background-color: #816AFE;
+  background-color: transparent;
   color: white;
   cursor: pointer;
+}
+
+.link-text-tag{
+  color: white;
 }
