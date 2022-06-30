@@ -8,7 +8,7 @@ const Login = () => {
   return (
     <div className="sign-up-container">
       <form className="sign-up-form">
-        <h1 className="sign-up-title">Sign up with</h1>
+        <h1 className="sign-up-title">Login with</h1>
         <div className="other-sign-up">
           <ul>
             <li className="button-a-tag"><button><BsTwitter/></button></li>
@@ -27,13 +27,17 @@ const Login = () => {
         <p className="new-user-password"></p>
         <br/>
 
-        <input type="checkbox" id='sign-up-condition-box' className='sign-up-terms-box' />
-        <label htmlFor="sign-up-condition-box" >I agree to terms & conditions.</label>
-        <br />
+        <a href="#" className="link-a-tag">Log in as Admin?</a>
+        <br/>
 
-        <button className='sign-up-btn'>Sign up</button>
+        <a href="#" className="link-a-tag">Forget your password?</a>
+        <br/>
 
-        <p>Do you already have an account? <a href="/login">Log in</a></p>
+        <div>
+        <br/>
+        <button className='sign-up-btn'>Log in</button>
+        </div>
+        <p>Do you need an account?<a href="/account" className="link-a-tag">Create new account</a></p>
       </form>
     </div>
   );
