@@ -1,27 +1,21 @@
 // import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import "./SignUp.css";
-// import demonSlayer from "./demonSlayer.mp4";
 // import React, {useState} from "react";
-import {BsTwitter} from 'react-icons/bs'; // npm install react-icons
+// import {BsTwitter} from 'react-icons/bs'; // npm install react-icons
 
 
 const SignUp = () => {
   return (
-
     <div className="sign-up-container">
-      {/* <div className="overlay-login">
-      <video src={demonSlayer} autoPlay loop muted/>
-      </div> */}
       <form className="sign-up-form">
         <h1 className="sign-up-title">Sign up with</h1>
-        <div className="other-sign-up">
+        {/* <div className="other-sign-up">
           <ul>
             <li className="button-a-tag"><button><BsTwitter/></button></li>
-            {/* add more icon buttons */}
           </ul>
         </div>
         <p className="or-line"><span>Or</span></p>
-        <br/>
+        <br/> */}
         <p className="sign-up-input-title">Your username</p>
         <input type="text" className="sign-up-input-box"/>
         <p className="new-user-username"></p>

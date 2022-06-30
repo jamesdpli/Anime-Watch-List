@@ -60,7 +60,7 @@
     background-color:black;
     margin-top:100px;
     min-height: 500px;
-    width:360px;
+    width:460px;
     border: solid black 8px;
     border-radius:10px;
     padding-left: 50px;
@@ -73,6 +73,9 @@
   font-family: 'Red Hat Mono', monospace;
 }
 
+.login-title{
+  margin-top: 40px;
+}
 /* -------- the little icons --------- */
 
 .other-sign-up{

@@ -8,15 +8,14 @@ const Login = () => {
   return (
     <div className="sign-up-container">
       <form className="sign-up-form">
-        <h1 className="sign-up-title">Login with</h1>
-        <div className="other-sign-up">
+        <h1 className="login-title">Login with</h1>
+        {/* <div className="other-sign-up">
           <ul>
             <li className="button-a-tag"><button><BsTwitter/></button></li>
-            {/* add more icon buttons */}
           </ul>
         </div>
         <p className="or-line"><span>Or</span></p>
-        <br/>
+        <br/> */}
 
         <p className="sign-up-input-title">Your Email</p>
         <input type="text" className="sign-up-input-box"/>
@@ -37,7 +36,7 @@ const Login = () => {
         <br/>
         <button className='sign-up-btn'>Log in</button>
         </div>
-        <p>Do you need an account? <br/><a href="/signup" className="link-a-tag">Create new account</a></p>
+        <p>Do you need an account? <a href="/signup" className="link-a-tag">Create new account</a></p>
       </form>
     </div>
   );
