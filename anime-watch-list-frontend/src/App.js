@@ -6,18 +6,19 @@ import Explore from "./components/Explore";
 import Account from "./components/Account/Account";
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
-import LoginPage from "./components/Login/LoginPage";
+import LoginPage from "./components/Account/LoginPage";
+import SigninForm from "./components/Account/SigninForm";
 
 function App() {
 return (
     <Router>
         <div className="App">
-            <ul className="Bar">
+            <ul id="bar">
                 <li><Link to='/home'>Home</Link></li>
                 <li><Link to='/explore'>Explore</Link></li>
                 <li><Link to='/account'>Account</Link></li>
                 <li><Link to='/login'>Login</Link></li>
+                <li><Link to='/sign'>Signin</Link></li>
             </ul>
 
             <Routes>
@@ -30,6 +31,7 @@ return (
                 <Route path='/explore' element={<Explore/>}/>
                 <Route path='/account' element={<Account/>}/>
                 <Route path='/login' element={<LoginPage/>}/>
+                <Route path='/signin' element={<SigninForm/>}/>
             </Routes>
         </div>
     </Router>

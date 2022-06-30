@@ -49,3 +49,8 @@
 .App ul li {
   list-style: none;
 }
+
+#bar > ul{
+  color: aliceblue;
+  text-decoration: none;
+}
