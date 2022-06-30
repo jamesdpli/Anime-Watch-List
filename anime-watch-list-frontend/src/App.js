@@ -6,19 +6,25 @@ import Explore from "./components/Explore";
 import Account from "./components/Account/Account";
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
 return (
     <Router>
         <div className="App">
-            <ul>
-                <li><Link to='/'>Home</Link></li>
+            <ul className="Bar">
+                <li><Link to='/home'>Home</Link></li>
                 <li><Link to='/explore'>Explore</Link></li>
                 <li><Link to='/account'>Account</Link></li>
             </ul>
 
             <Routes>
-                <Route path='/' element={<Home/>}/>
+                <Route path='/home' element={<Home/>}/>
+                {/* <Route path='/' exact>
+                    <div>
+                    <Navbar/>
+                    </div>
+                </Route> */}
                 <Route path='/explore' element={<Explore/>}/>
                 <Route path='/account' element={<Account/>}/>
             </Routes>

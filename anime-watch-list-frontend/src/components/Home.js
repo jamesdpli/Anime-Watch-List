@@ -1,14 +1,13 @@
 // import zenitsu from "./zenitsu.mp4";
 import MoreInfo from "./MoreInfo";
-import demonSlayer from "../assets/demonSlayer.mp4"
+import demonSlayer from "../assets/demonSlayer.mp4";
+import "./Home.css";
 
 
 const Home = () => {
   return (
+    <>
     <div className="story-card-main">
-
-
-
 
       <div className="story-card">
           
@@ -34,14 +33,9 @@ const Home = () => {
         </div>
         
       </div>
-
-     
-
     <MoreInfo/>
-
-
-
     </div>
+    </>
   );
 };
 
