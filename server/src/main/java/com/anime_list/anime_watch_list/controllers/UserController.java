@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,6 +38,20 @@ public class UserController {
         List<User> userByName = userRepository.findUsersByName(name);
         return new ResponseEntity<>(userByName, HttpStatus.OK);
     }
+
+    @GetMapping(value = "/dob={dob}")
+    public ResponseEntity<List<User>> getUsersByDob (@PathVariable LocalDate dob){
+        List<User> userByDob = userRepository.findUserByDobAfter(dob);
+        return new ResponseEntity<>(userByDob, HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/email={email}")
+    public ResponseEntity<List<User>> getUsersByEmail (@PathVariable String email){
+        List<User> userByEmail = userRepository.findUserByEmail(email);
+        return new ResponseEntity<>(userByEmail, HttpStatus.OK);
+    }
+
+
 
 
 
