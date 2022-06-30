@@ -6,8 +6,8 @@ import Explore from "./components/Explore";
 import Account from "./components/Account/Account";
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import LoginPage from "./components/Account/LoginPage";
-import SigninForm from "./components/Account/SigninForm";
+import LoginPage from "./components/Account/Login";
+import SigninForm from "./components/Account/SignUp";
 
 function App() {
 return (
@@ -17,8 +17,8 @@ return (
                 <li><Link to='/home'>Home</Link></li>
                 <li><Link to='/explore'>Explore</Link></li>
                 <li><Link to='/account'>Account</Link></li>
-                <li><Link to='/login'>Login</Link></li>
-                <li><Link to='/sign'>Signin</Link></li>
+                <li><Link to='/signin'>Login</Link></li>
+                <li><Link to='/signin'>Sign in</Link></li>
             </ul>
 
             <Routes>

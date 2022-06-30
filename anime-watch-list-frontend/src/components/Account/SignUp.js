@@ -2,10 +2,10 @@ import TextField from "@mui/material/TextField";
 // import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-import "./signInForm.css";
+import "./SignUp.css";
 import { red } from "@mui/material/colors";
 
-const SigninForm = () => {
+const SignUp = () => {
   return (
     <div className="content-signin">
       <div className="form-border">
@@ -65,4 +65,4 @@ const SigninForm = () => {
   );
 };
 
-export default SigninForm;
+export default SignUp;

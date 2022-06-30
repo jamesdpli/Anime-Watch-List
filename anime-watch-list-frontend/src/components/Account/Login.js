@@ -1,10 +1,10 @@
-import "./loginPage.css";
+import "./SignUp.css";
 // import animeAll from "../FirstPage/animeAll.mp4";
-import SigninForm from "./SigninForm";
+import SigninForm from "./SignUp";
 // import demonSlayer from "../assets/demonSlayer.mp4";
 // import zenitsu from "../FirstPage/zenitsu.mp4";
 
-const LoginPage = () => {
+const Login = () => {
   return (
     <div className="main-login">
       <div className="overlay-login"></div>
@@ -13,4 +13,4 @@ const LoginPage = () => {
     </div>
   );
 };
-export default LoginPage;
+export default Login;
