@@ -11,8 +11,11 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     List<User> findUserByDobAfter(LocalDate dob);
 
+    List<User> findUsersByName(String name);
+
     List<User> findUserByNameStartingWith(String name);
 
     List<User> findUserByEmail(String email);
 
+    List<User> findUsersByEmailContaining(String email);
 }

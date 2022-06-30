@@ -30,6 +30,16 @@ public class UserController {
         return new ResponseEntity(userRepository.findById(id), found.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK);
     }
 
+//    SHOW
+
+    @GetMapping(value = "/name={name}")
+    public ResponseEntity<List<User>> getUsersByName(@PathVariable String name) {
+        List<User> userByName = userRepository.findUsersByName(name);
+        return new ResponseEntity<>(userByName, HttpStatus.OK);
+    }
+
+
+
     //POST
     @PostMapping
     public ResponseEntity<List<User>> createUser(@RequestBody User newUser){

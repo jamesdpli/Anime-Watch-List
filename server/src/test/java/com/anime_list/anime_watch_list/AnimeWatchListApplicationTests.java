@@ -38,6 +38,12 @@ class AnimeWatchListApplicationTests {
 	}
 
 	@Test
+	public void canFindUsersByName(){
+		List<User> foundUser = userRepository.findUsersByName("Randy");
+		assertThat(foundUser.size()).isEqualTo(1);
+	}
+
+	@Test
 	public void canFindUserByNameStartingWith(){
 		List<User> foundUser = userRepository.findUserByNameStartingWith("J");
 		assertThat(foundUser.size()).isEqualTo(2);
@@ -48,6 +54,14 @@ class AnimeWatchListApplicationTests {
 		List<User> foundUser = userRepository.findUserByEmail("onodaKun@gmail.com");
 		assertThat(foundUser.size()).isEqualTo(2);
 	}
+
+	@Test
+	public void canFindUsersByEmailContaining(){
+		List<User> foundUser = userRepository.findUsersByEmailContaining("o");
+		assertThat(foundUser.size()).isEqualTo(12);
+	}
+
+
 
 //	ANIME TESTS:
 

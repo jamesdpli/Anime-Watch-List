@@ -75,25 +75,25 @@ public class AnimeController{
     }
 
     @GetMapping(value = "/description={description}")
-    public ResponseEntity<List<Anime>> getAnimeByDescription(@PathVariable String description){
+    public ResponseEntity<List<Anime>> getAnimesByDescription(@PathVariable String description){
         List<Anime> animeByDes = animeRepository.findAnimeByDescriptionStartingWith(description);
         return new ResponseEntity<>(animeByDes, HttpStatus.OK);
     }
 
     @GetMapping(value = "/rating>{rating}")
-    public ResponseEntity<List<Anime>> getAnimeByRatingGreaterThan(@PathVariable double rating){
+    public ResponseEntity<List<Anime>> getAnimesByRatingGreaterThan(@PathVariable double rating){
         List<Anime> animeByRating = animeRepository.findAnimeByRatingGreaterThan(rating);
         return new ResponseEntity<>(animeByRating, HttpStatus.OK);
     }
 
     @GetMapping(value = "/episodesGreaterThan={numberOfEps}")
-    public ResponseEntity<List<Anime>> getAnimeByEpsGreaterThan(@PathVariable int numberOfEps){
+    public ResponseEntity<List<Anime>> getAnimesByEpsGreaterThan(@PathVariable int numberOfEps){
         List<Anime> animeByEps = animeRepository.findAnimeByNumberOfEpsGreaterThan(numberOfEps);
         return new ResponseEntity<>(animeByEps, HttpStatus.OK);
     }
 
     @GetMapping(value = "/releaseDate") // not working rn (-_-)
-    public ResponseEntity<List<Anime>> getAnimeByReleaseDateGreaterThan(@PathVariable LocalDate releaseDate){
+    public ResponseEntity<List<Anime>> getAnimesByReleaseDateGreaterThan(@PathVariable LocalDate releaseDate){
         List<Anime> animeRD = animeRepository.findAnimeByReleaseDateGreaterThan(releaseDate);
         return new ResponseEntity<>(animeRD, HttpStatus.OK);
     }
