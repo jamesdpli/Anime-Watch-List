@@ -1,14 +1,14 @@
 import "./loginPage.css";
-import animeAll from "../FirstPage/animeAll.mp4";
+// import animeAll from "../FirstPage/animeAll.mp4";
 import SigninForm from "./SigninForm";
-import demonSlayer from "../FirstPage/demonSlayer.mp4";
-import zenitsu from "../FirstPage/zenitsu.mp4";
+// import demonSlayer from "../assets/demonSlayer.mp4";
+// import zenitsu from "../FirstPage/zenitsu.mp4";
 
 const LoginPage = () => {
   return (
     <div className="main-login">
       <div className="overlay-login"></div>
-      <video src={demonSlayer} autoPlay loop muted />
+      {/* <video src={demonSlayer} autoPlay loop muted /> */}
       <SigninForm />
     </div>
   );
