@@ -1,5 +1,6 @@
 package com.anime_list.anime_watch_list.models;
 
+import com.anime_list.anime_watch_list.repositroies.WatchListRepository;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -51,4 +52,5 @@ public class WatchList {
     public void setAnime(Anime anime) {
         this.watchlistAnime = anime;
     }
+
 }

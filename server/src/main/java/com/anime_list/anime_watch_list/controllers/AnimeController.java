@@ -40,20 +40,20 @@ public class AnimeController{
         return new ResponseEntity(animeRepository.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/{id}") //localhost:8080/animes/1
+    @GetMapping(value = "/{id}") //localhost:8080/animes/X
     public ResponseEntity<Optional<Anime>> getAnime(@PathVariable Long id) {
         Optional<Anime> anime = animeRepository.findById(id);
         return new ResponseEntity<>(anime, anime.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK);
     }
 
-    // POST MAPPING
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    // Post
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE) //localhost:8080/animes
     public ResponseEntity<List<Anime>> createAnime(@RequestBody Anime newAnime){
         animeRepository.save(newAnime);
         return new ResponseEntity(animeRepository.findAll(), HttpStatus.CREATED);
     }
 
-    //PUT
+    // Put
     @PutMapping(value = "/{id}") //localhost:8080/animes/1
     public ResponseEntity<Anime> updateAnime(@PathVariable(value = "id") Long id, @RequestBody Anime upAnime) throws Exception{
         Optional<Anime> anime = animeRepository.findById(id);
@@ -72,25 +72,31 @@ public class AnimeController{
         }
     }
 
-    // DELETE MAPPING
-    @DeleteMapping("/{id}")
-    public ResponseEntity<List<Anime>> deleteAnime(@PathVariable Long id) {
-        var found = animeRepository.findById(id);
-        animeRepository.deleteById(id);
-        return new ResponseEntity(animeRepository.findAll(), found.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK);
+    // Delete
+    // If we want to delete an anime we must remove all watch lists containing that anime FIRST,
+    // as a watch list cannot have a null anime
+    @DeleteMapping(value = "animeInWatchList/{id}")
+    public ResponseEntity<String> removeAnimeById(@PathVariable("id") Long id) {
+        List<WatchList> AllWatchLists = watchListRepository.findAll();
+        List<Anime> AllAnimes = animeRepository.findAll();
+        Optional<Anime> anime = animeRepository.findById(id);
+
+
+        for(int i = 0; i < AllWatchLists.size(); i++) {
+            if(AllWatchLists.get(i).getAnime().getName().equals(anime.get().getName())) {
+                watchListRepository.deleteById(AllWatchLists.get(i).getId());
+                animeRepository.deleteById(id);
+            }
+        }
+
+        return new ResponseEntity("Anime Deleted id: " + id   , HttpStatus.NOT_FOUND);
     }
 
-//    DELETE
-//    @DeleteMapping(value = "/{id}")
-//    public ResponseEntity<Long> removeAnimeById(@PathVariable("id") Long id) {
-//        Optional<Anime> anime = animeRepository.findById(id);
-//        if (anime.isPresent()) {
-//            Anime upAnime = anime.get();
-//            upAnime.getGenres().stream()
-//                    .forEach(genre -> genreRepository.deleteById(genre.getId()));
-//            upAnime.setGenres(new ArrayList<>());
-//            animeRepository.deleteById(id);
-//        }
-//        return new ResponseEntity<>(id, HttpStatus.OK);
-//    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteAnimeById(@PathVariable Long id) {
+        var found = animeRepository.findById(id);
+        animeRepository.deleteById(id);
+        return new ResponseEntity("Anime Deleted id: " + id, HttpStatus.NOT_FOUND);
+    }
+
 }
