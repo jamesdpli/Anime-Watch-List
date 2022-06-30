@@ -17,9 +17,6 @@ const Login = () => {
         </div>
         <p className="or-line"><span>Or</span></p>
         <br/>
-        <p className="sign-up-input-title">Your username</p>
-        <input type="text" className="sign-up-input-box"/>
-        <p className="new-user-username"></p>
 
         <p className="sign-up-input-title">Your Email</p>
         <input type="text" className="sign-up-input-box"/>
