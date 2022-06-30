@@ -23,11 +23,6 @@ return (
 
             <Routes>
                 <Route path='/home' element={<Home/>}/>
-                {/* <Route path='/' exact>
-                    <div>
-                    <Navbar/>
-                    </div>
-                </Route> */}
                 <Route path='/explore' element={<Explore/>}/>
                 <Route path='/account' element={<Account/>}/>
                 <Route path='/login' element={<LoginPage/>}/>
