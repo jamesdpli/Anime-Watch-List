@@ -25,6 +25,7 @@ public class Anime {
 
     @ManyToMany(mappedBy = "animes", cascade = CascadeType.ALL)
     @JsonIgnoreProperties(value = "animes")
+
     private List <Genre> genres;
 
     @Column

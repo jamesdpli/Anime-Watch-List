@@ -76,24 +76,28 @@ public class AnimeController{
     // If we want to delete an anime we must remove all watch lists containing that anime FIRST,
     // as a watch list cannot have a null anime
     // Working, but error thrown if anime is not in a watchlist -> anime is still deleted though
+    // New Bug -> deletes genres from db
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<String> removeAnimeInWatchListById(@PathVariable("id") Long id) {
         List<WatchList> AllWatchLists = watchListRepository.findAll();
         Optional<Anime> anime = animeRepository.findById(id);
 
-
         for(int i = 0; i < AllWatchLists.size(); i++) {
-            if(AllWatchLists.get(i).getAnime().getName().equals(anime.get().getName())) {
+            if(AllWatchLists.get(i).getAnime().getId().equals(anime.get().getId())) {
                 watchListRepository.deleteById(AllWatchLists.get(i).getId());
                 animeRepository.deleteById(id);
-            } else if(AllWatchLists.size() < anime.get().getId()) {
+            } else if(!AllWatchLists.get(i).getAnime().getId().equals(anime.get().getId())){
                 animeRepository.deleteById(id);
             }
         }
 
-        return new ResponseEntity("Anime Deleted " + id   , HttpStatus.NOT_FOUND);
+        return new ResponseEntity("Anime Deleted " + id , HttpStatus.NOT_FOUND);
     }
 
+//    else if(AllWatchLists.get(i).getAnime().equals(anime.)) {
+//        animeRepository.deleteById(id);
+//    }
+//    AllWatchLists.size() < anime.get().getId()
 //    @DeleteMapping("/{id}")
 //    public ResponseEntity<String> removeAnimeNotInWatchListById(@PathVariable Long id) {
 //        var found = animeRepository.findById(id);
