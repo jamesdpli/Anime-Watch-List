@@ -1,4 +1,4 @@
-const HomeInfo = () => {
+const MoreInfo = () => {
     return (<>
         <div className="anime-container">
         <div className="anime-parent-container">
@@ -72,4 +72,4 @@ const HomeInfo = () => {
     )
 }
 
-export default HomeInfo;
+export default MoreInfo;
