@@ -80,6 +80,8 @@
   font-family: 'Red Hat Mono', monospace;
 }
 
+/* -------- the little icons --------- */
+
 .other-sign-up{
   display: flex;
   flex-direction: row;
@@ -96,4 +98,82 @@
   
   position: relative;
   right:3%;
+}
+
+.other-sign-up > ul > li {
+  display: flex;
+  margin-right:20px;
+  margin-left:0;
+}
+
+/* -------- add the different icons here ------------ */
+
+
+/* -------------------------------------------------- */
+
+
+/* The line around the OR */
+.or-line{
+  width: 100%; 
+  text-align: center; 
+  border-bottom: 1px solid white; 
+  line-height: 0.1em;
+  margin: 10px 0 20px; 
+}
+
+.or-line > span {
+  color:white;
+  font-weight: 600;
+  background:black;
+  padding: 0 10px;
+  font-family: 'Red Hat Mono', monospace;
+}
+
+/* The input boxes */
+.sign-up-input-title{
+  font-family: 'Red Hat Mono', monospace;
+  color: white;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+
+.sign-up-input-box{
+  border-style: solid;
+  padding: 10px;
+  height:25px;
+  width: 330px;
+  border-radius: 5px;
+  border-color: rgb(167, 167, 167);
+  border-width: 1px;
+  margin-bottom: 0;
+}
+
+/* terms tick box */
+.sign-up-terms-box{
+  border-radius: 20px;
+}
+
+/* The button */
+
+.sign-up-btn{
+  margin-top:10px;
+  height: 40px;
+  width: 250px;
+
+  text-align: center;
+  position: relative;
+  left: 14%;
+
+  border-radius: 20px;
+  border-style: solid;
+  border-color:red;
+  background-color:red;
+  color: white;
+  font-size: 18px;
+}
+
+.sign-up-btn:hover{
+  background-color: #816AFE;
+  color: white;
+  cursor: pointer;
 }
