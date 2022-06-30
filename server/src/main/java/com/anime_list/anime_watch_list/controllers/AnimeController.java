@@ -86,7 +86,7 @@ public class AnimeController{
         return new ResponseEntity<>(animeByRating, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/episodesGreaterThan={numberOfEps}")
+    @GetMapping(value = "/episodesGreaterThan>{numberOfEps}")
     public ResponseEntity<List<Anime>> getAnimesByEpsGreaterThan(@PathVariable int numberOfEps){
         List<Anime> animeByEps = animeRepository.findAnimeByNumberOfEpsGreaterThan(numberOfEps);
         return new ResponseEntity<>(animeByEps, HttpStatus.OK);
