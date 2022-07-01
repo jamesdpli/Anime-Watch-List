@@ -79,6 +79,12 @@ public class AnimeController{
         return new ResponseEntity<>(animeRD, HttpStatus.OK);
     }
 
+    @GetMapping(value = "/genre={genreName}")
+    public ResponseEntity<List<Anime>> getAllAnimesByGenre(@PathVariable String genreName){
+        List<Anime> animesByGenre = animeRepository.findByGenres_Name(genreName);
+        return new ResponseEntity<>(animesByGenre, HttpStatus.OK);
+    }
+
 
 
     // POST MAPPING

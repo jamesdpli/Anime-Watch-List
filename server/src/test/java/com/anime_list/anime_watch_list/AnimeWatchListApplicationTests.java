@@ -102,9 +102,16 @@ class AnimeWatchListApplicationTests {
 	}
 
 	@Test
-	public void canFindAllByGenres(){
-		List<Anime> foundAnimes = animeRepository.findAllByGenres()
+	public void canFindByGenre_Name(){
+		List<Anime> foundAnimes = animeRepository.findByGenres_Name("Comedy");
+		assertThat(foundAnimes.size()).isEqualTo(3);
 	}
+
+//	@Test
+//	public void canFindByGenre_NameAndGenre_Name(){
+//		List<Anime> foundAnimesFiltered = animeRepository.findByGenres_Name_AndGenres_Name("Action", "Ecchi");
+//		assertThat(foundAnimesFiltered.size()).isEqualTo(1);
+//	}
 
 
 //	GENRE TESTS:
