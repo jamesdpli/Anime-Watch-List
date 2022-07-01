@@ -133,6 +133,7 @@ public class Anime {
                 ", genres=" + genres +
                 ", rating=" + rating +
                 ", numberOfEps=" + numberOfEps +
+                ", imageUrl='" + imageUrl + '\'' +
                 '}';
     }
 }
