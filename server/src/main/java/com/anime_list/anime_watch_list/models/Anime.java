@@ -25,7 +25,6 @@ public class Anime {
 
     @ManyToMany(mappedBy = "animes", cascade = CascadeType.ALL)
     @JsonIgnoreProperties(value = "animes")
-
     private List <Genre> genres;
 
     @Column
@@ -34,17 +33,23 @@ public class Anime {
     @Column(name = "number_of_episodes")
     private int numberOfEps;
 
+    @Column
+    private String imageUrl;
+
     // Empty constructor
     public Anime() {}
 
     // Constructor
-    public Anime(String name, LocalDate releaseDate, String description, double rating, int numberOfEps) {
+    public Anime(String name, LocalDate releaseDate,
+                 String description, double rating, int numberOfEps,
+                 String imageUrl) {
         this.name = name;
         this.releaseDate = releaseDate;
         this.description = description;
         this.genres = new ArrayList<>();
         this.rating = rating;
         this.numberOfEps = numberOfEps;
+        this.imageUrl = imageUrl;
     }
 
     // Getters and Setters
