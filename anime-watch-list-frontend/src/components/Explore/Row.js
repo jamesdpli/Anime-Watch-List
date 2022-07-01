@@ -29,22 +29,17 @@ return (
         "https://m.media-amazon.com/images/M/MV5BY2I2MzI1ODYtMWRlOS00MzdhLWEyOWEtYWJhNmFiZTIxMGJhXkEyXkFqcGdeQXVyMTExNDQ2MTI@._V1_.jpg"
     }
     alt="poster"
-    /><img className="row-poster"
-    src={
-    "https://m.media-amazon.com/images/M/MV5BNTk1NTc0MTYtY2IyNC00OWVjLWJhYWItNDQ0ODdiNWZkYTA5XkEyXkFqcGdeQXVyMTQ3MjMyMTYz._V1_FMjpg_UX1000_.jpg"
-    }
-    alt="poster"/><img className="row-poster"
-src={
-    "https://i.ebayimg.com/images/g/BgUAAOSwaCBg6aUT/s-l500.jpg"
-}
-alt="poster"
-/><img className="row-poster"
+    /><img className="row-poster" 
+    src={"https://m.media-amazon.com/images/M/MV5BNTk1NTc0MTYtY2IyNC00OWVjLWJhYWItNDQ0ODdiNWZkYTA5XkEyXkFqcGdeQXVyMTQ3MjMyMTYz._V1_FMjpg_UX1000_.jpg"} alt="poster"/>
+    <img className="row-poster" 
+    src={"https://i.ebayimg.com/images/g/BgUAAOSwaCBg6aUT/s-l500.jpg"} alt="poster"/>
+    <img className="row-poster"
         src={
         "https://i.ebayimg.com/images/g/iIcAAOSwGXNgSkHt/s-l500.jpg"
         }
         alt="poster"
-    />
-    </div>
+        />
+        </div>
     </div>
 );
 }

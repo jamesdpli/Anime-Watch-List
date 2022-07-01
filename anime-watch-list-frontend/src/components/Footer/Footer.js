@@ -1,5 +1,7 @@
 import './Footer.css';
 
+// need to add more footer ---- not nice looking
+
 const Footer = () => {
     return(
         <footer id="footer">

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Row from "./Row";
 import Banner from "./Banner";
 import './Explore.css';
+import SearchBar from "./SearchBar";
+import Nav from "./Nav";
 
 
 const Explore = () => {
@@ -23,8 +25,10 @@ const Explore = () => {
     return(
 
         <div className="homeScreen">
-            <h2>Explore Page</h2>
+            {/* <Nav/> */}
             <Banner/>
+            <br/>
+            <SearchBar/>
             <Row animes={animes} />
             <Row animes={animes} />
             <Row animes={animes} />
