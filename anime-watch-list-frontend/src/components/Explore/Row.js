@@ -1,5 +1,5 @@
 import React from "react";
-import "./row.css";
+import "./Row.css";
 
 function Row({ animes }) {
 
