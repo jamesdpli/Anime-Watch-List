@@ -95,11 +95,11 @@ class AnimeWatchListApplicationTests {
 		assertThat(foundAnime.size()).isEqualTo(10);
 	}
 
-	@Test
-	public void canFindAnimeByDescriptionStartingWith(){
-		List<Anime> foundAnime = animeRepository.findAnimeByDescriptionStartingWith("N");
-		assertThat(foundAnime.size()).isEqualTo(4);
-	}
+//	@Test
+//	public void canFindAnimeByDescriptionStartingWith(){
+//		List<Anime> foundAnime = animeRepository.findAnimeByDescriptionStartingWith("N");
+//		assertThat(foundAnime.size()).isEqualTo(4);
+//	}
 
 	@Test
 	public void canFindByGenre_Name(){

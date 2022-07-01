@@ -34,17 +34,21 @@ public class Anime {
     @Column(name = "number_of_episodes")
     private int numberOfEps;
 
+    @Column
+    private String imageUrl;
+
     // Empty constructor
     public Anime() {}
 
     // Constructor
-    public Anime(String name, LocalDate releaseDate, String description, double rating, int numberOfEps) {
+    public Anime(String name, LocalDate releaseDate, String description, double rating, int numberOfEps, String imageUrl) {
         this.name = name;
         this.releaseDate = releaseDate;
         this.description = description;
         this.genres = new ArrayList<>();
         this.rating = rating;
         this.numberOfEps = numberOfEps;
+        this.imageUrl = imageUrl;
     }
 
     // Getters and Setters
@@ -102,6 +106,14 @@ public class Anime {
         this.numberOfEps = numberOfEps;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
     // Custom methods
     public void addGenres(List<Genre> genres){
         this.genres.addAll(genres);
@@ -121,6 +133,7 @@ public class Anime {
                 ", genres=" + genres +
                 ", rating=" + rating +
                 ", numberOfEps=" + numberOfEps +
+                ", imageUrl='" + imageUrl + '\'' +
                 '}';
     }
 }

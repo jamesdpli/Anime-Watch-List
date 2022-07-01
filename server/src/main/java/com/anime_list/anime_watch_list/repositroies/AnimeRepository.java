@@ -21,7 +21,7 @@ public interface AnimeRepository extends JpaRepository<Anime, Long> {
 
     List<Anime> findAnimeByNumberOfEpsGreaterThan(int numberOfEps);
 
-    List<Anime> findAnimeByDescriptionStartingWith(String description);
+//    List<Anime> findAnimeByDescriptionStartingWith(String description);
 
     List<Anime> findByGenres_Name(String genreName);
 

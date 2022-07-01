@@ -55,11 +55,11 @@ public class AnimeController{
         return new ResponseEntity<>(animeByName, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/description={description}")
-    public ResponseEntity<List<Anime>> getAnimesByDescription(@PathVariable String description){
-        List<Anime> animeByDes = animeRepository.findAnimeByDescriptionStartingWith(description);
-        return new ResponseEntity<>(animeByDes, HttpStatus.OK);
-    }
+//    @GetMapping(value = "/description={description}")
+//    public ResponseEntity<List<Anime>> getAnimesByDescription(@PathVariable String description){
+//        List<Anime> animeByDes = animeRepository.findAnimeByDescriptionStartingWith(description);
+//        return new ResponseEntity<>(animeByDes, HttpStatus.OK);
+//    }
 
     @GetMapping(value = "/rating>{rating}")
     public ResponseEntity<List<Anime>> getAnimesByRatingGreaterThan(@PathVariable double rating){
@@ -78,7 +78,7 @@ public class AnimeController{
         List<Anime> animeRD = animeRepository.findAnimeByReleaseDateGreaterThan(releaseDate);
         return new ResponseEntity<>(animeRD, HttpStatus.OK);
     }
-
+//DIFFERENCE
     @GetMapping(value = "/genre={genreName}")
     public ResponseEntity<List<Anime>> getAllAnimesByGenre(@PathVariable String genreName){
         List<Anime> animesByGenre = animeRepository.findByGenres_Name(genreName);

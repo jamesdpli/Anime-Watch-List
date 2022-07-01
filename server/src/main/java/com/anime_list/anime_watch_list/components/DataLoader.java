@@ -41,17 +41,68 @@ public class DataLoader implements ApplicationRunner {
 
 
         //      Add Anime
-        Anime anime1 = new Anime("Naruto", LocalDate.of(2002, 10, 03), "Ninja's",  4.6, 500);
-        Anime anime2 = new Anime("Bleach", LocalDate.of(2004, 10, 05), "Soul reaper's", 4.5, 366);
-        Anime anime3 = new Anime("Attack on Titan", LocalDate.of(2013, 04, 07), "Titans destroy humanity",  4.5, 86);
-        Anime anime4 = new Anime("One Piece", LocalDate.of(1999, 10, 03), "Pirates",  4.5, 1014);
-        Anime anime5 = new Anime("Haikyuu", LocalDate.of(2014, 04, 06), "High school volley ball", 4.5, 73);
-        Anime anime6 = new Anime("Kuroko's Basketball", LocalDate.of(2012, 04, 07), "High school basket ball team", 4.5, 75);
-        Anime anime7 = new Anime("Bungo Stray Dogs", LocalDate.of(2016, 04, 07), "Detectives ", 4.5, 500);
-        Anime anime8 = new Anime("Death Note", LocalDate.of(2002, 10, 03), "Ninja anime", 4.5, 500);
-        Anime anime9 = new Anime("Slam Dunk", LocalDate.of(2002, 10, 03), "Ninja anime", 4.5, 500);
-        Anime anime10 = new Anime("Jojo's Bizzare Adventure", LocalDate.of(2002, 10, 03), "Ninja anime", 4.5, 500);
+//        Anime anime1 = new Anime("Naruto", LocalDate.of(2002, 10, 03), "Ninja's",  4.6, 500);
+//        Anime anime2 = new Anime("Bleach", LocalDate.of(2004, 10, 05), "Soul reaper's", 4.5, 366);
+//        Anime anime3 = new Anime("Attack on Titan", LocalDate.of(2013, 04, 07), "Titans destroy humanity",  4.5, 86);
+//        Anime anime4 = new Anime("One Piece", LocalDate.of(1999, 10, 03), "Pirates",  4.5, 1014);
+//        Anime anime5 = new Anime("Haikyuu", LocalDate.of(2014, 04, 06), "High school volley ball", 4.5, 73);
+//        Anime anime6 = new Anime("Kuroko's Basketball", LocalDate.of(2012, 04, 07), "High school basket ball team", 4.5, 75);
+//        Anime anime7 = new Anime("Bungo Stray Dogs", LocalDate.of(2016, 04, 07), "Detectives ", 4.5, 500);
+//        Anime anime8 = new Anime("Death Note", LocalDate.of(2002, 10, 03), "Ninja anime", 4.5, 500);
+//        Anime anime9 = new Anime("Slam Dunk", LocalDate.of(2002, 10, 03), "Ninja anime", 4.5, 500);
+//        Anime anime10 = new Anime("Jojo's Bizzare Adventure", LocalDate.of(2002, 10, 03), "Ninja anime", 4.5, 500);
 
+        Anime anime1 = new Anime("Naruto", LocalDate.of(2002, 10, 03),
+                "Moments prior to Naruto Uzumaki's birth, a huge demon known as the Kyuubi, the Nine-Tailed " +
+                        "Fox, attacked Konohagakure, the Hidden Leaf Village, and wreaked havoc. ",
+                4.6, 500,
+                "https://media.kitsu.io/anime/11/poster_image/small-db4debb693482e09f5d9615864b99b3d.jpeg");
+        Anime anime2 = new Anime("Bleach", LocalDate.of(2004, 10, 05),
+                "Ichigo Kurosaki is an ordinary high schooler—until his family is attacked by a Hollow, " +
+                        "a corrupt spirit that seeks to devour human souls.",
+                4.5, 366,
+                "https://media.kitsu.io/anime/poster_images/244/small.jpg");
+        Anime anime3 = new Anime("Attack on Titan", LocalDate.of(2013, 04, 07),
+                "Centuries ago, mankind was slaughtered to near extinction by monstrous humanoid creatures" +
+                        " called titans, forcing humans to hide in fear behind enormous concentric walls.",
+                4.5, 86,
+                "https://media.kitsu.io/anime/poster_images/7442/small.jpg");
+        Anime anime4 = new Anime("One Piece", LocalDate.of(1999, 10, 03),
+                "Enter Monkey D. Luffy, a 17-year-old boy who defies your " +
+                        "standard definition of a pirate.",  4.5, 1014,
+                "https://media.kitsu.io/anime/poster_images/12/small.jpg");
+        Anime anime5 = new Anime("Haikyuu", LocalDate.of(2014, 04, 06),
+                "Inspired after watching a volleyball ace nicknamed \\\"Little Giant\\\" in action, " +
+                        "small-statured Shouyou Hinata revives the volleyball club at his middle school.",
+                4.5, 73,
+                "https://media.kitsu.io/anime/poster_images/8133/small.jpg");
+        Anime anime6 = new Anime("Kuroko's Basketball", LocalDate.of(2012, 04, 07),
+                "Teikou Junior High School's basketball team is crowned champion three years in a row " +
+                        "thanks to five outstanding players who, with their breathtaking and unique skills.",
+                4.5, 75,
+                "https://media.kitsu.io/anime/6595/poster_image/small-e15bd563bb282dce553074560247c421.jpeg");
+        Anime anime7 = new Anime("Bungo Stray Dogs 2", LocalDate.of(2016, 04, 07),
+                "Guild has entered Yokohoma city. Along with the city, they want Atsushi of The Armed " +
+                        "Detective Agency too.",
+                4.5, 500,
+                "https://media.kitsu.io/anime/poster_images/11882/small.jpg");
+        Anime anime8 = new Anime("Death Note", LocalDate.of(2002, 10, 03),
+                "A shinigami, as a god of death, can kill any person—provided they see their victim's face " +
+                        "and write their victim's name in a notebook called a Death Note.",
+                4.5, 500,
+                "https://media.kitsu.io/anime/poster_images/1376/small.jpg");
+        Anime anime9 = new Anime("Slam Dunk", LocalDate.of(2002, 10, 03),
+                "Hanamichi Sakuragi, infamous for this temper, massive height, and fire-red hair, enrolls " +
+                        "in Shohoku High, hoping to finally get a girlfriend and break his record of being rejected " +
+                        "50 consecutive times in middle school.",
+                4.5, 500,
+                "https://media.kitsu.io/anime/poster_images/148/small.jpg");
+        Anime anime10 = new Anime("Jojo's Bizzare Adventure 2012", LocalDate.of(2002, 10, 03),
+                "In 1868, Dario Brando saves the life of an English nobleman, George Joestar. By taking in Dario's " +
+                        "son Dio when the boy becomes fatherless, George hopes to repay the debt he owes to his " +
+                        "savior.",
+                4.5, 500,
+                "https://media.kitsu.io/anime/7158/poster_image/small-bde68eb96267be7833813f3a85b68df0.jpeg");
 
 
         //      Add Genre
