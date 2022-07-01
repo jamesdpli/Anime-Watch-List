@@ -1,6 +1,7 @@
 package com.anime_list.anime_watch_list.repositroies;
 
 import com.anime_list.anime_watch_list.models.Anime;
+import com.anime_list.anime_watch_list.models.Genre;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -21,6 +22,8 @@ public interface AnimeRepository extends JpaRepository<Anime, Long> {
     List<Anime> findAnimeByNumberOfEpsGreaterThan(int numberOfEps);
 
     List<Anime> findAnimeByDescriptionStartingWith(String description);
+
+    List<Anime> findAllByGenres(Genre genre);
 
 //    @Query("Select a FROM Anime a JOIN a.genres g WHERE g.id =: id")
 //    List<Anime> findAnimeByGenreId(Long id);

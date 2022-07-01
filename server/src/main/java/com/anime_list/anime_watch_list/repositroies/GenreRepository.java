@@ -8,4 +8,9 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface GenreRepository extends JpaRepository<Genre, Long> {
+
+    List<Genre> findGenreByName(String name);
+
+
+
 }

@@ -55,7 +55,7 @@ public class DataLoader implements ApplicationRunner {
 
 
         //      Add Genre
-        Genre genre1 = new Genre("comedy", Arrays.asList(anime1,anime2,anime3));
+        Genre genre1 = new Genre("Comedy", Arrays.asList(anime1,anime2,anime3));
         Genre genre2 = new Genre("Action", Arrays.asList(anime1,anime7,anime3));
         Genre genre3 = new Genre("Ecchi", Arrays.asList(anime4,anime2,anime3, anime8));
 
