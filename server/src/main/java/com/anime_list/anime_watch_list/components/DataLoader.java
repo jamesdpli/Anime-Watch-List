@@ -114,6 +114,7 @@ public class DataLoader implements ApplicationRunner {
         WatchList watchList4 = new WatchList(user2, anime4);
         WatchList watchList5 = new WatchList(user2, anime5);
 
+//      Save models
         animeRepository.saveAll(Arrays.asList(anime1, anime2, anime3, anime4, anime5, anime6, anime7, anime8, anime9, anime10));
         animeRepository.saveAll(Arrays.asList(anime1));
         userRepository.saveAll(Arrays.asList(user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, user11, user12));
