@@ -71,7 +71,7 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
 
         <div>
         <br/>
-        <button onClick={handleLogin} className='sign-up-btn'>Log in</button>
+        <button onClick={handleLogin}className='sign-up-btn'>Log in</button>
         </div>
         <p>Do you need an account? <a href="/signup" className="link-a-tag">Create new account</a></p>
       </form>
