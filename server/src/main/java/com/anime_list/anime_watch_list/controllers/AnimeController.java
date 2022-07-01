@@ -78,6 +78,7 @@ public class AnimeController{
         List<Anime> animeRD = animeRepository.findAnimeByReleaseDateGreaterThan(releaseDate);
         return new ResponseEntity<>(animeRD, HttpStatus.OK);
     }
+
 //DIFFERENCE
     @GetMapping(value = "/genre={genreName}")
     public ResponseEntity<List<Anime>> getAllAnimesByGenre(@PathVariable String genreName){
