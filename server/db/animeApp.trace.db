@@ -2769,3 +2769,45 @@ org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (
 	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
 	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:114)
 	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-07-01 11:09:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'Moments prior to Naruto Uzumaki''s birth, a huge demon known as the Kyuubi, the... (647)"; SQL statement:
+insert into animes (id, description, image_url, name, number_of_episodes, rating, release_date) values (default, ?, ?, ?, ?, ?, ?) [22001-214]
+2022-07-01 11:10:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'Moments prior to Naruto Uzumaki''s birth, a huge demon known as the Kyuubi, the... (647)"; SQL statement:
+insert into animes (id, description, image_url, name, number_of_episodes, rating, release_date) values (default, ?, ?, ?, ?, ?, ?) [22001-214]
+2022-07-01 11:12:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'Moments prior to Naruto Uzumaki''s birth, a huge demon known as the Kyuubi, the... (647)"; SQL statement:
+insert into animes (id, description, image_url, name, number_of_episodes, rating, release_date) values (default, ?, ?, ?, ?, ?, ?) [22001-214]
+2022-07-01 11:13:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'Moments prior to Naruto Uzumaki''s birth, a huge demon known as the Kyuubi, the... (647)"; SQL statement:
+insert into animes (id, description, image_url, name, number_of_episodes, rating, release_date) values (default, ?, ?, ?, ?, ?, ?) [22001-214]
+2022-07-01 11:15:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'Moments prior to Naruto Uzumaki''s birth, a huge demon known as the Kyuubi, the... (647)"; SQL statement:
+insert into animes (id, description, image_url, name, number_of_episodes, rating, release_date) values (default, ?, ?, ?, ?, ?, ?) [22001-214]
+2022-07-01 11:21:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'Moments prior to Naruto Uzumaki''s birth, a huge demon known as the Kyuubi, the... (647)"; SQL statement:
+insert into animes (id, description, image_url, name, number_of_episodes, rating, release_date) values (default, ?, ?, ?, ?, ?, ?) [22001-214]
+2022-07-01 11:21:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'Moments prior to Naruto Uzumaki''s birth, a huge demon known as the Kyuubi, the... (646)"; SQL statement:
+insert into animes (id, description, image_url, name, number_of_episodes, rating, release_date) values (default, ?, ?, ?, ?, ?, ?) [22001-214]
+2022-07-01 11:23:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'Moments prior to Naruto Uzumaki''s birth, a huge demon known as the Kyuubi, the... (647)"; SQL statement:
+insert into animes (id, description, image_url, name, number_of_episodes, rating, release_date) values (default, ?, ?, ?, ?, ?, ?) [22001-214]
+2022-07-01 11:24:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'lblbllbdcdcacajchaiuchaiochjaicjaicjiajciajcioajcoiajcioajcioajciojaiocjaicjaic... (307)"; SQL statement:
+insert into animes (id, description, image_url, name, number_of_episodes, rating, release_date) values (default, ?, ?, ?, ?, ?, ?) [22001-214]
+2022-07-01 11:25:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'lblbllbdcdcacajchaiuchaiochjaicjaicjiajciajcioajcoiajcioajcioajciojaiocjaicjaic... (260)"; SQL statement:
+insert into animes (id, description, image_url, name, number_of_episodes, rating, release_date) values (default, ?, ?, ?, ?, ?, ?) [22001-214]
+2022-07-01 11:25:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'lblbllbdcdcacajchaiuchaiochjaicjaicjiajciajcioajcoiajcioajcioajciojaiocjaicjaic... (259)"; SQL statement:
+insert into animes (id, description, image_url, name, number_of_episodes, rating, release_date) values (default, ?, ?, ?, ?, ?, ?) [22001-214]
+2022-07-01 11:25:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'lblbllbdcdcacajchaiuchaiochjaicjaicjiajciajcioajcoiajcioajcioajciojaiocjaicjaic... (258)"; SQL statement:
+insert into animes (id, description, image_url, name, number_of_episodes, rating, release_date) values (default, ?, ?, ?, ?, ?, ?) [22001-214]
+2022-07-01 11:25:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'lblbllbdcdcacajchaiuchaiochjaicjaicjiajciajcioajcoiajcioajcioajciojaiocjaicjaic... (257)"; SQL statement:
+insert into animes (id, description, image_url, name, number_of_episodes, rating, release_date) values (default, ?, ?, ?, ?, ?, ?) [22001-214]
+2022-07-01 11:26:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'lblbllbdcdcacajchaiuchaiochjaicjaicjiajciajcioajcoiajcioajcioajciojaiocjaicjaic... (256)"; SQL statement:
+insert into animes (id, description, image_url, name, number_of_episodes, rating, release_date) values (default, ?, ?, ?, ?, ?, ?) [22001-214]

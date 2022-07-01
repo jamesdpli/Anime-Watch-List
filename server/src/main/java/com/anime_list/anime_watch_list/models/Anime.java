@@ -41,8 +41,8 @@ public class Anime {
 
     // Constructor
     public Anime(String name, LocalDate releaseDate,
-                 String description, double rating, int numberOfEps,
-                 String imageUrl) {
+                 String description, double rating, int numberOfEps, String imageUrl
+                 ) {
         this.name = name;
         this.releaseDate = releaseDate;
         this.description = description;
@@ -106,6 +106,14 @@ public class Anime {
         this.numberOfEps = numberOfEps;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
     // Custom methods
     public void addGenres(List<Genre> genres){
         this.genres.addAll(genres);
@@ -113,14 +121,6 @@ public class Anime {
 
     public void removeGenres(List<Genre> genres){
         this.genres.removeAll(genres);
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
     }
 
     @Override
