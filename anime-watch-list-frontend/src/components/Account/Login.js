@@ -58,7 +58,7 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
         <p className="new-user-email"></p>
 
         <p className="sign-up-input-title">Password</p>
-        <input type={passwordShown? "text" : "password"} ref={inputPassword} className="sign-up-input-box"/>
+        <input type={passwordShown? "text" : "password"} ref={inputPassword} className="sign-up-input-box"/><br/>
         <button onClick={handlePasswordShown} className="password-shown-button">{passwordShown? <AiOutlineEye className="password-eye"/> : <AiOutlineEyeInvisible className="password-eye"/>}</button>
         <p className="new-user-password"></p>
         <br/>

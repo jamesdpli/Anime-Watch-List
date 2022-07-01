@@ -190,3 +190,24 @@
 .sign-up-container{
   background-image: url(https://i.redd.it/c3uhsgo1vx541.jpg);
 }
+
+/* --------- password visibility -------- */
+.password-shown-button{
+  border-style: none;
+  background-color:white;
+  position: relative;
+  left: 33%;
+  bottom: 7.2%;
+}
+
+.password-eye{
+  font-size: 25px;
+  font-weight: bold;
+  color:red;
+}
+
+
+.new-user-password-input{
+  margin-top:0;
+  padding-top:0;
+}
