@@ -125,10 +125,58 @@ public class DataLoader implements ApplicationRunner {
                         "powerful teams, some of which have one of the five players with godlike abilities, whom " +
                         "Kuroko and Taiga make a pact to defeat.", 4.5, 75,
                 "https://media.kitsu.io/anime/6595/poster_image/small-e15bd563bb282dce553074560247c421.jpeg");
-        Anime anime7 = new Anime("Bungo Stray Dogs", LocalDate.of(2016, 04, 07), "Detectives ", 4.5, 500);
-        Anime anime8 = new Anime("Death Note", LocalDate.of(2002, 10, 03), "Ninja anime", 4.5, 500);
-        Anime anime9 = new Anime("Slam Dunk", LocalDate.of(2002, 10, 03), "Ninja anime", 4.5, 500);
-        Anime anime10 = new Anime("Jojo's Bizzare Adventure", LocalDate.of(2002, 10, 03), "Ninja anime", 4.5, 500);
+        Anime anime7 = new Anime("Bungo Stray Dogs 2", LocalDate.of(2016, 04, 07),
+                "Guild has entered Yokohoma city. Along with the city, they want Atsushi of The Armed " +
+                        "Detective Agency too. As Port Mafia want the city for themselves, a three way war seems " +
+                        "unavoidable. While fighting, Atsushi &amp; Akutagawa find help in strange places. And in the " +
+                        "background, Dazai continues his endless scheming. ", 4.5, 500,
+                "https://media.kitsu.io/anime/poster_images/11882/small.jpg");
+        Anime anime8 = new Anime("Death Note", LocalDate.of(2002, 10, 03),
+                "A shinigami, as a god of death, can kill any person—provided they see their victim's face " +
+                        "and write their victim's name in a notebook called a Death Note. One day, Ryuk, bored by the " +
+                        "shinigami lifestyle and interested in seeing how a human would use a Death Note, drops one " +
+                        "into the human realm.\\n\\nHigh school student and prodigy Light Yagami stumbles upon the " +
+                        "Death Note and—since he deplores the state of the world—tests the deadly notebook by writing " +
+                        "a criminal's name in it. When the criminal dies immediately following his experiment with " +
+                        "the Death Note, Light is greatly surprised and quickly recognizes how devastating the power " +
+                        "that has fallen into his hands could be.\\n\\nWith this divine capability, Light decides to " +
+                        "extinguish all criminals in order to build a new world where crime does not exist and " +
+                        "people worship him as a god. Police, however, quickly discover that a serial killer is " +
+                        "targeting criminals and, consequently, try to apprehend the culprit. To do this, the " +
+                        "Japanese investigators count on the assistance of the best detective in the world: a young " +
+                        "and eccentric man known only by the name of L.", 4.5, 500,
+                "https://media.kitsu.io/anime/poster_images/1376/small.jpg");
+        Anime anime9 = new Anime("Slam Dunk", LocalDate.of(2002, 10, 03),
+                "Hanamichi Sakuragi, infamous for this temper, massive height, and fire-red hair, enrolls " +
+                        "in Shohoku High, hoping to finally get a girlfriend and break his record of being rejected " +
+                        "50 consecutive times in middle school. His notoriety precedes him, however, leading to him " +
+                        "being avoided by most students. Soon, after certain events, Hanamichi is left with two " +
+                        "unwavering thoughts: \\\"I hate basketball,\\\" and \\\"I desperately need a girlfriend." +
+                        "\\\"\\nOne day, a girl named Haruko Akagi approaches him without any knowledge of his " +
+                        "troublemaking and asks him if he likes basketball. Hanamichi immediately falls head over " +
+                        "heels in love with her, blurting out a fervent affirmative. She then leads him to the " +
+                        "gymnasium, where she asks him if he can do a slam dunk. In an attempt to impress Haruko, " +
+                        "he makes the leap, but overshoots, instead slamming his head straight into the blackboard." +
+                        " When Haruko informs the basketball team's captain of Hanamichi's near-inhuman physical " +
+                        "capabilities, he slowly finds himself drawn into the camaraderie and competition of the " +
+                        "sport he had previously held resentment for.", 4.5, 500,
+                "https://media.kitsu.io/anime/poster_images/148/small.jpg");
+        Anime anime10 = new Anime("Jojo's Bizzare Adventure 2012", LocalDate.of(2002, 10, 03),
+                "In 1868, Dario Brando saves the life of an English nobleman, George Joestar. By taking in Dario's " +
+                        "son Dio when the boy becomes fatherless, George hopes to repay the debt he owes to his " +
+                        "savior. However Dio, unsatisfied with his station in life, aspires to seize the Joestar " +
+                        "house for his own. Wielding an Aztec stone mask with supernatural properties, he sets out " +
+                        "to destroy George and his son, Jonathan \"JoJo\" Joestar, and triggers a chain of events " +
+                        "that will continue to echo through the years to come.\n\nHalf a century later, in New York " +
+                        "City, Jonathan's grandson Joseph Joestar discovers the legacy his grandfather left for him. " +
+                        "When an archeological dig unearths the truth behind the stone mask, he realizes that he is " +
+                        "the only one who can defeat the Pillar Men, mystical beings of immeasurable power who " +
+                        "inadvertently began everything.\n\nAdapted from the first two arcs of Hirohiko Araki's " +
+                        "outlandish manga series, JoJo no Kimyou na Bouken follows the many thrilling expeditions of " +
+                        "JoJo and his descendants. Whether it's facing off with the evil Dio, or combatting the " +
+                        "sinister Pillar Men, there's always plenty of bizarre adventures in store.", 4.5,
+                500,
+                "https://media.kitsu.io/anime/7158/poster_image/small-bde68eb96267be7833813f3a85b68df0.jpeg");
 
 //      Add Genre
         Genre genre1 = new Genre("comedy", Arrays.asList(anime1,anime2,anime3));
