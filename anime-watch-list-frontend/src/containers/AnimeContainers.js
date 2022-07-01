@@ -1,3 +1,4 @@
+import './AnimeContainers.css';
 import { Link } from "react-router-dom";
 
 const AnimeContainer = () =>{
@@ -9,7 +10,7 @@ const AnimeContainer = () =>{
                 <div className="dropdown">
                 <button className="dropbtn"> Account</button>
                     <div className="dropdown-content" styleleft="left:0">
-                        <a><Link to='/account'>Sign Up</Link></a>
+                        <a><Link to='/signup'>Sign Up</Link></a>
                         <a><Link to='/login'> Login</Link></a>
                     </div>
                 </div>
