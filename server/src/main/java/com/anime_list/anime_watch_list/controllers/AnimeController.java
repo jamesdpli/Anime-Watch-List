@@ -35,7 +35,7 @@ public class AnimeController{
     @Autowired
     WatchListRepository watchListRepository;
 
-//  Get
+//    GET MAPPING
     @GetMapping //localhost:8080/animes
     public ResponseEntity<List<Anime>> getAnime(){
         return new ResponseEntity(animeRepository.findAll(), HttpStatus.OK);
@@ -47,18 +47,19 @@ public class AnimeController{
         return new ResponseEntity<>(anime, anime.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK);
     }
 
-//   Show
+//    SHOW
+
     @GetMapping(value = "/name={name}")
     public ResponseEntity<List<Anime>> getAnimesByName(@PathVariable String name){
         List<Anime> animeByName = animeRepository.findAnimeByName((name));
         return new ResponseEntity<>(animeByName, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/description={description}")
-    public ResponseEntity<List<Anime>> getAnimesByDescription(@PathVariable String description){
-        List<Anime> animeByDes = animeRepository.findAnimeByDescriptionStartingWith(description);
-        return new ResponseEntity<>(animeByDes, HttpStatus.OK);
-    }
+//    @GetMapping(value = "/description={description}")
+//    public ResponseEntity<List<Anime>> getAnimesByDescription(@PathVariable String description){
+//        List<Anime> animeByDes = animeRepository.findAnimeByDescriptionStartingWith(description);
+//        return new ResponseEntity<>(animeByDes, HttpStatus.OK);
+//    }
 
     @GetMapping(value = "/rating>{rating}")
     public ResponseEntity<List<Anime>> getAnimesByRatingGreaterThan(@PathVariable double rating){
@@ -78,14 +79,23 @@ public class AnimeController{
         return new ResponseEntity<>(animeRD, HttpStatus.OK);
     }
 
-//  Post
+//DIFFERENCE
+    @GetMapping(value = "/genre={genreName}")
+    public ResponseEntity<List<Anime>> getAllAnimesByGenre(@PathVariable String genreName){
+        List<Anime> animesByGenre = animeRepository.findByGenres_Name(genreName);
+        return new ResponseEntity<>(animesByGenre, HttpStatus.OK);
+    }
+
+
+
+    // POST MAPPING
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Anime>> createAnime(@RequestBody Anime newAnime){
         animeRepository.save(newAnime);
         return new ResponseEntity(animeRepository.findAll(), HttpStatus.CREATED);
     }
 
-//  Put
+    // Put
     @PutMapping(value = "/{id}") //localhost:8080/animes/1
     public ResponseEntity<Anime> updateAnime(@PathVariable(value = "id") Long id, @RequestBody Anime upAnime) throws Exception{
         Optional<Anime> anime = animeRepository.findById(id);
@@ -125,4 +135,16 @@ public class AnimeController{
 
         return new ResponseEntity("Anime Deleted " + id , HttpStatus.NOT_FOUND);
     }
+
+//    else if(AllWatchLists.get(i).getAnime().equals(anime.)) {
+//        animeRepository.deleteById(id);
+//    }
+//    AllWatchLists.size() < anime.get().getId()
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<String> removeAnimeNotInWatchListById(@PathVariable Long id) {
+//        var found = animeRepository.findById(id);
+//        animeRepository.deleteById(id);
+//        return new ResponseEntity("Anime Deleted id: " + id, HttpStatus.NOT_FOUND);
+//    }
+
 }

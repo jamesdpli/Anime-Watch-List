@@ -1,8 +1,10 @@
 package com.anime_list.anime_watch_list;
 
 import com.anime_list.anime_watch_list.models.Anime;
+import com.anime_list.anime_watch_list.models.Genre;
 import com.anime_list.anime_watch_list.models.User;
 import com.anime_list.anime_watch_list.repositroies.AnimeRepository;
+import com.anime_list.anime_watch_list.repositroies.GenreRepository;
 import com.anime_list.anime_watch_list.repositroies.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,9 @@ class AnimeWatchListApplicationTests {
 
 	@Autowired
 	UserRepository userRepository;
+
+	@Autowired
+	GenreRepository genreRepository;
 
 
 
@@ -90,10 +95,31 @@ class AnimeWatchListApplicationTests {
 		assertThat(foundAnime.size()).isEqualTo(10);
 	}
 
+//	@Test
+//	public void canFindAnimeByDescriptionStartingWith(){
+//		List<Anime> foundAnime = animeRepository.findAnimeByDescriptionStartingWith("N");
+//		assertThat(foundAnime.size()).isEqualTo(4);
+//	}
+
 	@Test
-	public void canFindAnimeByDescriptionStartingWith(){
-		List<Anime> foundAnime = animeRepository.findAnimeByDescriptionStartingWith("N");
-		assertThat(foundAnime.size()).isEqualTo(4);
+	public void canFindByGenre_Name(){
+		List<Anime> foundAnimes = animeRepository.findByGenres_Name("Comedy");
+		assertThat(foundAnimes.size()).isEqualTo(3);
+	}
+
+//	@Test
+//	public void canFindByGenre_NameAndGenre_Name(){
+//		List<Anime> foundAnimesFiltered = animeRepository.findByGenres_Name_AndGenres_Name("Action", "Ecchi");
+//		assertThat(foundAnimesFiltered.size()).isEqualTo(1);
+//	}
+
+
+//	GENRE TESTS:
+
+	@Test
+	public void canFindGenreByName(){
+		List<Genre> foundGenre = genreRepository.findGenreByName("Action");
+		assertThat(foundGenre.size()).isEqualTo(1);
 	}
 
 

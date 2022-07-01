@@ -20,6 +20,7 @@ import java.util.Arrays;
 @Component
 public class DataLoader implements ApplicationRunner {
 
+
     @Autowired
     AnimeRepository animeRepository;
 
@@ -32,8 +33,12 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     GenreRepository genreRepository;
 
+
     @Override
     public void run (ApplicationArguments args) throws Exception {
+
+
+
 
 //      Add Anime
         Anime anime1 = new Anime("Naruto", LocalDate.of(2002, 10, 03),
@@ -88,10 +93,12 @@ public class DataLoader implements ApplicationRunner {
                 4.5, 500,
                 "https://media.kitsu.io/anime/7158/poster_image/small-bde68eb96267be7833813f3a85b68df0.jpeg");
 
+
 //      Add Genre
-        Genre genre1 = new Genre("comedy", Arrays.asList(anime1,anime2,anime3));
+        Genre genre1 = new Genre("Comedy", Arrays.asList(anime1,anime2,anime3));
         Genre genre2 = new Genre("Action", Arrays.asList(anime1,anime7,anime3));
         Genre genre3 = new Genre("Ecchi", Arrays.asList(anime4,anime2,anime3, anime8));
+
 
 //      Add User
         User user1 = new User("Onoda", LocalDate.of(1999,9,2), "onodaKun@gmail.com");
