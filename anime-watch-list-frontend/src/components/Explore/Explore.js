@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Row from "./Row";
+import Banner from "./Banner";
 
 
 const Explore = () => {
@@ -20,7 +21,8 @@ const Explore = () => {
 
 const Explore = () =>{
     return(
-        <div>
+        <div className="homeScreen">
+            <Banner/>
             <Row animes={animes} />
             <Row animes={animes} />
             <Row animes={animes} />
