@@ -54,7 +54,6 @@ public class Anime {
 
     // Getters and Setters
 
-
     public Long getId() {
         return id;
     }
@@ -114,6 +113,14 @@ public class Anime {
 
     public void removeGenres(List<Genre> genres){
         this.genres.removeAll(genres);
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     @Override
