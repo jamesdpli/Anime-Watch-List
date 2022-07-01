@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Row from "./Row";
 import Banner from "./Banner";
+import './Explore.css';
 
 
 const Explore = () => {
@@ -19,9 +20,10 @@ const Explore = () => {
         .catch((err) => console.log(err));
     }, []);
 
-const Explore = () =>{
     return(
+
         <div className="homeScreen">
+            <h2>Explore Page</h2>
             <Banner/>
             <Row animes={animes} />
             <Row animes={animes} />
@@ -29,9 +31,9 @@ const Explore = () =>{
             <Row animes={animes} />
             <Row animes={animes} />
         </div>
-    );
+        );
 
-    }
+
 }
 
 export default Explore;

@@ -1,4 +1,5 @@
 import "./SignUp.css";
+import { Link } from "react-router-dom";
 import { BsTwitter } from "react-icons/bs";
 // import animeAll from "../FirstPage/animeAll.mp4";
 // import demonSlayer from "../assets/demonSlayer.mp4";
@@ -34,7 +35,7 @@ const Login = () => {
 
         <div>
         <br/>
-        <button className='sign-up-btn'>Log in</button>
+        <Link to='/explore'><button className='sign-up-btn'>Log in</button></Link>
         </div>
         <p>Do you need an account? <a href="/signup" className="link-a-tag">Create new account</a></p>
       </form>
