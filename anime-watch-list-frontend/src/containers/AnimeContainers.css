@@ -1,26 +1,26 @@
 
 /* to show that we have an actual nav bar - clearer -- find another colour for nav bar */
 .nav-bar > ul{
-    background-color: #816AFE;
-    /* position: fixed; */
-    /* top: 0;
-    left: 0;
-    right: 0; */
-    height: 80px;
+    background-color: transparent;
+    height: 70px;
     display: flex;
     align-items: center;
-    /* box-shadow:0 8px 6px -6px rgb(126, 126, 126); */
+
 }
 /* add logo to the nav bar */
 
 .nar-ul {
     list-style: none;
-    display: inline;
-    justify-content: space-evenly;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     margin: 0;
-    padding: 0;
+
+    padding-right: 50px;
+    padding-left: 50px;
+
     box-sizing: border-box;
+
 }
 
 
@@ -33,7 +33,7 @@ nav > ul > li > a{
 }
 
 nav > ul > li > a:hover {
-    color: #81e2a8;
+    color: red;
     border: solid; 
     border-radius: 10%;
     padding: 20px;
@@ -43,7 +43,7 @@ nav > ul > li > a:hover {
 /* Drop down menu layout for Account */
 
 .dropbtn {
-    background-color: #816AFE;
+    background-color: red;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -63,7 +63,7 @@ nav > ul > li > a:hover {
     display: none;
     position: absolute;
     right: 0;
-    background-color: #81e2a8;
+    background-color: rgb(183, 183, 183);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -78,9 +78,9 @@ nav > ul > li > a:hover {
     font-weight: 600;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1; color: #816AFE;}
+.dropdown-content a:hover {background-color: red; color: white;}
 .dropdown:hover .dropdown-content {display: block;}
-.dropdown:hover .dropbtn {color: #81e2a8; border: solid; border-radius: 10%; padding: 20px;}
+.dropdown:hover .dropbtn {color: red; background-color: black; border: solid; border-radius: 10%; padding: 20px;}
 
 /* @media all and(max-width:768px){
     nav .burger{

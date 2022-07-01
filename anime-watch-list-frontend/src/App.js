@@ -2,7 +2,7 @@
 // import animeAll from "./assets/animeAll.mp4";
 // import zenitsu from "./assets/zenitsu.mp4";
 import Home from "./components/Home";
-import Explore from "./components/Explore";
+import Explore from "./components/Explore/Explore";
 import Account from "./components/Account/Account";
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
