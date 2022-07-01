@@ -1,0 +1,42 @@
+.homeScreen {
+    background: rgb(237,241,245);
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    height: 30px;
+    z-index: 1;
+
+    /* Animations */
+    transition-timing-function: ease-in;
+    transition: all 0.5s;
+}
+
+.nav-contents {
+    display: flex;
+    justify-content: space-between;
+}
+.nav-black {
+    background-color: black;
+}
+
+.nav-logo {
+    position: fixed;
+    top:10px;
+    left:20px;
+    width:80px;
+    height: 30px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.nav-avatar {
+    position: fixed;
+    right: 30px;
+    width:30px;
+    height: 30px;
+    cursor: pointer;
+}
