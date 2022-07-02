@@ -24,6 +24,9 @@ public class User {
     @Column
     String email;
 
+    @Column
+    private String password;
+
     @OneToMany(mappedBy = "user")
     @JsonIgnoreProperties({"user"})
     private List<WatchList> watchLists;
@@ -33,10 +36,11 @@ public class User {
     }
 
     // Constructor
-    public User(String name, LocalDate dob, String email) {
+    public User(String name, LocalDate dob, String email, String password) {
         this.name = name;
         this.dob = dob;
         this.email = email;
+        this.password = password;
     }
 
     // Getters and Setters
@@ -68,6 +72,13 @@ public class User {
         this.email = email;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public void setId(Long id) {
         this.id = id;
@@ -88,7 +99,8 @@ public class User {
                 ", name='" + name + '\'' +
                 ", dob=" + dob +
                 ", email='" + email + '\'' +
-                ", watchLists=" + watchLists +
+                ", password='" + password +
+                ", watchLists=" + watchLists +'\'' +
                 '}';
     }
 }

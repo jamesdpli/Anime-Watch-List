@@ -101,18 +101,18 @@ public class DataLoader implements ApplicationRunner {
 
 
 //      Add User
-        User user1 = new User("Onoda", LocalDate.of(1999,9,2), "onodaKun@gmail.com");
-        User user2 = new User("John", LocalDate.of(1959,6,25),"lol@gmail.com");
-        User user3 = new User("Rem", LocalDate.of(2001,9,4), "Kem@gmail.com");
-        User user4 = new User("Jenny", LocalDate.of(1969,3,27), "janjenny@gmail.com");
-        User user5 = new User("Shiki", LocalDate.of(1999,9,14), "Shiki43@gmail.com");
-        User user6 = new User("Randy", LocalDate.of(1599,5,15), "Randy432@gmail.com");
-        User user7 = new User("Shuka", LocalDate.of(1999,9,2), "onodaKun@gmail.com");
-        User user8 = new User("Obu", LocalDate.of(2003,9,3), "ObiObi@gmail.com");
-        User user9 = new User("Kite", LocalDate.of(1998,6,6), "Kie7673@gmail.com");
-        User user10 = new User("Pete", LocalDate.of(1987,9,23), "PITY@gmail.com");
-        User user11 = new User("Kwnichi", LocalDate.of(1989,6,24), "koitd@gmail.com");
-        User user12 = new User("Quinnie", LocalDate.of(2001,9,2), "qunie432@gmail.com");
+        User user1 = new User("Onoda", LocalDate.of(1999,9,2), "onodaKun@gmail.com", "kangaboo23!");
+        User user2 = new User("John", LocalDate.of(1959,6,25),"lol@gmail.com","bomba345");
+        User user3 = new User("Rem", LocalDate.of(2001,9,4), "Kem@gmail.com","madman76!");
+        User user4 = new User("Jenny", LocalDate.of(1969,3,27), "janjenny@gmail.com", "gangnam45!");
+        User user5 = new User("Shiki", LocalDate.of(1999,9,14), "Shiki43@gmail.com", "tokyorevengers22");
+        User user6 = new User("Randy", LocalDate.of(1599,5,15), "Randy432@gmail.com", "bossgyal45");
+        User user7 = new User("Shuka", LocalDate.of(1999,9,2), "onodaKun@gmail.com", "ganggang1!");
+        User user8 = new User("Obu", LocalDate.of(2003,9,3), "ObiObi@gmail.com","whiskers89");
+        User user9 = new User("Kite", LocalDate.of(1998,6,6), "Kie7673@gmail.com", "1derland!");
+        User user10 = new User("Pete", LocalDate.of(1987,9,23), "PITY@gmail.com","bambideer2");
+        User user11 = new User("Kwnichi", LocalDate.of(1989,6,24), "koitd@gmail.com", "raahted20");
+        User user12 = new User("Quinnie", LocalDate.of(2001,9,2), "qunie432@gmail.com", "quebec203");
 
 //      Add WatchList
         WatchList watchList1 = new WatchList(user1, anime1);
