@@ -32,6 +32,7 @@ return (
             </ul> */}
 
             <Routes>
+                <Route path='/' element={<Home/>}/>
                 <Route path='/home' element={<Home/>}/>
                 <Route path='/explore' element={<Explore/>}/>
                 <Route path='/account' element={isLogin? <Account currentAnimeAcc={currentAnimeAcc}
