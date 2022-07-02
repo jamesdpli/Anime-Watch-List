@@ -25,10 +25,10 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
       const currentUser = allUsers.filter(user => user.email == inputEmail.current.value &&
         user.password == inputPassword.current.value);
         
-        // if (currentUser.length == 0) {
-        //   alert("Invalid email adress or password! Please try again!")
-        //   return
-        // };
+        if (currentUser.length == 0) {
+          alert("Invalid email adress or password! Please try again!")
+          return
+        };
 
         setCurrentAnimeAcc(currentUser[0]);
         setIsLogin(!isLogin);
