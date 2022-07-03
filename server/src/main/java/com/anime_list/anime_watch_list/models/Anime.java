@@ -34,6 +34,9 @@ public class Anime {
     @Column(name = "number_of_episodes")
     private int numberOfEps;
 
+    @Column(name = "complete")
+    private boolean isComplete;
+
     @Column
     private String imageUrl;
 
@@ -41,13 +44,14 @@ public class Anime {
     public Anime() {}
 
     // Constructor
-    public Anime(String name, LocalDate releaseDate, String description, double rating, int numberOfEps, String imageUrl) {
+    public Anime(String name, LocalDate releaseDate, String description, double rating, int numberOfEps, boolean isComplete, String imageUrl) {
         this.name = name;
         this.releaseDate = releaseDate;
         this.description = description;
         this.genres = new ArrayList<>();
         this.rating = rating;
         this.numberOfEps = numberOfEps;
+        this.isComplete = isComplete;
         this.imageUrl = imageUrl;
     }
 
@@ -104,6 +108,14 @@ public class Anime {
 
     public void setNumberOfEps(int numberOfEps) {
         this.numberOfEps = numberOfEps;
+    }
+
+    public boolean isComplete() {
+        return isComplete;
+    }
+
+    public void setComplete(boolean complete) {
+        isComplete = complete;
     }
 
     public String getImageUrl() {

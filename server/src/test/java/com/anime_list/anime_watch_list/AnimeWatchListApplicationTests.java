@@ -113,6 +113,11 @@ class AnimeWatchListApplicationTests {
 //		assertThat(foundAnimesFiltered.size()).isEqualTo(1);
 //	}
 
+	@Test
+	public void canFindAnimeByIsComplete(){
+		List<Anime> completeAnimes = animeRepository.findAllByIsComplete(true);
+		assertThat(completeAnimes.size()).isEqualTo(7);
+	}
 
 //	GENRE TESTS:
 

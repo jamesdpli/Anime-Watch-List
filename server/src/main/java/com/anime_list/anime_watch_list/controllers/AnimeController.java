@@ -86,6 +86,12 @@ public class AnimeController{
         return new ResponseEntity<>(animesByGenre, HttpStatus.OK);
     }
 
+    @GetMapping(value = "/complete/animes={isComplete}")
+    public ResponseEntity<List<Anime>> getAllCompleteAnimes(@PathVariable boolean isComplete){
+        List<Anime> completeAnimes = animeRepository.findAllByIsComplete(isComplete);
+        return new ResponseEntity<>(completeAnimes, HttpStatus.OK);
+    }
+
 
 
     // POST MAPPING
