@@ -10,7 +10,6 @@ import LoginPage from "./components/Account/Login";
 import SigninForm from "./components/Account/SignUp";
 import AnimeContainer from "./containers/AnimeContainers";
 import usePersistedState from "./containers/usePersistedState";
-import RenderedAnime from "./components/RenderedAnime/RenderedAnime";
 import RenderedAnimeList from "./components/RenderedAnime/RenderedAnimeList";
 import { React } from "react";
 
