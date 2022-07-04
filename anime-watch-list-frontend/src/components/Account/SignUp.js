@@ -29,7 +29,6 @@ const SignUp = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
 
       if (allowedSignup.includes(false)) return;
 
-
       const newUser = {
           username: inputNewUsername.current.value,
           password: inputNewPassword.current.value,
@@ -37,7 +36,7 @@ const SignUp = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
       };
 
     
-      // POSTing the new user data into the db
+      // POSTing the new user data into the db -- this does not function replaced xAnimeUser to xUser
       fetch("http://localhost:8080/users",
             {
                 method: 'POST',
@@ -51,11 +50,9 @@ const SignUp = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
 
       // Add an account and password checker with an action to say if it is wrong
       const handleExisitedUserName = () => {
-
         const allUserNames = allUsers.map(user => { return user.username; });
         // initialise a checker, index 0
         let userNameChecker = [false, allowedSignup[1], allowedSignup[2]];
-
         if (allUserNames.includes(inputNewUsername.current.value)) {
             document.querySelector('.new-user-username-input').innerHTML = "This username already exists";
 

@@ -48,7 +48,7 @@ section.addEventListener('click',()=>{
         <li className="watched-li"><Link to='/account/watched' className="watched-link">Watched Episodes</Link></li>
         </div>
         </div>
-
+        {/* this bugged out -- does not move anymore */}
         <div className="container">
         <div className="section one active"></div>
         <div className="section two"></div>
