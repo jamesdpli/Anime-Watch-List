@@ -9,8 +9,12 @@
     color: white;
     object-fit: fill;
     height: 350px;
-    
 }   
+
+.banner-dynamic img{
+    height: 100%;
+    width: 100%;
+}
 
 .content-dynamic {
     max-width: 100%;

@@ -33,8 +33,7 @@ const RenderedAnime = ({ renderedAnime }) => {
             <header
             className="banner-dynamic">
             <img src={chosenAnime[0].bannerImage} alt={chosenAnime[0].name}/>
-            
-            <div className="banner--fadeButtom" />
+            {/* <div className="banner--fadeButtom" /> */}
           </header>
 
           <div className="content-dynamic">
