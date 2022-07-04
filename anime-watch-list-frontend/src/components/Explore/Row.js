@@ -4,6 +4,8 @@ import "./Row.css";
 function Row({ animes }) {
 
 return (
+
+    // Link with backend for fetching images 
     <div className="row">
     <h2>This is a title test</h2>
     <div className="row-posters">

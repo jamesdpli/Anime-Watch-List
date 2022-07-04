@@ -15,7 +15,7 @@ const SignUp = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
     const [passwordShown, setPasswordShown] = useState(false);
     const [allowedSignup, setAllowedSignup] = useState([false, false, false]);
 
-    // getting all users
+    // Getting all users
     console.log(allowedSignup);
     useEffect(() => {
       fetch("http://localhost:8080/users")
@@ -36,6 +36,8 @@ const SignUp = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
           email: inputNewEmail.current.value,
       };
 
+    
+      // POSTing the new user data into the db
       fetch("http://localhost:8080/users",
             {
                 method: 'POST',

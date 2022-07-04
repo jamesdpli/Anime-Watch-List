@@ -9,13 +9,20 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import LoginPage from "./components/Account/Login";
 import SigninForm from "./components/Account/SignUp";
 import AnimeContainer from "./containers/AnimeContainers";
+import usePersistedState from "./containers/usePersistedState";
 
 function App() {
+// is the user logged on - true or false
+const [isLogin, setIsLogin] = usePersistedState('isLogin',false);
+const [currentAnimeAcc, setCurrentAnimeAcc] = usePersistedState('currentAnimeAcc', {});
+
 return (
     <Router>
-        <AnimeContainer/>
-
         <div className="App">
+        <AnimeContainer isLogin={isLogin} setIsLogin={setIsLogin}
+                        currentAnimeAcc={currentAnimeAcc}
+                        setCurrentAnimeAcc={setCurrentAnimeAcc}
+                        />
             {/* <ul id="bar">
                 <li><Link to='/home'>Home</Link></li>
                 <li><Link to='/explore'>Explore</Link></li>
@@ -25,11 +32,18 @@ return (
             </ul> */}
 
             <Routes>
+                <Route path='/' element={<Home/>}/>
                 <Route path='/home' element={<Home/>}/>
                 <Route path='/explore' element={<Explore/>}/>
-                <Route path='/account' element={<Account/>}/>
-                <Route path='/login' element={<LoginPage/>}/>
-                <Route path='/signup' element={<SigninForm/>}/>
+                <Route path='/account' element={isLogin? <Account currentAnimeAcc={currentAnimeAcc}
+                                                                    setCurrentAnimeAcc={setCurrentAnimeAcc}/>: 
+                                                        <SigninForm isLogin={isLogin} setIsLogin={setIsLogin}
+                                                                currentAnimeAcc={currentAnimeAcc}
+                                                                setCurrentAnimeAcc={setCurrentAnimeAcc} />}/>
+                <Route path='/login' element={<LoginPage isLogin={isLogin} setIsLogin={setIsLogin}
+                                                            currentAnimeAcc={currentAnimeAcc}
+                                                            setCurrentAnimeAcc={setCurrentAnimeAcc}/>}/>
+                {/* <Route path='/signup' element={<SigninForm/>}/> */}
             </Routes>
         </div>
     </Router>
