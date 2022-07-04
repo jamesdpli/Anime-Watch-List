@@ -120,12 +120,40 @@ public class DataLoader implements ApplicationRunner {
         WatchList watchList3 = new WatchList(user1, anime3);
         WatchList watchList4 = new WatchList(user2, anime4);
         WatchList watchList5 = new WatchList(user2, anime5);
+        WatchList watchList6 = new WatchList(user2, anime6);
+        WatchList watchList7 = new WatchList(user3, anime5);
+        WatchList watchList8 = new WatchList(user3, anime8);
+        WatchList watchList9 = new WatchList(user3, anime10);
+        WatchList watchList10 = new WatchList(user4, anime6);
+        WatchList watchList11 = new WatchList(user4, anime7);
+        WatchList watchList12 = new WatchList(user4, anime3);
+        WatchList watchList13 = new WatchList(user5, anime9);
+        WatchList watchList14 = new WatchList(user5, anime1);
+        WatchList watchList15 = new WatchList(user5, anime10);
+        WatchList watchList16 = new WatchList(user6, anime2);
+        WatchList watchList17 = new WatchList(user6, anime4);
+        WatchList watchList18 = new WatchList(user6, anime8);
+        WatchList watchList19 = new WatchList(user7, anime3);
+        WatchList watchList20 = new WatchList(user7, anime8);
+        WatchList watchList21 = new WatchList(user7, anime10);
+        WatchList watchList22 = new WatchList(user8, anime2);
+        WatchList watchList23 = new WatchList(user8, anime4);
+        WatchList watchList24 = new WatchList(user8, anime5);
+        WatchList watchList25 = new WatchList(user9, anime8);
+        WatchList watchList26 = new WatchList(user10, anime1);
+        WatchList watchList27 = new WatchList(user11, anime10);
+        WatchList watchList28 = new WatchList(user12, anime6);
+        WatchList watchList29 = new WatchList(user12, anime4);
+        WatchList watchList30 = new WatchList(user12, anime2);
 
 //      Save models
         animeRepository.saveAll(Arrays.asList(anime1, anime2, anime3, anime4, anime5, anime6, anime7, anime8, anime9, anime10));
         animeRepository.saveAll(Arrays.asList(anime1));
         userRepository.saveAll(Arrays.asList(user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, user11, user12));
-        watchListRepository.saveAll(Arrays.asList(watchList1,watchList2,watchList3,watchList4,watchList5));
+        watchListRepository.saveAll(Arrays.asList(watchList1,watchList2,watchList3,watchList4,watchList5, watchList6,
+                watchList7, watchList8, watchList9, watchList10, watchList11, watchList12, watchList13, watchList14,
+                watchList15,watchList16, watchList17, watchList18,watchList19,watchList20,watchList21, watchList22,
+                watchList23, watchList24, watchList25, watchList26, watchList27,watchList28, watchList29, watchList30));
         genreRepository.saveAll(Arrays.asList(genre1, genre2, genre3));
 
     }
