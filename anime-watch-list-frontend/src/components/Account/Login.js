@@ -15,12 +15,14 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
   const [allUsers, setAllUsers] = useState ([]);
   const [passwordShown, setPasswordShown] = useState(false);
 
+  // Getting all the users
   useEffect(()=>{
     fetch("http://localhost:8080/users")
     .then(response => response.json())
     .then(data => setAllUsers(data))
     },[]);
 
+    // to check if the email + password are the same in the dataloader -- alert will state if it is wrong
     const handleLogin = (event) =>{
       const currentUser = allUsers.filter(user => user.email == inputEmail.current.value &&
         user.password == inputPassword.current.value);
@@ -63,9 +65,11 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
         <p className="new-user-password"></p>
         <br/>
 
+        {/* Should an admin login page be made? -- backend must add boolean whether user is an admin or not */}
         <a href="#" className="link-a-tag">Log in as Admin?</a>
         <br/>
 
+        {/* Authentication -- extension */}
         <a href="#" className="link-a-tag">Forget your password?</a>
         <br/>
 
