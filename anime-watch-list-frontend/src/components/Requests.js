@@ -9,7 +9,7 @@ const requests = {
   fetchDramaAnimes: `/8`,
   fetchMysteryAnimes: `/9`,
   fetchSciFiAnimes: `/10`,
-  fetchSuspenceAnimes: `/11`,
+  fetchSuspenseAnimes: `/11`,
   fetchRomanceAnimes: `/12`,
   fetchAvantGardeAnimes: `/13`
 };
