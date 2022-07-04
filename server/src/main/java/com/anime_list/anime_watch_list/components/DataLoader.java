@@ -1,6 +1,5 @@
 package com.anime_list.anime_watch_list.components;
 
-
 import com.anime_list.anime_watch_list.models.Anime;
 import com.anime_list.anime_watch_list.models.Genre;
 import com.anime_list.anime_watch_list.models.User;
@@ -20,7 +19,6 @@ import java.util.Arrays;
 @Component
 public class DataLoader implements ApplicationRunner {
 
-
     @Autowired
     AnimeRepository animeRepository;
 
@@ -33,12 +31,8 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     GenreRepository genreRepository;
 
-
     @Override
     public void run (ApplicationArguments args) throws Exception {
-
-
-
 
 //      Add Anime
         Anime anime1 = new Anime("Naruto", LocalDate.of(2002, 10, 03),
@@ -110,10 +104,6 @@ public class DataLoader implements ApplicationRunner {
                 4.5,500, false,"https://media.kitsu.io/anime/poster_images/13209/medium.jpg",
                 "https://media.kitsu.io/anime/cover_images/789/original.jpeg");
 
-
-
-
-
 //      Add Genre
         Genre genre1 = new Genre("Comedy", Arrays.asList(anime1,anime2,anime3, anime11, anime12, anime13, anime14));
         Genre genre2 = new Genre("Action", Arrays.asList(anime1,anime7,anime3, anime11, anime12, anime13, anime14));
@@ -122,7 +112,6 @@ public class DataLoader implements ApplicationRunner {
         Genre genre5 = new Genre("Adventure", Arrays.asList(anime10));
         Genre genre6 = new Genre("Supernatural", Arrays.asList(anime10, anime13));
         Genre genre7 = new Genre("Fantasy", Arrays.asList(anime14));
-
 
 //      Add User
         User user1 = new User("Onoda", LocalDate.of(1999,9,2), "onodaKun@gmail.com", "kangaboo23!");
@@ -179,6 +168,5 @@ public class DataLoader implements ApplicationRunner {
                 watchList15,watchList16, watchList17, watchList18,watchList19,watchList20,watchList21, watchList22,
                 watchList23, watchList24, watchList25, watchList26, watchList27,watchList28, watchList29, watchList30));
         genreRepository.saveAll(Arrays.asList(genre1, genre2, genre3));
-
     }
 }
