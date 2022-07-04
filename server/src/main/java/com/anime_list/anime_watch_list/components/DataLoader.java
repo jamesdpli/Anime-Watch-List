@@ -143,8 +143,46 @@ public class DataLoader implements ApplicationRunner {
                         "transmutation.", 10, 51, true,
                 "https://media.kitsu.io/anime/poster_images/100/small.jpg",
                 "https://media.kitsu.io/anime/cover_images/100/large.jpg");
-//        Anime trigun = new Anime("Trigun", LocalDate.of(1998, 04, 01), "")
-
+        Anime trigun = new Anime("Trigun", LocalDate.of(1998, 04, 01), "Vash the Stampede is " +
+                "the man with a $$60,000,000 bounty on his head. The reason: he's a merciless villain who lays waste " +
+                "to all those that oppose him and flattens entire cities for fun, garnering him the title " +
+                "\\\"The Humanoid Typhoon.", 7.5, 26, true,
+                "https://media.kitsu.io/anime/3/poster_image/small-8b8e908c4f3dd2ea581b5c93957fba02.jpeg",
+                "https://media.kitsu.io/anime/cover_images/3/large.jpg");
+        Anime myHeroAcademia = new Anime("My Hero Academia", LocalDate.of(2016, 07, 07), "What" +
+                " would the world be like if 80 percent of the population manifested extraordinary superpowers called" +
+                " “Quirks” at age four? Heroes and villains would be battling it out everywhere!", 3.2, 113, false,
+                "https://media.kitsu.io/anime/poster_images/11469/small.jpg",
+                "https://media.kitsu.io/anime/cover_images/11469/large.jpg");
+        Anime neonGenisisEvangelion = new Anime("Neon Genesis Evangelion", LocalDate.of(1995, 10, 04),
+                "In the year 2015, the world stands on the brink of destruction. Humanity's last hope lies in the hands" +
+                        " of Nerv, a special agency under the United Nations, and their Evangelions, giant machines" +
+                        " capable of defeating the Angels who herald Earth's ruin.", 8.8, 26, true,
+                "https://media.kitsu.io/anime/21/poster_image/small-6662f66b53b64098d873e037b3f59bd2.jpeg",
+                "https://media.kitsu.io/anime/cover_images/21/large.jpg");
+        Anime cowboyBebop = new Anime("Cowboy Bebop", LocalDate.of(1998, 04, 03), "In the year" +
+                " 2071, humanity has colonized several of the planets and moons of the solar system leaving the now" +
+                " uninhabitable surface of planet Earth behind.",
+                6.9, 26, true,
+                "https://media.kitsu.io/anime/poster_images/1/small.jpg",
+                "https://media.kitsu.io/anime/1/cover_image/large-88da0208ac7fdd1a978de8b539008bd8.jpeg");
+        Anime aPromisedNeverland = new Anime("A Promised Neverland", LocalDate.of(2019, 01, 10),
+                "The orphans at Grace Field House have only ever known peace. Their home is nice, their bellies stay" +
+                        " full, and their caretaker, Mom, loves them very much. " ,7.1, 12, false,
+                "https://media.kitsu.io/anime/poster_images/41312/small.jpg",
+                "https://media.kitsu.io/anime/cover_images/41312/original.png");
+        Anime sailorMoon = new Anime("Sailor Moon", LocalDate.of(1992, 03, 07), "Tsukino Usagi " +
+                "is a 14-year-old girl in junior high. She's ditzy, whiny, and a crybaby. She often flunks her tests," +
+                " and she is always scolded by her family.", 10, 200, true,
+                "https://media.kitsu.io/anime/489/poster_image/small-31a022984f9712f7242a5957a0d32888.jpeg",
+                "https://media.kitsu.io/anime/cover_images/489/large.jpg");
+        Anime cardCaptorSakura = new Anime("Cardcaptor Sakura", LocalDate.of(1999, 8, 21), "akura " +
+                "Kinomoto is your garden-variety fourth grader, one day, she stumbles upon a " +
+                "mysterious book containing a set of cards. The " +
+                "cards mean because she accidentally stirs up a magical gust of wind and unintentionally scatters" +
+                " the cards over the world.", 7.1, 70, true,
+                "https://media.kitsu.io/anime/poster_images/207/small.jpg",
+                "https://media.kitsu.io/anime/cover_images/207/large.jpg");
 
 //      Add Genre
         Genre comedy = new Genre("Comedy", Arrays.asList(naruto, bleach, attackOnTitan, onePunchMan, assinationClassroom, mobPsycho100, blackClover));
@@ -204,7 +242,8 @@ public class DataLoader implements ApplicationRunner {
 //      Save models
         animeRepository.saveAll(Arrays.asList(naruto, narutoShippuden, bleach, attackOnTitan, onePiece, haikyuu, kurokosBasketball,
                 bungoStrayDogs2, deathNote, slamDunk, jojosBizzareAdventure2012, onePunchMan, assinationClassroom,
-                mobPsycho100, blackClover, dragonBall, dragonBallZ, yuyuHakusho, gintama, hunterXHunter, inuyasha, fullMetalAlchemists));
+                mobPsycho100, blackClover, dragonBall, dragonBallZ, yuyuHakusho, gintama, hunterXHunter, inuyasha, fullMetalAlchemists,
+                trigun, neonGenisisEvangelion, cowboyBebop, aPromisedNeverland, sailorMoon, cardCaptorSakura));
         userRepository.saveAll(Arrays.asList(user1, user2, user3, user4, user5, user6, user7, user8, user9, user10,
                 user11, user12));
         watchListRepository.saveAll(Arrays.asList(watchList1,watchList2,watchList3,watchList4,watchList5, watchList6,

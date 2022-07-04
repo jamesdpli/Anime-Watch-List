@@ -11437,3 +11437,24 @@ insert into animes (id, banner_image, description, image_url, complete, name, nu
 2022-07-04 11:02:49 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'Edward Elric, a young, brilliant alchemist, has lost much in his twelve-year li... (342)"; SQL statement:
 insert into animes (id, banner_image, description, image_url, complete, name, number_of_episodes, rating, release_date) values (default, ?, ?, ?, ?, ?, ?, ?, ?) [22001-214]
+2022-07-04 11:39:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'In the year 2071, humanity has colonized several of the planets and moons of th... (360)"; SQL statement:
+insert into animes (id, banner_image, description, image_url, complete, name, number_of_episodes, rating, release_date) values (default, ?, ?, ?, ?, ?, ?, ?, ?) [22001-214]
+2022-07-04 11:40:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'In the year 2071, humanity has colonized several of the planets and moons of th... (291)"; SQL statement:
+insert into animes (id, banner_image, description, image_url, complete, name, number_of_episodes, rating, release_date) values (default, ?, ?, ?, ?, ?, ?, ?, ?) [22001-214]
+2022-07-04 11:50:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "U&'The orphans at Grace Field House have only ever known peace. Their home is ni... (295)"; SQL statement:
+insert into animes (id, banner_image, description, image_url, complete, name, number_of_episodes, rating, release_date) values (default, ?, ?, ?, ?, ?, ?, ?, ?) [22001-214]
+2022-07-04 12:00:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'akura Kinomoto is your garden-variety ten-year-old fourth grader, until one day... (324)"; SQL statement:
+insert into animes (id, banner_image, description, image_url, complete, name, number_of_episodes, rating, release_date) values (default, ?, ?, ?, ?, ?, ?, ?, ?) [22001-214]
+2022-07-04 12:00:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'akura Kinomoto is your garden-variety ten-year-old fourth grader, until one day... (274)"; SQL statement:
+insert into animes (id, banner_image, description, image_url, complete, name, number_of_episodes, rating, release_date) values (default, ?, ?, ?, ?, ?, ?, ?, ?) [22001-214]
+2022-07-04 12:00:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'akura Kinomoto is your garden-variety ten-year-old fourth grader, until one day... (270)"; SQL statement:
+insert into animes (id, banner_image, description, image_url, complete, name, number_of_episodes, rating, release_date) values (default, ?, ?, ?, ?, ?, ?, ?, ?) [22001-214]
+2022-07-04 12:01:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'akura Kinomoto is your garden-variety fourth grader, until one day, she stumble... (257)"; SQL statement:
+insert into animes (id, banner_image, description, image_url, complete, name, number_of_episodes, rating, release_date) values (default, ?, ?, ?, ?, ?, ?, ?, ?) [22001-214]
