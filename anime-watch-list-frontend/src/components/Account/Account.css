@@ -38,7 +38,7 @@
 
 /* attempting splash animation for account page */
 body.welcome {
-    background: #512da8;
+    background: red;
     overflow: hidden;
     -webkit-font-smoothing: antialiased;
 }
@@ -46,7 +46,7 @@ body.welcome {
 .welcome .splash {
     height: 0px;
     padding: 0px;
-    border: 130em solid #039be5;
+    border: 130em solid black;
     position: fixed;
     left: 50%;
     top: 100%;
@@ -60,7 +60,7 @@ body.welcome {
   }
 
   .welcome #welcome {
-    background: #311b92 ;
+    background: red ;
     width: 56px;
     height: 56px;
     position: absolute;

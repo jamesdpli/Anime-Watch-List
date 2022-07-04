@@ -86,7 +86,7 @@ const SignUp = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
         <label htmlFor="sign-up-condition-box" >I agree to terms & conditions.</label>
         <br />
 
-        <button className='sign-up-btn'>Sign up</button>
+        <button onClick={handleSignUp} className='sign-up-btn'>Sign up</button>
 
         <p>Do you already have an account? <br/><a href="/login" className="link-text-tag">Log in</a></p>
       </form>
