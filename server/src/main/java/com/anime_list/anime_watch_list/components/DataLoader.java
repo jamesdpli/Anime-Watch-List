@@ -183,6 +183,17 @@ public class DataLoader implements ApplicationRunner {
                 " the cards over the world.", 7.1, 70, true,
                 "https://media.kitsu.io/anime/poster_images/207/small.jpg",
                 "https://media.kitsu.io/anime/cover_images/207/large.jpg");
+        Anime fairyTale = new Anime("Fairy Tail", LocalDate.of(2009, 10, 12), "A superficial" +
+                " but kind-hearted celestial mage, Lucy Heartfilia, joins a famous wizarding guild in Magnolia Town" +
+                " called Fairy Tail, where the members use their powers to earn rewards in exchange for fulfilling" +
+                " quests.", 1.1, 328, true,
+                "https://media.kitsu.io/anime/poster_images/4676/small.jpg",
+                "https://media.kitsu.io/anime/cover_images/4676/large.jpg");
+        Anime goldenBoy = new Anime("Golden Boy", LocalDate.of(1995, 01 ,20), "Kintarou Ooe is a specialist in part-time" +
+                " work, riding all over the highways and byways of Japan on his trusty steed, the Mikazuki 5, " +
+                "and finding employment wherever he can.", 10, 6, true,
+                "https://media.kitsu.io/anime/poster_images/243/small.jpg",
+                "https://media.kitsu.io/anime/cover_images/243/large.jpg");
 
 //      Add Genre
         Genre comedy = new Genre("Comedy", Arrays.asList(naruto, bleach, attackOnTitan, onePunchMan, assinationClassroom, mobPsycho100, blackClover));
@@ -243,7 +254,7 @@ public class DataLoader implements ApplicationRunner {
         animeRepository.saveAll(Arrays.asList(naruto, narutoShippuden, bleach, attackOnTitan, onePiece, haikyuu, kurokosBasketball,
                 bungoStrayDogs2, deathNote, slamDunk, jojosBizzareAdventure2012, onePunchMan, assinationClassroom,
                 mobPsycho100, blackClover, dragonBall, dragonBallZ, yuyuHakusho, gintama, hunterXHunter, inuyasha, fullMetalAlchemists,
-                trigun, neonGenisisEvangelion, cowboyBebop, aPromisedNeverland, sailorMoon, cardCaptorSakura));
+                trigun, neonGenisisEvangelion, cowboyBebop, aPromisedNeverland, sailorMoon, cardCaptorSakura, fairyTale, goldenBoy));
         userRepository.saveAll(Arrays.asList(user1, user2, user3, user4, user5, user6, user7, user8, user9, user10,
                 user11, user12));
         watchListRepository.saveAll(Arrays.asList(watchList1,watchList2,watchList3,watchList4,watchList5, watchList6,
