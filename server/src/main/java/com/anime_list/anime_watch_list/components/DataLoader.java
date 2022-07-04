@@ -196,13 +196,29 @@ public class DataLoader implements ApplicationRunner {
                 "https://media.kitsu.io/anime/cover_images/243/large.jpg");
 
 //      Add Genre
-        Genre comedy = new Genre("Comedy", Arrays.asList(naruto, bleach, attackOnTitan, onePunchMan, assinationClassroom, mobPsycho100, blackClover));
-        Genre action = new Genre("Action", Arrays.asList(naruto, bungoStrayDogs2, attackOnTitan, onePunchMan, assinationClassroom, mobPsycho100, blackClover));
-        Genre ecchi = new Genre("Ecchi", Arrays.asList(onePiece, bleach, attackOnTitan, deathNote));
-        Genre sports = new Genre("Sports", Arrays.asList(slamDunk));
-        Genre adventure = new Genre("Adventure", Arrays.asList(jojosBizzareAdventure2012));
-        Genre supernatural = new Genre("Supernatural", Arrays.asList(jojosBizzareAdventure2012, mobPsycho100));
-        Genre fantasy = new Genre("Fantasy", Arrays.asList(blackClover));
+        Genre comedy = new Genre("Comedy", Arrays.asList(onePunchMan, assinationClassroom, mobPsycho100, blackClover,
+                dragonBall, dragonBallZ, yuyuHakusho, gintama, inuyasha, trigun, cardCaptorSakura, goldenBoy));
+        Genre action = new Genre("Action", Arrays.asList(naruto, narutoShippuden, bleach, bungoStrayDogs2, attackOnTitan,
+                onePunchMan, assinationClassroom, mobPsycho100, blackClover, onePiece,jojosBizzareAdventure2012,
+                yuyuHakusho, gintama, hunterXHunter, inuyasha, fullMetalAlchemists, trigun, myHeroAcademia, neonGenisisEvangelion,
+                cowboyBebop, fairyTale));
+        Genre ecchi = new Genre("Ecchi", Arrays.asList(goldenBoy));
+        Genre sports = new Genre("Sports", Arrays.asList(slamDunk, haikyuu, kurokosBasketball));
+        Genre adventure = new Genre("Adventure", Arrays.asList(naruto, narutoShippuden, bleach ,
+                jojosBizzareAdventure2012, onePunchMan, dragonBall, dragonBallZ, hunterXHunter, inuyasha,
+                fullMetalAlchemists, trigun, cardCaptorSakura, fairyTale, goldenBoy));
+        Genre supernatural = new Genre("Supernatural", Arrays.asList(jojosBizzareAdventure2012, mobPsycho100,
+                bungoStrayDogs2, deathNote, yuyuHakusho, inuyasha));
+        Genre fantasy = new Genre("Fantasy", Arrays.asList(naruto, narutoShippuden, blackClover, bleach, onePiece,
+                dragonBall, dragonBallZ, hunterXHunter, inuyasha, fullMetalAlchemists, cardCaptorSakura,fairyTale));
+        Genre drama = new Genre("Drama", Arrays.asList(attackOnTitan, fullMetalAlchemists, trigun, neonGenisisEvangelion,
+                cardCaptorSakura));
+        Genre mystery = new Genre("Mystery", Arrays.asList(bungoStrayDogs2, aPromisedNeverland));
+        Genre suspense = new Genre("Suspense", Arrays.asList(deathNote, aPromisedNeverland));
+        Genre sciFi = new Genre("Sci-Fi", Arrays.asList(gintama, trigun, neonGenisisEvangelion, cowboyBebop,
+                aPromisedNeverland));
+        Genre romance = new Genre("Romance", Arrays.asList(inuyasha, sailorMoon, cardCaptorSakura));
+        Genre avantGarde = new Genre("Avant Garde", Arrays.asList(neonGenisisEvangelion));
 
 //      Add User
         User user1 = new User("Onoda", LocalDate.of(1999,9,2), "onodaKun@gmail.com", "kangaboo23!");
@@ -254,13 +270,15 @@ public class DataLoader implements ApplicationRunner {
         animeRepository.saveAll(Arrays.asList(naruto, narutoShippuden, bleach, attackOnTitan, onePiece, haikyuu, kurokosBasketball,
                 bungoStrayDogs2, deathNote, slamDunk, jojosBizzareAdventure2012, onePunchMan, assinationClassroom,
                 mobPsycho100, blackClover, dragonBall, dragonBallZ, yuyuHakusho, gintama, hunterXHunter, inuyasha, fullMetalAlchemists,
-                trigun, neonGenisisEvangelion, cowboyBebop, aPromisedNeverland, sailorMoon, cardCaptorSakura, fairyTale, goldenBoy));
+                trigun, neonGenisisEvangelion, cowboyBebop, aPromisedNeverland, sailorMoon, cardCaptorSakura, fairyTale, goldenBoy,
+                myHeroAcademia));
         userRepository.saveAll(Arrays.asList(user1, user2, user3, user4, user5, user6, user7, user8, user9, user10,
                 user11, user12));
         watchListRepository.saveAll(Arrays.asList(watchList1,watchList2,watchList3,watchList4,watchList5, watchList6,
                 watchList7, watchList8, watchList9, watchList10, watchList11, watchList12, watchList13, watchList14,
                 watchList15,watchList16, watchList17, watchList18,watchList19,watchList20,watchList21, watchList22,
                 watchList23, watchList24, watchList25, watchList26, watchList27,watchList28, watchList29, watchList30));
-        genreRepository.saveAll(Arrays.asList(comedy, action, ecchi, sports, adventure, supernatural, fantasy));
+        genreRepository.saveAll(Arrays.asList(comedy, action, ecchi, sports, adventure, supernatural, fantasy, drama,
+                mystery, sciFi, suspense, romance, avantGarde));
     }
 }
