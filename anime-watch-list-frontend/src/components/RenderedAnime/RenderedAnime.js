@@ -11,19 +11,14 @@ const RenderedAnime = ({ renderedAnime }) => {
   useEffect(() => {
     if (renderedAnime.length) {
       let filterChecker = renderedAnime.filter((anime) => {
-        if (anime.name == params.animeName) {
+        if (anime.name === params.animeName) {
           return anime;
         }
-        // console.log(anime)
+        return null;
       });
-      // console.log(filterChecker)
       setchosenAnime(filterChecker);
     }
-  }, [renderedAnime]);
-
-  const truncate = (string, n) => {
-    return string?.length > n ? string.substr(0, n - 1) + "..." : string;
-  };
+  }, [renderedAnime, params.animeName]);
 
   return (
     <>

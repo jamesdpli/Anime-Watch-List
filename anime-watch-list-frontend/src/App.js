@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import Explore from "./components/Explore/Explore";
 import Account from "./components/Account/Account";
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoginPage from "./components/Account/Login";
 import SigninForm from "./components/Account/SignUp";
 import AnimeContainer from "./containers/AnimeContainers";

@@ -17,14 +17,6 @@ function Row({ title, fetchUrl }) {
     fetchData();
   }, [fetchUrl]);
 
-  // const animeComponents = {animeGenre.map((anime)=>{
-  //     return anime.animes.map((secondAnime) => {
-  //   return <img key={secondAnime.id} src={anime.imageUrl} alt={anime.name} />;
-  //     })
-  //   })
-
-  // console.log(animeGenre.animes?.map((anime) => anime.name));
-
   return (
     <div className="row">
       <h2>{animeGenre.name}</h2>
@@ -37,7 +29,7 @@ function Row({ title, fetchUrl }) {
                 alt={anime.name}
                 key={anime.id}
               />
-              </Link>
+          </Link>
           
           ))}
       </div>
