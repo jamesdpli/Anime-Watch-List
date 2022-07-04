@@ -182,3 +182,41 @@ body.welcome {
   height: 50px;
   border-radius: 50%;
 }
+
+
+/* --------- testing expanding cards css project ----------- */
+/* Setting container to flex and width to 80% of view port */
+.container{
+	display: flex;
+	width: 80%;
+}
+/*Adding background image to each section*/
+.one{
+	background: url(https://www.comingsoon.net/assets/uploads/2021/10/mob-psycho-100-season-3.jpg);
+}
+.two{
+	background: url(https://nntheblog.b-cdn.net/wp-content/uploads/2021/09/magi-sinbad-1024x576.jpg);
+}
+.three{
+	background: url(https://theawesomeone.com/wp-content/uploads/2020/12/Solo-Leveling-Anime-1.jpg);
+}
+.four{
+	background: url(https://assets3.thrillist.com/v1/image/2855064/828x1500/flatten;scale;webp=auto;jpeg_quality=60.jpg);
+}
+/* Background properties and transition effect to section */
+.section{
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 80vh;
+	cursor: pointer;
+	flex: 0.2;
+	margin:8px;
+	position: relative;
+	transition: all 0.7s ease-out;
+}
+
+/* section with active class will grow flex to 3 times */
+.section.active{
+	flex: 3;
+}

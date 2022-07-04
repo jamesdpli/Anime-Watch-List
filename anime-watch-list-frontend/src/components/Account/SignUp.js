@@ -30,7 +30,7 @@ const SignUp = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
       if (allowedSignup.includes(false)) return;
 
 
-      const newAnimeUser = {
+      const newUser = {
           username: inputNewUsername.current.value,
           password: inputNewPassword.current.value,
           email: inputNewEmail.current.value,
@@ -42,14 +42,57 @@ const SignUp = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
             {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(newAnimeUser)
+                body: JSON.stringify(newUser)
             })
             .then(response => response.json())
-            .then(savedAnimeUser => setCurrentAnimeAcc(savedAnimeUser))
+            .then(savedUser => setCurrentAnimeAcc(savedUser))
         setIsLogin(!isLogin);
       }
 
       // Add an account and password checker with an action to say if it is wrong
+      const handleExisitedUserName = () => {
+
+        const allUserNames = allUsers.map(user => { return user.username; });
+        // initialise a checker, index 0
+        let userNameChecker = [false, allowedSignup[1], allowedSignup[2]];
+
+        if (allUserNames.includes(inputNewUsername.current.value)) {
+            document.querySelector('.new-user-username-input').innerHTML = "This username already exists";
+
+            // didn't pass the username checker
+            setAllowedSignup(userNameChecker);
+
+        }
+        else {
+            document.querySelector('.new-user-username-input').innerHTML = "";
+
+            // pass username checker
+            userNameChecker = [true, allowedSignup[1], allowedSignup[2]];
+            setAllowedSignup(userNameChecker);
+
+        }
+
+    }
+
+    const handleCorrectEmail = () => {
+      // initialise a checker, index 1
+      let userEmailChecker = [allowedSignup[0], false, allowedSignup[2]];
+
+      if (!inputNewEmail.current.value.includes("@")) {
+          document.querySelector('.new-user-email-input').innerHTML = "Please put in the correct email"
+
+          // didn't pass the email checker
+          setAllowedSignup(userEmailChecker);
+      }
+      else {
+          document.querySelector('.new-user-email-input').innerHTML = "";
+
+          // pass email checker
+          userEmailChecker = [allowedSignup[0], true, allowedSignup[2]];
+          setAllowedSignup(userEmailChecker);
+
+      }
+  }
 
       // To show password or not
       const handlePasswordShown = (event) => {
@@ -69,11 +112,11 @@ const SignUp = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
         <p className="or-line"><span>Or</span></p>
         <br/> */}
         <p className="sign-up-input-title">Your username</p>
-        <input type="text" ref={inputNewUsername} className="sign-up-input-box"/>
+        <input type="text" ref={inputNewUsername} onChange={handleExisitedUserName} className="sign-up-input-box"/>
         <p className="new-user-username"></p>
 
         <p className="sign-up-input-title">Your Email</p>
-        <input type="text" ref={inputNewEmail} className="sign-up-input-box"/>
+        <input type="text" ref={inputNewEmail} onChange={handleCorrectEmail} className="sign-up-input-box"/>
         <p className="new-user-email"></p>
 
         <p className="sign-up-input-title">Password</p>

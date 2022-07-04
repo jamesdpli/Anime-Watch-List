@@ -1,14 +1,31 @@
-import { useNavigate } from "react-router-dom";
-import Footer from "../Footer/Footer";
+// import { useNavigate } from "react-router-dom";
+// import Footer from "../Footer/Footer";
 import './Account.css';
+import { Link } from "react-router-dom";
 
 const Account = ({currentAnimeAcc, setCurrentAnimeAcc}) => {
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
-    const handleNavToExplore = () =>{
-        navigate('/explore');
-    }
+    // const handleNavToExplore = () =>{
+    //     navigate('/explore');
+    // }
+
+// Selecting all sections with class of section
+const sections = document.querySelectorAll('.section')
+
+// On click event for each section
+sections.forEach((section)=>{
+section.addEventListener('click',()=>{
+    // remove active class from all another section
+    // and add it to the selected section
+    sections.forEach((section) => {
+        section.classList.remove('active')
+    })
+    section.classList.add('active')
+})
+})
+
 
     return(
         <div className="account-container">
@@ -27,13 +44,16 @@ const Account = ({currentAnimeAcc, setCurrentAnimeAcc}) => {
             See what is popular right now!
             </h2>
         </div>
-        <div className="anime-img-container">
-        <div class="section one active"></div>
-        <div class="section two"></div>
-        <div class="section three"></div>
-        <div class="section four"></div>
+        {/* adding watched list function */}
+        <li className="watched-li"><Link to='/account/watched' className="watched-link">Watched Episodes</Link></li>
         </div>
         </div>
+
+        <div className="container">
+        <div className="section one active"></div>
+        <div className="section two"></div>
+        <div className="section three"></div>
+        <div className="section four"></div>
         </div>
             {/* <div className="welcome">
             <span id="splash-overlay" class="splash"></span>
