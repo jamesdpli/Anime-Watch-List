@@ -14,8 +14,8 @@ const Account = ({currentAnimeAcc, setCurrentAnimeAcc}) => {
         <div className="account-container">
             <div className="welcomeback-title">
                 <ul className="welcome-back-div">
-                    <li>Welcome back&nbsp;</li>
-                    <li className="user-name">&nbsp;{currentAnimeAcc.name}&nbsp;</li>
+                    <li>Welcome back&nbsp;&nbsp;{currentAnimeAcc.name}&nbsp;</li>
+                    <img src="http://pm1.narvii.com/6825/868e382ae2074d0fc7ae1c8a7bcf771e580e776av2_00.jpg" alt="Avatar" className="avatar"/>
                 </ul>
             </div>
             <div><h2>Explore here</h2></div>
@@ -28,14 +28,17 @@ const Account = ({currentAnimeAcc, setCurrentAnimeAcc}) => {
             </h2>
         </div>
         <div className="anime-img-container">
-            
+        <div class="section one active"></div>
+        <div class="section two"></div>
+        <div class="section three"></div>
+        <div class="section four"></div>
         </div>
         </div>
         </div>
-            <div className="welcome">
+            {/* <div className="welcome">
             <span id="splash-overlay" class="splash"></span>
             <span id="welcome" class="z-depth-1"></span>
-            </div>
+            </div> */}
 
         </div>
     );
