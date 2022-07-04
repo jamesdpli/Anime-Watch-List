@@ -108,6 +108,20 @@ public class DataLoader implements ApplicationRunner {
         Anime blackClover = new Anime("Black Clover", LocalDate.of(2015,10,05),"test",
                 4.5,500, false,"https://media.kitsu.io/anime/poster_images/13209/medium.jpg",
                 "https://media.kitsu.io/anime/cover_images/789/original.jpeg");
+        Anime dragonBall = new Anime("Dragon Ball", LocalDate.of(1986, 02, 26),
+                "Gokuu Son is a young boy who lives in the woods all alone—that is, until a girl named Bulma runs into" +
+                " him in her search for a set of magical objects called the \\\"Dragon Balls.\\",8.8,
+                153, true, "https://media.kitsu.io/anime/poster_images/199/small.jpg",
+                "https://media.kitsu.io/anime/cover_images/199/large.jpg");
+        Anime dragonBallZ = new Anime("Dragon ball Z", LocalDate.of(1989, 04, 26), "Five years" +
+                " after the events of Dragon Ball, martial arts expert Gokuu is now a grown man married to his wife " +
+                "Chi-Chi, with a four-year old son named Gohan.", 7.9, 291, true,
+                "https://media.kitsu.io/anime/poster_images/4394/small.jpg", "https://media.kitsu.io/anime/cover_images/4394/large.jpg");
+        Anime yuyuHakusho = new Anime("Yu Yu Hakusho", LocalDate.of(1992, 10, 8), "One fateful " +
+                "day, Yuusuke Urameshi, a 14-year-old delinquent with a dim future, gets a miraculous chance to turn " +
+                "it all around when he throws himself in front of a moving car to save a young boy.", 9.9, 112, true,
+                "https://media.kitsu.io/anime/poster_images/359/small.jpg",
+                "https://media.kitsu.io/anime/cover_images/359/original.jpg");
 
 //      Add Genre
         Genre comedy = new Genre("Comedy", Arrays.asList(naruto, bleach, attackOnTitan, onePunchMan, assinationClassroom, mobPsycho100, blackClover));
@@ -165,9 +179,9 @@ public class DataLoader implements ApplicationRunner {
         WatchList watchList30 = new WatchList(user12, bleach);
 
 //      Save models
-        animeRepository.saveAll(Arrays.asList(naruto, narutoShippuden,bleach, attackOnTitan, onePiece, haikyuu, kurokosBasketball,
+        animeRepository.saveAll(Arrays.asList(naruto, narutoShippuden, bleach, attackOnTitan, onePiece, haikyuu, kurokosBasketball,
                 bungoStrayDogs2, deathNote, slamDunk, jojosBizzareAdventure2012, onePunchMan, assinationClassroom,
-                mobPsycho100, blackClover));
+                mobPsycho100, blackClover, dragonBall, dragonBallZ, yuyuHakusho));
         userRepository.saveAll(Arrays.asList(user1, user2, user3, user4, user5, user6, user7, user8, user9, user10,
                 user11, user12));
         watchListRepository.saveAll(Arrays.asList(watchList1,watchList2,watchList3,watchList4,watchList5, watchList6,
