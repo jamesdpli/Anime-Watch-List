@@ -52,6 +52,12 @@ public class UserController {
         return new ResponseEntity<>(userByDob, HttpStatus.OK);
     }
 
+    @GetMapping(value = "/dobAfter={dob}") // http://localhost:8080/users?dobAfter=2000-01-01
+    public ResponseEntity<List<User>> getAllUsersAfterDob(@PathVariable LocalDate dob){
+        List<User> usersAfterDob = userRepository.findUserByDobAfter(dob);
+        return new ResponseEntity<>(usersAfterDob, HttpStatus.OK);
+    }
+
     @GetMapping(value = "/email={email}")
     public ResponseEntity<List<User>> getUsersByEmail (@PathVariable String email){
         List<User> userByEmail = userRepository.findUserByEmail(email);

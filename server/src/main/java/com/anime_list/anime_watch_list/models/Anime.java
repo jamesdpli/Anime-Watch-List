@@ -34,21 +34,29 @@ public class Anime {
     @Column(name = "number_of_episodes")
     private int numberOfEps;
 
+    @Column(name = "complete")
+    private boolean isComplete;
+
     @Column
     private String imageUrl;
+
+    @Column
+    private String bannerImage;
 
     // Empty constructor
     public Anime() {}
 
     // Constructor
-    public Anime(String name, LocalDate releaseDate, String description, double rating, int numberOfEps, String imageUrl) {
+    public Anime(String name, LocalDate releaseDate, String description, double rating, int numberOfEps, boolean isComplete, String imageUrl, String bannerImage) {
         this.name = name;
         this.releaseDate = releaseDate;
         this.description = description;
         this.genres = new ArrayList<>();
         this.rating = rating;
         this.numberOfEps = numberOfEps;
+        this.isComplete = isComplete;
         this.imageUrl = imageUrl;
+        this.bannerImage = bannerImage;
     }
 
     // Getters and Setters
@@ -106,12 +114,28 @@ public class Anime {
         this.numberOfEps = numberOfEps;
     }
 
+    public boolean isComplete() {
+        return isComplete;
+    }
+
+    public void setComplete(boolean complete) {
+        isComplete = complete;
+    }
+
     public String getImageUrl() {
         return imageUrl;
     }
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getBannerImage() {
+        return bannerImage;
+    }
+
+    public void setBannerImage(String bannerImage) {
+        this.bannerImage = bannerImage;
     }
 
     // Custom methods
@@ -133,9 +157,12 @@ public class Anime {
                 ", genres=" + genres +
                 ", rating=" + rating +
                 ", numberOfEps=" + numberOfEps +
+                ", isComplete=" + isComplete +
                 ", imageUrl='" + imageUrl + '\'' +
+                ", bannerImage='" + bannerImage + '\'' +
                 '}';
-    }
+
+}
 }
 
 // add a toString() here ✅

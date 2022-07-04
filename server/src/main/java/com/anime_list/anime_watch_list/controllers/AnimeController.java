@@ -55,11 +55,6 @@ public class AnimeController{
         return new ResponseEntity<>(animeByName, HttpStatus.OK);
     }
 
-//    @GetMapping(value = "/description={description}")
-//    public ResponseEntity<List<Anime>> getAnimesByDescription(@PathVariable String description){
-//        List<Anime> animeByDes = animeRepository.findAnimeByDescriptionStartingWith(description);
-//        return new ResponseEntity<>(animeByDes, HttpStatus.OK);
-//    }
 
     @GetMapping(value = "/rating>{rating}")
     public ResponseEntity<List<Anime>> getAnimesByRatingGreaterThan(@PathVariable double rating){
@@ -79,11 +74,16 @@ public class AnimeController{
         return new ResponseEntity<>(animeRD, HttpStatus.OK);
     }
 
-//DIFFERENCE
     @GetMapping(value = "/genre={genreName}")
     public ResponseEntity<List<Anime>> getAllAnimesByGenre(@PathVariable String genreName){
         List<Anime> animesByGenre = animeRepository.findByGenres_Name(genreName);
         return new ResponseEntity<>(animesByGenre, HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/complete/animes={isComplete}")
+    public ResponseEntity<List<Anime>> getAllCompleteAnimes(@PathVariable boolean isComplete){
+        List<Anime> completeAnimes = animeRepository.findAllByIsComplete(isComplete);
+        return new ResponseEntity<>(completeAnimes, HttpStatus.OK);
     }
 
 

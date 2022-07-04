@@ -95,11 +95,6 @@ class AnimeWatchListApplicationTests {
 		assertThat(foundAnime.size()).isEqualTo(10);
 	}
 
-//	@Test
-//	public void canFindAnimeByDescriptionStartingWith(){
-//		List<Anime> foundAnime = animeRepository.findAnimeByDescriptionStartingWith("N");
-//		assertThat(foundAnime.size()).isEqualTo(4);
-//	}
 
 	@Test
 	public void canFindByGenre_Name(){
@@ -107,12 +102,12 @@ class AnimeWatchListApplicationTests {
 		assertThat(foundAnimes.size()).isEqualTo(3);
 	}
 
-//	@Test
-//	public void canFindByGenre_NameAndGenre_Name(){
-//		List<Anime> foundAnimesFiltered = animeRepository.findByGenres_Name_AndGenres_Name("Action", "Ecchi");
-//		assertThat(foundAnimesFiltered.size()).isEqualTo(1);
-//	}
 
+	@Test
+	public void canFindAnimeByIsComplete(){
+		List<Anime> completeAnimes = animeRepository.findAllByIsComplete(true);
+		assertThat(completeAnimes.size()).isEqualTo(7);
+	}
 
 //	GENRE TESTS:
 
