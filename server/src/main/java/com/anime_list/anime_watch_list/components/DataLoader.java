@@ -122,6 +122,29 @@ public class DataLoader implements ApplicationRunner {
                 "it all around when he throws himself in front of a moving car to save a young boy.", 9.9, 112, true,
                 "https://media.kitsu.io/anime/poster_images/359/small.jpg",
                 "https://media.kitsu.io/anime/cover_images/359/original.jpg");
+        Anime gintama = new Anime("Gintama", LocalDate.of(2006, 04, 04), "The Amanto, aliens " +
+                "from outer space, have invaded Earth and taken over feudal Japan. As a result, a prohibition on " +
+                "swords has been established, and the samurai of Japan are treated with disregard as a consequence.", 6.1,
+                267, true, "https://media.kitsu.io/anime/poster_images/818/small.jpg",
+                "https://media.kitsu.io/anime/cover_images/818/large.jpg");
+        Anime hunterXHunter = new Anime("Hunter X Hunter", LocalDate.of(2011, 10, 02), "Hunters" +
+                " are specialized in a wide variety of fields, ranging from treasure hunting to cooking. They have " +
+                "access to otherwise unavailable funds and information that allow them to pursue their dreams and " +
+                "interests.", 5.1, 148, false, "https://media.kitsu.io/anime/poster_images/115/small.jpg",
+                "https://media.kitsu.io/anime/cover_images/115/original.png");
+        Anime inuyasha = new Anime("Inuyasha", LocalDate.of(2000, 10, 16), "InuYasha follows " +
+                "Kagome Higurashi, a fifteen-year-old girl whose normal life ends when a demon drags her into a cursed" +
+                " well on the grounds of her family's Shinto shrine.", 8.7, 167, true,
+                "https://media.kitsu.io/anime/poster_images/224/small.jpg",
+                "https://media.kitsu.io/anime/cover_images/224/large.jpg");
+        Anime fullMetalAlchemists = new Anime("Full Metal Alchemists", LocalDate.of(2003, 10, 04),
+                "Edward Elric, a young, brilliant alchemist, has lost much in his twelve-year life: when he and his " +
+                        "brother Alphonse try to resurrect their dead mother through the forbidden act of human " +
+                        "transmutation.", 10, 51, true,
+                "https://media.kitsu.io/anime/poster_images/100/small.jpg",
+                "https://media.kitsu.io/anime/cover_images/100/large.jpg");
+//        Anime trigun = new Anime("Trigun", LocalDate.of(1998, 04, 01), "")
+
 
 //      Add Genre
         Genre comedy = new Genre("Comedy", Arrays.asList(naruto, bleach, attackOnTitan, onePunchMan, assinationClassroom, mobPsycho100, blackClover));
@@ -181,7 +204,7 @@ public class DataLoader implements ApplicationRunner {
 //      Save models
         animeRepository.saveAll(Arrays.asList(naruto, narutoShippuden, bleach, attackOnTitan, onePiece, haikyuu, kurokosBasketball,
                 bungoStrayDogs2, deathNote, slamDunk, jojosBizzareAdventure2012, onePunchMan, assinationClassroom,
-                mobPsycho100, blackClover, dragonBall, dragonBallZ, yuyuHakusho));
+                mobPsycho100, blackClover, dragonBall, dragonBallZ, yuyuHakusho, gintama, hunterXHunter, inuyasha, fullMetalAlchemists));
         userRepository.saveAll(Arrays.asList(user1, user2, user3, user4, user5, user6, user7, user8, user9, user10,
                 user11, user12));
         watchListRepository.saveAll(Arrays.asList(watchList1,watchList2,watchList3,watchList4,watchList5, watchList6,

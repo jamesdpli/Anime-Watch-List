@@ -11434,3 +11434,6 @@ insert into animes (id, banner_image, description, image_url, complete, name, nu
 2022-07-04 10:23:23 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'It has been two and a half years since Naruto Uzumaki left Konohagakure, the Hi... (332)"; SQL statement:
 insert into animes (id, banner_image, description, image_url, complete, name, number_of_episodes, rating, release_date) values (default, ?, ?, ?, ?, ?, ?, ?, ?) [22001-214]
+2022-07-04 11:02:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "'Edward Elric, a young, brilliant alchemist, has lost much in his twelve-year li... (342)"; SQL statement:
+insert into animes (id, banner_image, description, image_url, complete, name, number_of_episodes, rating, release_date) values (default, ?, ?, ?, ?, ?, ?, ?, ?) [22001-214]
