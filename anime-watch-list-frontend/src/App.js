@@ -44,6 +44,7 @@ return (
                                                             currentAnimeAcc={currentAnimeAcc}
                                                             setCurrentAnimeAcc={setCurrentAnimeAcc}/>}/>
                 {/* <Route path='/signup' element={<SigninForm/>}/> */}
+                
             </Routes>
         </div>
     </Router>
