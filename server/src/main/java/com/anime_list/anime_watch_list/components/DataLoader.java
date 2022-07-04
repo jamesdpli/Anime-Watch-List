@@ -41,6 +41,11 @@ public class DataLoader implements ApplicationRunner {
                 4.6, 500, true,
                 "https://media.kitsu.io/anime/11/poster_image/small-db4debb693482e09f5d9615864b99b3d.jpeg",
                 "https://media.kitsu.io/anime/cover_images/11/original.jpg");
+        Anime narutoShippuden = new Anime("Naruto Shippuden", LocalDate.of(2007, 02, 15), "It " +
+                "has been two and a half years since Naruto Uzumaki left Konohagakure, the Hidden Leaf Village, for " +
+                "intense training following events which fueled his desire to be stronger.", 10, 500,
+                true, "https://media.kitsu.io/anime/poster_images/1555/small.jpg",
+                "https://media.kitsu.io/anime/cover_images/1555/original.jpg");
         Anime bleach = new Anime("Bleach", LocalDate.of(2004, 10, 05),
                 "Ichigo Kurosaki is an ordinary high schooler—until his family is attacked by a Hollow, " +
                         "a corrupt spirit that seeks to devour human souls.",
@@ -105,13 +110,13 @@ public class DataLoader implements ApplicationRunner {
                 "https://media.kitsu.io/anime/cover_images/789/original.jpeg");
 
 //      Add Genre
-        Genre genre1 = new Genre("Comedy", Arrays.asList(naruto, bleach, attackOnTitan, onePunchMan, assinationClassroom, mobPsycho100, blackClover));
-        Genre genre2 = new Genre("Action", Arrays.asList(naruto, bungoStrayDogs2, attackOnTitan, onePunchMan, assinationClassroom, mobPsycho100, blackClover));
-        Genre genre3 = new Genre("Ecchi", Arrays.asList(onePiece, bleach, attackOnTitan, deathNote));
-        Genre genre4 = new Genre("Sports", Arrays.asList(slamDunk));
-        Genre genre5 = new Genre("Adventure", Arrays.asList(jojosBizzareAdventure2012));
-        Genre genre6 = new Genre("Supernatural", Arrays.asList(jojosBizzareAdventure2012, mobPsycho100));
-        Genre genre7 = new Genre("Fantasy", Arrays.asList(blackClover));
+        Genre comedy = new Genre("Comedy", Arrays.asList(naruto, bleach, attackOnTitan, onePunchMan, assinationClassroom, mobPsycho100, blackClover));
+        Genre action = new Genre("Action", Arrays.asList(naruto, bungoStrayDogs2, attackOnTitan, onePunchMan, assinationClassroom, mobPsycho100, blackClover));
+        Genre ecchi = new Genre("Ecchi", Arrays.asList(onePiece, bleach, attackOnTitan, deathNote));
+        Genre sports = new Genre("Sports", Arrays.asList(slamDunk));
+        Genre adventure = new Genre("Adventure", Arrays.asList(jojosBizzareAdventure2012));
+        Genre supernatural = new Genre("Supernatural", Arrays.asList(jojosBizzareAdventure2012, mobPsycho100));
+        Genre fantasy = new Genre("Fantasy", Arrays.asList(blackClover));
 
 //      Add User
         User user1 = new User("Onoda", LocalDate.of(1999,9,2), "onodaKun@gmail.com", "kangaboo23!");
@@ -160,7 +165,7 @@ public class DataLoader implements ApplicationRunner {
         WatchList watchList30 = new WatchList(user12, bleach);
 
 //      Save models
-        animeRepository.saveAll(Arrays.asList(naruto, bleach, attackOnTitan, onePiece, haikyuu, kurokosBasketball,
+        animeRepository.saveAll(Arrays.asList(naruto, narutoShippuden,bleach, attackOnTitan, onePiece, haikyuu, kurokosBasketball,
                 bungoStrayDogs2, deathNote, slamDunk, jojosBizzareAdventure2012, onePunchMan, assinationClassroom,
                 mobPsycho100, blackClover));
         userRepository.saveAll(Arrays.asList(user1, user2, user3, user4, user5, user6, user7, user8, user9, user10,
@@ -169,6 +174,6 @@ public class DataLoader implements ApplicationRunner {
                 watchList7, watchList8, watchList9, watchList10, watchList11, watchList12, watchList13, watchList14,
                 watchList15,watchList16, watchList17, watchList18,watchList19,watchList20,watchList21, watchList22,
                 watchList23, watchList24, watchList25, watchList26, watchList27,watchList28, watchList29, watchList30));
-        genreRepository.saveAll(Arrays.asList(genre1, genre2, genre3));
+        genreRepository.saveAll(Arrays.asList(comedy, action, ecchi, sports, adventure, supernatural, fantasy));
     }
 }
