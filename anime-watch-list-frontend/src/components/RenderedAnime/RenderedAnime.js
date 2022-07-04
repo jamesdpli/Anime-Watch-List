@@ -1,9 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import AccessTimeFilledIcon from "@mui/icons-material/AccessTimeFilled";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import "./renderedAnime.css"
-import Footer from "../../Footer/Footer";
+import Footer from "../Footer/Footer";
 
 const RenderedAnime = ({ renderedAnime }) => {
   const params = useParams();
@@ -34,7 +32,6 @@ const RenderedAnime = ({ renderedAnime }) => {
           { <div className="container-dynamic">
             <header
             className="banner-dynamic">
-            <h1>Hello</h1>
             <img src={chosenAnime[0].bannerImage} alt={chosenAnime[0].name}/>
             
             <div className="banner--fadeButtom" />

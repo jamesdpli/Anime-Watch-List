@@ -1,49 +1,48 @@
 import React from "react";
 import "./Row.css";
+import { useState, useEffect } from "react";
+import axios from "../axios";
+import { Link } from "react-router-dom";
 
-function Row({ animes }) {
+function Row({ title, fetchUrl }) {
+  const [animeGenre, setAnimeGenre] = useState([]);
 
-return (
-
-    // Link with backend for fetching images 
-    <div className="row">
-    <h2>This is a title test</h2>
-    <div className="row-posters">
-    <img className="row-poster"
-        src={
-        "https://thesmartlocal.com/japan/wp-content/uploads/2020/03/Top-Anime-Movies-21.jpg"
-        }
-        alt="poster"
-    />
-    <img className="row-poster"
-        src={
-        "https://m.media-amazon.com/images/M/MV5BM2MxY2QwYTAtMDM1My00MTc0LWEwZjktMDdjODY2NWJiNDg2XkEyXkFqcGdeQXVyODY3ODQ2MTk@._V1_.jpg"
-        }
-        alt="poster"
-    />
-        <img className="row-poster"
-        src={
-        "https://static.posters.cz/image/750/posters/one-punch-man-destruction-i61133.jpg"
-        }
-        alt="poster"
-    /><img className="row-poster"
-    src={
-        "https://m.media-amazon.com/images/M/MV5BY2I2MzI1ODYtMWRlOS00MzdhLWEyOWEtYWJhNmFiZTIxMGJhXkEyXkFqcGdeQXVyMTExNDQ2MTI@._V1_.jpg"
+  useEffect(() => {
+    async function fetchData() {
+      const request = await axios.get(fetchUrl);
+      setAnimeGenre(request.data);
+      return request;
     }
-    alt="poster"
-    /><img className="row-poster" 
-    src={"https://m.media-amazon.com/images/M/MV5BNTk1NTc0MTYtY2IyNC00OWVjLWJhYWItNDQ0ODdiNWZkYTA5XkEyXkFqcGdeQXVyMTQ3MjMyMTYz._V1_FMjpg_UX1000_.jpg"} alt="poster"/>
-    <img className="row-poster" 
-    src={"https://i.ebayimg.com/images/g/BgUAAOSwaCBg6aUT/s-l500.jpg"} alt="poster"/>
-    <img className="row-poster"
-        src={
-        "https://i.ebayimg.com/images/g/iIcAAOSwGXNgSkHt/s-l500.jpg"
-        }
-        alt="poster"
-        />
-        </div>
+
+    fetchData();
+  }, [fetchUrl]);
+
+  // const animeComponents = {animeGenre.map((anime)=>{
+  //     return anime.animes.map((secondAnime) => {
+  //   return <img key={secondAnime.id} src={anime.imageUrl} alt={anime.name} />;
+  //     })
+  //   })
+
+  // console.log(animeGenre.animes?.map((anime) => anime.name));
+
+  return (
+    <div className="row">
+      <h2>{animeGenre.name}</h2>
+      <div className="row-posters">
+        {animeGenre.animes?.map((anime) => (
+          <Link to={`/explore/${anime.name}`}>
+              <img
+                className="row-poster"
+                src={anime.imageUrl}
+                alt={anime.name}
+                key={anime.id}
+              />
+              </Link>
+          
+          ))}
+      </div>
     </div>
-);
+  );
 }
 
 export default Row;

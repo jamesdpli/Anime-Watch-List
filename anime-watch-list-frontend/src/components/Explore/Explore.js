@@ -3,6 +3,7 @@ import Row from "./Row";
 import Banner from "./Banner";
 import './Explore.css';
 import SearchBar from "./SearchBar";
+import Request from "../Requests";
 import Nav from "./Nav";
 
 
@@ -29,11 +30,13 @@ const Explore = () => {
             <Banner/>
             <br/>
             <SearchBar/>
-            <Row animes={animes} />
-            <Row animes={animes} />
-            <Row animes={animes} />
-            <Row animes={animes} />
-            <Row animes={animes} />
+      {/* <AnimeList animesGenre={animesGenre}/> */}
+            <Row title="Comedy" fetchUrl={Request.fetchComedyAnimes} />
+            <Row title="Action" fetchUrl={Request.fetchActionAnimes} />
+            <Row title="Ecchi" fetchUrl={Request.fetchEcchiAnimes} />
+            <Row title="Supernatural" fetchUrl={Request.fetchSupernaturalAnimes} />
+            <Row title="Drama" fetchUrl={Request.fetchDramaAnimes} />
+            <Row title="Romance" fetchUrl={Request.fetchRomanceAnimes} />
         </div>
         );
 
