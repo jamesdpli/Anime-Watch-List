@@ -1,4 +1,4 @@
-import "./SignUp.css";
+// import "./SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
 import { BsTwitter } from "react-icons/bs";
 import { useRef, useState, useEffect } from "react";
@@ -6,6 +6,7 @@ import {AiOutlineEye, AiOutlineEyeInvisible} from "react-icons/ai"
 // import animeAll from "../FirstPage/animeAll.mp4";
 // import demonSlayer from "../assets/demonSlayer.mp4";
 // import zenitsu from "../FirstPage/zenitsu.mp4";
+import "./Login.css";
 
 const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
 
@@ -44,16 +45,18 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
       }
 
   return (
-    <div className="sign-up-container">
-      <form className="sign-up-form">
-        <h1 className="login-title">Login with</h1>
-        {/* <div className="other-sign-up">
-          <ul>
-            <li className="button-a-tag"><button><BsTwitter/></button></li>
-          </ul>
+    <div className="box-form">
+        <div className="left">
+          <div className="overlay1">
+            <h1>Hello User</h1>
+            <p> text goes here </p>
+          </div>
         </div>
-        <p className="or-line"><span>Or</span></p>
-        <br/> */}
+
+        <div className="right">
+        <h1>Login with</h1>
+        <p>Don't have an account? <a href="/account"> Create Your Account</a> it takes less than a minute</p>
+        <div className="inputs">
 
         <p className="sign-up-input-title">Your Email</p>
         <input type="text" ref={inputEmail} className="sign-up-input-box"/>
@@ -64,21 +67,37 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
         <button onClick={handlePasswordShown} className="password-shown-button">{passwordShown? <AiOutlineEye className="password-eye"/> : <AiOutlineEyeInvisible className="password-eye"/>}</button>
         <p className="new-user-password"></p>
         <br/>
+        </div>
+        <br></br>
+        <div className="remember-me">
+          <label>
+            <input type="checkbox" name="item" checked/>
+            <span class="text-checkbox"> Remember me</span>
+          </label>
+            <p>forget password?</p>
+        </div>
+          <br/>
+          <button onClick={handleLogin}className='sign-up-btn'>Log in</button>
+        </div>
+        
+
+        
+
+        
 
         {/* Should an admin login page be made? -- backend must add boolean whether user is an admin or not */}
-        <a href="#" className="link-a-tag">Log in as Admin?</a>
-        <br/>
+        {/* <a href="#" className="link-a-tag">Log in as Admin?</a>
+        <br/> */}
 
         {/* Authentication -- extension */}
-        <a href="#" className="link-a-tag">Forget your password?</a>
-        <br/>
+        {/* <a href="#" className="link-a-tag">Forget your password?</a>
+        <br/> */}
 
-        <div>
-        <br/>
-        <button onClick={handleLogin}className='sign-up-btn'>Log in</button>
-        </div>
-        <p>Do you need an account? <a href="/account" className="link-a-tag">Create new account</a></p>
-      </form>
+        {/* <div>
+        <br/> */}
+        
+        {/* </div>
+        <p>Do you need an account? <a href="/account" className="link-a-tag">Create new account</a></p> */}
     </div>
   );
 };
