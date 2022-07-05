@@ -38,7 +38,7 @@ return (
                 <Route path='/' element={<Home/>}/>
                 <Route path='/home' element={<Home/>}/>
                 <Route exact path='/explore/' element={<Explore/>}/>
-                <Route exact path='/userWatchList' element={<WatchLists/>}/>
+                <Route exact path='/userWatchList' element={<WatchLists currentAnimeAcc ={currentAnimeAcc}/>}/>
                 <Route path='/account' element={isLogin? <Account currentAnimeAcc={currentAnimeAcc}
                                                                     setCurrentAnimeAcc={setCurrentAnimeAcc}/>: 
                                                         <SigninForm isLogin={isLogin} setIsLogin={setIsLogin}
@@ -48,7 +48,7 @@ return (
                                                             currentAnimeAcc={currentAnimeAcc}
                                                             setCurrentAnimeAcc={setCurrentAnimeAcc}/>}/>
                 {/* <Route path='/signup' element={<SigninForm/>}/> */}
-                <Route path='/explore/:animeName' element={<RenderedAnimeList/>}/>
+                <Route path='/explore/:animeName' element={<RenderedAnimeList currentAnimeAcc ={currentAnimeAcc} />}/>
             </Routes>
         </div>
     </Router>

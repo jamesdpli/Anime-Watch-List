@@ -45,7 +45,7 @@ section.addEventListener('click',()=>{
             </h2>
         </div>
         {/* adding watched list function */}
-        <li className="watched-li"><Link to='/account/watched' className="watched-link">Watched Episodes</Link></li>
+        <li className="watched-li"><Link to='/userWatchList'> <button  className="watched-link">My WatchList</button></Link></li>
         </div>
         </div>
         {/* this bugged out -- does not move anymore */}

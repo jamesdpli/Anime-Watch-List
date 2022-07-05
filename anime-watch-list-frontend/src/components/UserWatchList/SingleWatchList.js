@@ -1,8 +1,8 @@
+import "./SingleWatchList.css"
+
 const SingleWatchList = ({ eachAnimeInWatchList,
     deleteWatchList,
     watchListId,
-    setRemoveBtnState,
-    removeBtnState,
     setUserWatchListAnimes,
      }) => {
 
@@ -10,7 +10,6 @@ const SingleWatchList = ({ eachAnimeInWatchList,
   
 
     const handleRemoveWatchList = () => {
-        setRemoveBtnState(!removeBtnState)
         deleteWatchList(watchListId)
 
 
@@ -20,9 +19,26 @@ const SingleWatchList = ({ eachAnimeInWatchList,
     }
     return (
         <>
-            <div className="singleWatchList">
-                <h4>{eachAnimeInWatchList.name}</h4>
-                <button onClick={handleRemoveWatchList} className="removeWatchList"> remove </button>
+            <div className="singleWatchList-container">
+
+                <div className="image-container">
+                    <img src={eachAnimeInWatchList.imageUrl}/>
+                    </div>
+
+                    <div className="anime-info-Container">
+
+                        <div className="headerAndRemoveBtn-container">
+                            <h2> {eachAnimeInWatchList.name}</h2>
+                            <button onClick={handleRemoveWatchList}>X</button>
+                        </div>
+
+                        <div className="description">
+                            <h4>{eachAnimeInWatchList.description}</h4>
+                        </div>
+
+                    </div>
+            
+               
 
             </div>
         </>

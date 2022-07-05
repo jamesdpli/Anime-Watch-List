@@ -36,6 +36,7 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
         setCurrentAnimeAcc(currentUser[0]);
         setIsLogin(!isLogin);
         navigate('/explore');
+        
         }
 
         // to show the password or not
