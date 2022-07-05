@@ -34,7 +34,7 @@ const UserContainer = () => {
 
   return (
     <>
-    <SignUp postUser={postUser}/>
+    {/* <SignUp postUser={postUser}/> */}
     {/* <NewUserForm postUser={postUser}/> */}
     </>
   )

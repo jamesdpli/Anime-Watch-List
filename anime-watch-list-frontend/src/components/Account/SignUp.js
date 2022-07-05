@@ -8,9 +8,9 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const SignUp = ({postUser}) => {
 
-    const inputNewEmail = useRef();
-    const inputNewPassword = useRef();
-    const inputNewUsername = useRef();
+    // const inputNewEmail = useRef();
+    // const inputNewPassword = useRef();
+    // const inputNewUsername = useRef();
     // const [allUsers, setAllUsers] = useState();
     const [allowedSignup, setAllowedSignup] = useState([false, false, false]);
     
@@ -130,13 +130,18 @@ const SignUp = ({postUser}) => {
         <h1 className="sign-up-title">Sign Up with</h1>
 
 
-        <p className="sign-up-input-title">Your username</p>
+        {/* <p className="sign-up-input-title">Your username</p>
         <input 
             type="text" 
             onChange={handleChange}
-            className="sign-up-input-box"/>
-        <p className="new-user-username"></p>
+            className="sign-up-input-box"
+            value={stateUser.name}  />
+        <p className="new-user-username"></p> */}
 
+      <p className="sign-up-input-title">Your name <br/> 
+        <input type="text"  name="name" onChange={handleChange} value={stateUser.name}  className="sign-up-input-box"
+        />
+      </p>
 
         <p className="sign-up-input-title">Enter DOB (YYYY-MM-DD): 
         <br/>
@@ -150,24 +155,34 @@ const SignUp = ({postUser}) => {
         </p>
 
 
-        <p className="sign-up-input-title">Your Email</p>
+        {/* <p className="sign-up-input-title">Your Email</p>
         <input 
             type="text" 
             // ref={inputNewEmail}
             onChange={handleChange}
             className="sign-up-input-box"
             value={stateUser.email}/>
-        <p className="new-user-email"></p>
+        <p className="new-user-email"></p> */}
 
+      <p className="sign-up-input-title">Enter email: 
+        <br/> 
+        <input type="text" placeholder="email" name="email" onChange={handleChange} value={stateUser.email} className="sign-up-input-box"/>
+      </p>
 
-        <p className="sign-up-input-title">Password</p>
+        {/* <p className="sign-up-input-title">Password</p>
         <input 
             type={passwordShown? "text" : "password"}
             // ref={inputNewPassword} 
             className="sign-up-input-box"
             onChange={handleChange}
-            value={stateUser.password}/>
-            <br/>
+            value={stateUser.password}/> */}
+        <p className="sign-up-input-title">Set password: </p>
+       
+        <input type={passwordShown? "text" : "password"} placeholder="new password" name="password" onChange={handleChange} value={stateUser.password} className="sign-up-input-box"   
+        />
+        <br/>
+      
+          
         <button 
             onClick={handlePasswordShown} 
             className="password-shown-button">{passwordShown ? <AiOutlineEye className="password-eye" /> : <AiOutlineEyeInvisible className="password-eye" />}</button>
