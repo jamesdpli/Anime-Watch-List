@@ -223,7 +223,7 @@ body {
     display: none;
   }
 
-  .password-shown-button1{
+  /* .password-shown-button1{
     border-style: none;
     background-color:white;
     color: grey;
@@ -231,4 +231,4 @@ body {
     right: 0;
     left: 140px;
     bottom: 30px;
-  }
+  } */

@@ -1,4 +1,4 @@
-// import "./SignUp.css";
+import "./SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
 import { BsTwitter } from "react-icons/bs";
 import { useRef, useState, useEffect } from "react";
@@ -66,13 +66,14 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
 
         <p className="sign-up-input-title">Password</p>
         <input type={passwordShown? "text" : "password"} ref={inputPassword} className="sign-up-input-box-1"/><br/>
-        <button onClick={handlePasswordShown} className="password-shown-button1">{passwordShown? <AiOutlineEye className="password-eye-1"/> : <AiOutlineEyeInvisible className="password-eye-1"/>}</button>
+        <button onClick={handlePasswordShown} className="password-shown-button">{passwordShown ? <AiOutlineEye className="password-eye" /> : <AiOutlineEyeInvisible className="password-eye" />}</button>
         <p className="new-user-password"></p>
         <br/>
         </div>
         <br></br>
         <div className="remember-me">
             {/* <input type="checkbox" name="item" checked/> */}
+            <input type="checkbox" id='sign-up-condition-box' className='sign-up-terms-box' />
             <span class="text-checkbox1">Remember me</span>
             <p>forget password?</p>
         </div>
