@@ -3,10 +3,15 @@ import { useEffect, useState } from "react";
 import "./renderedAnime.css"
 import Footer from "../Footer/Footer";
 
-const RenderedAnime = ({ renderedAnime }) => {
+const RenderedAnime = ({ renderedAnime,
+                         loggedInUser, 
+                         addToWatchList
+                        }) => {
   const params = useParams();
 
   const [chosenAnime, setchosenAnime] = useState();
+  const [selectedAnime, setSelectedAnime] = useState();
+
 
   useEffect(() => {
     if (renderedAnime.length) {
@@ -16,9 +21,33 @@ const RenderedAnime = ({ renderedAnime }) => {
         }
         return null;
       });
+      setSelectedAnime(filterChecker[0])
       setchosenAnime(filterChecker);
     }
   }, [renderedAnime, params.animeName]);
+
+
+
+
+
+
+
+  const[userWatchList, setUserWatchList] = useState(
+    { 
+      user:{},
+      anime:{}
+     }
+  );
+
+  const handleAddToWatchList = () =>{
+    userWatchList.anime = selectedAnime
+    userWatchList.user = loggedInUser
+
+    console.log(userWatchList)
+    addToWatchList(userWatchList)   
+}
+
+
 
   return (
     <>
@@ -51,6 +80,9 @@ const RenderedAnime = ({ renderedAnime }) => {
       ) : (
         ""
       )}
+
+<button onClick={handleAddToWatchList}>Add</button>
+
     </>
   );
 };
