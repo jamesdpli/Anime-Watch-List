@@ -29,7 +29,7 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
         user.password == inputPassword.current.value);
         
         if (currentUser.length == 0) {
-          alert("Invalid email adress or password! Please try again!")
+          alert("Invalid email address or password! Please try again!")
           return
         };
 
@@ -65,7 +65,7 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
 
         <p className="sign-up-input-title">Password</p>
         <input type={passwordShown? "text" : "password"} ref={inputPassword} className="sign-up-input-box"/><br/>
-        <button onClick={handlePasswordShown} className="password-shown-button">{passwordShown? <AiOutlineEye className="password-eye"/> : <AiOutlineEyeInvisible className="password-eye"/>}</button>
+        <button onClick={handlePasswordShown} className="password-shown-button1">{passwordShown? <AiOutlineEye className="password-eye-1"/> : <AiOutlineEyeInvisible className="password-eye-1"/>}</button>
         <p className="new-user-password"></p>
         <br/>
         </div>
@@ -73,12 +73,12 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
         <div className="remember-me">
           <label>
             <input type="checkbox" name="item" checked/>
-            <span class="text-checkbox"> Remember me</span>
+            <span class="text-checkbox1"> Remember me</span>
           </label>
             <p>forget password?</p>
         </div>
           <br/>
-          <button onClick={handleLogin}className='sign-up-btn'>Log in</button>
+          <button onClick={handleLogin}className='sign-up-btn1'>Log in</button>
         </div>
         </form>
 

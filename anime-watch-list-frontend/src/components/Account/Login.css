@@ -172,7 +172,7 @@ body {
     margin-right: 7px;
     width: auto;
   }
-  .box-form .right button {
+  .box-form .right .sign-up-btn1 {
     /* float: right; */
     color: #fff;
     font-size: 16px;
@@ -211,11 +211,11 @@ body {
     background: #70F570;
   }
   
-  label:hover::before .text-checkbox {
+  label:hover::before .text-checkbox1 {
     background: #70F570;
   }
   
-  label span.text-checkbox {
+  label span.text-checkbox1 {
     display: inline-block;
     height: auto;
     position: relative;
@@ -225,4 +225,14 @@ body {
   
   label input[type="checkbox"] {
     display: none;
+  }
+
+  .password-shown-button1{
+    border-style: none;
+    background-color:white;
+    color: red;
+    position: relative;
+    right: 0;
+    left: 150px;
+    bottom: 30px;
   }
