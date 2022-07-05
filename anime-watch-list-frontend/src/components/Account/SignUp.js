@@ -15,6 +15,14 @@ const SignUp = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
     const [passwordShown, setPasswordShown] = useState(false);
     const [allowedSignup, setAllowedSignup] = useState([false, false, false]);
 
+    const[stateUser, setStateUser] = useState({
+      name: "",
+      dob: "",
+      email: "",
+      password: "",
+      watchLists: []
+    });
+
     // Getting all users
     console.log(allowedSignup);
     useEffect(() => {
@@ -25,6 +33,7 @@ const SignUp = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
 
     // POST Mapping for creating a new user --- can change 
     const handleSignUp = (event) => {
+      console.log(event);
       event.preventDefault();
 
       if (allowedSignup.includes(false)) return;
@@ -101,13 +110,6 @@ const SignUp = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
     <div className="sign-up-container">
       <form className="sign-up-form">
         <h1 className="sign-up-title">Sign Up with</h1>
-        {/* <div className="other-sign-up">
-          <ul>
-            <li className="button-a-tag"><button><BsTwitter/></button></li>
-          </ul>
-        </div>
-        <p className="or-line"><span>Or</span></p>
-        <br/> */}
         <p className="sign-up-input-title">Your username</p>
         <input 
             type="text" 
