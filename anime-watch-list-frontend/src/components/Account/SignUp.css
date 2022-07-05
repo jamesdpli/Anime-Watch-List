@@ -227,7 +227,7 @@
   box-shadow: 0 0 20px 6px #12121685;
 }
 @media (max-width: 980px) {
-  .box-form {
+  .box-form-1 {
     flex-flow: wrap;
     text-align: center;
     align-content: center;
@@ -241,7 +241,7 @@
   color: #FFFFFF;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("https://i.insider.com/61d775e137afc20019ac9849?width=700");
+  background-image: url("https://www.nme.com/wp-content/uploads/2022/01/attack-on-titan-final-season-part-2-first-look-review@2000x1270-1.jpg");
   overflow: hidden;
 }
 .box-form-1 .left .overlay1 {
@@ -281,7 +281,7 @@
   overflow: hidden;
 }
 @media (max-width: 980px) {
-  .box-form .right {
+  .box-form-1 .right {
     width: 100%;
   }
 }
