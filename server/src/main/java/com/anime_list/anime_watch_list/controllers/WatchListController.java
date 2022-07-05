@@ -30,6 +30,7 @@ public class WatchListController {
     }
 
     // POST
+    @CrossOrigin
     @PostMapping
     public ResponseEntity<WatchList> createWatchList (@RequestBody WatchList newWatchList){
         watchListRepository.save(newWatchList);
@@ -53,7 +54,8 @@ public class WatchListController {
     }
 
     // DELETE
-    @DeleteMapping("/remove/{id}")
+    @CrossOrigin
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteWatchList(@PathVariable Long id) {
         var found = watchListRepository.findById(id);
         watchListRepository.deleteById(id);
