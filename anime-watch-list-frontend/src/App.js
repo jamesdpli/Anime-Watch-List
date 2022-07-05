@@ -58,7 +58,7 @@ return (
                                                                 setCurrentAnimeAcc={setCurrentAnimeAcc} postUser={postUser}/>}/>
                 <Route path='/login' element={<LoginPage isLogin={isLogin} setIsLogin={setIsLogin}
                                                             currentAnimeAcc={currentAnimeAcc}
-                                                            setCurrentAnimeAcc={setCurrentAnimeAcc}/>}/>
+                                                            setCurrentAnimeAcc={setCurrentAnimeAcc} postUser={postUser}/>}/>
                 {/* <Route path='/signup' element={<SigninForm/>}/> */}
                 <Route path='/explore/:animeName' element={<RenderedAnimeList currentAnimeAcc ={currentAnimeAcc} />}/>
             </Routes>

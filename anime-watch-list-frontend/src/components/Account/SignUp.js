@@ -49,7 +49,7 @@ const SignUp = ({postUser}) => {
   return (
 
     <div>
-      <form className="box-form-1">
+      <form onSubmit={handleFormSubmit} className="box-form-1">
         <div className="left">
           <div className="overlay1">
             <h1>Join Us</h1>
