@@ -63,6 +63,7 @@ const RenderedAnime = ({ renderedAnime,
           <div className="content-dynamic">
             <div className="content-left-dynamic">
               <img src={chosenAnime[0].imageUrl} alt={chosenAnime[0].name}/>
+              <p>Rating: {chosenAnime[0].rating}/10</p>
               <button onClick={handleAddToWatchList}>Add</button>
             </div>
             <div className="content-right-dynamic">
