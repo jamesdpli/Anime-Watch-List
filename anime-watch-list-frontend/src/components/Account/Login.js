@@ -45,7 +45,8 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
       }
 
   return (
-    <div className="box-form">
+    <div> 
+      <form className="box-form">
         <div className="left">
           <div className="overlay1">
             <h1>Hello User</h1>
@@ -79,7 +80,7 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
           <br/>
           <button onClick={handleLogin}className='sign-up-btn'>Log in</button>
         </div>
-        
+        </form>
 
         
 
