@@ -60,7 +60,7 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
 
         <div className="right">
         <h1>Login with</h1>
-        <p>Don't have an account? <a href="/account"> Create Your Account</a> it takes less than a minute</p>
+        <p>Don't have an account? <Link to="/account"> Create Your Account</  Link> it takes less than a minute</p>
         <div className="inputs">
 
         <p className="sign-up-input-title">Your Email</p>
@@ -76,7 +76,7 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
         <br></br>
         <div className="remember-me">
           <label>
-            <input type="checkbox" name="item"  checked/>
+            <input type="checkbox" name="item"  />
             <span className="text-checkbox1"> Remember me</span>
           </label>
             <p>forget password?</p>

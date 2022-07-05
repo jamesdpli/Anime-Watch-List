@@ -2,6 +2,7 @@
 import "./SignUp.css";
 import { useRef, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { Link } from "react-router-dom";
 // import React, {useState} from "react";
 // import {BsTwitter} from 'react-icons/bs'; // npm install react-icons
 
@@ -89,7 +90,8 @@ const SignUp = ({postUser}) => {
         <br />
         <button className='sign-up-btn'>Sign up</button>
 
-        <p>Do you already have an account? <br/><a href="/login" className="link-text-tag">Log in</a></p>
+        <p>Do you already have an account? <br/>
+       <Link to="/login" className="link-text-tag">Log in</Link></p>
       </form>
     </div>
   );
