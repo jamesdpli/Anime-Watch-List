@@ -25,6 +25,7 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
 
     // to check if the email + password are the same in the dataloader -- alert will state if it is wrong
     const handleLogin = (event) =>{
+      console.log(event)
       const currentUser = allUsers.filter(user => user.email == inputEmail.current.value &&
         user.password == inputPassword.current.value);
         
@@ -45,6 +46,8 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
           setPasswordShown(!passwordShown);
       }
 
+      
+
   return (
     <div> 
       <form className="box-form">
@@ -61,11 +64,11 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
         <div className="inputs">
 
         <p className="sign-up-input-title">Your Email</p>
-        <input type="text" ref={inputEmail} className="sign-up-input-box"/>
+        <input type="text" ref={inputEmail} className="sign-up-input-box"  />
         <p className="new-user-email"></p>
 
         <p className="sign-up-input-title">Password</p>
-        <input type={passwordShown? "text" : "password"} ref={inputPassword} className="sign-up-input-box"/><br/>
+        <input type={passwordShown? "text" : "password"} ref={inputPassword} className="sign-up-input-box" /><br/>
         <button onClick={handlePasswordShown} className="password-shown-button1">{passwordShown? <AiOutlineEye className="password-eye-1"/> : <AiOutlineEyeInvisible className="password-eye-1"/>}</button>
         <p className="new-user-password"></p>
         <br/>
@@ -73,8 +76,8 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
         <br></br>
         <div className="remember-me">
           <label>
-            <input type="checkbox" name="item" checked/>
-            <span class="text-checkbox1"> Remember me</span>
+            <input type="checkbox" name="item"  checked/>
+            <span className="text-checkbox1"> Remember me</span>
           </label>
             <p>forget password?</p>
         </div>
