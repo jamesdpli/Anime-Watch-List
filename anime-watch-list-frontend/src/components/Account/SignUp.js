@@ -43,11 +43,22 @@ const SignUp = ({postUser}) => {
       }
 
   return (
-    <div className="sign-up-container">
-      <form onSubmit={handleFormSubmit} className="sign-up-form">
-        <h1 className="sign-up-title">Sign Up with</h1>
+    <div>
+      <form onSubmit={handleFormSubmit} className="box-form-1">
+        <div className="left">
+          <div className="overlay1">
+            <h1>Join Us</h1>
+            <h1>today!</h1>
+            <br/>
+            <p>Be part of a big community!</p>
+          </div>
+        </div>
+        
+        <div className="right">
+          <h1>Sign Up here</h1>
+          <br/>
 
-      <p className="sign-up-input-title">Your name <br/> 
+          <p className="sign-up-input-title">Your name <br/> 
         <input type="text"  name="name" onChange={handleChange} value={stateUser.name}  className="sign-up-input-box"
         />
       </p>
@@ -69,7 +80,6 @@ const SignUp = ({postUser}) => {
       </p>
 
         <p className="sign-up-input-title">Set password: </p>
-       
         <input type={passwordShown? "text" : "password"} placeholder="new password" name="password" onChange={handleChange} value={stateUser.password} className="sign-up-input-box"   
         />
         <br/>
@@ -91,8 +101,10 @@ const SignUp = ({postUser}) => {
         <button className='sign-up-btn'>Sign up</button>
 
         <p>Do you already have an account? <br/>
-       <Link to="/login" className="link-text-tag">Log in</Link></p>
+      <Link to="/login" className="link-text-tag">Log in</Link></p>
+      </div>
       </form>
+        
     </div>
   );
 };
