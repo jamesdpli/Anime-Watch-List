@@ -153,10 +153,10 @@ body {
   .box-form .right .inputs {
     overflow: hidden;
   }
-  .box-form .right input {
+  .box-form .right .sign-up-input-box-1 {
     width: 100%;
     padding: 10px;
-    margin-top: 25px;
+    margin-top: 5px;
     font-size: 16px;
     border: none;
     outline: none;
@@ -176,7 +176,7 @@ body {
     /* float: right; */
     color: #fff;
     font-size: 16px;
-    padding: 10px 35px;
+    padding: 15px 80px;
     border-radius: 50px;
     display: inline-block;
     border: 0;
@@ -192,27 +192,23 @@ body {
   }
   
   label::before {
-    content: ' \f00c';
-    position: absolute;
-    font-family: FontAwesome;
+    position: relative;
     background: transparent;
-    border: 3px solid #70F570;
-    border-radius: 4px;
+    border: 3px solid black;
     color: transparent;
     left: -30px;
     transition: all 0.2s linear;
   }
   
   label:hover::before {
-    font-family: FontAwesome;
-    content: ' \f00c';
+
     color: #fff;
     cursor: pointer;
     background: #70F570;
   }
   
   label:hover::before .text-checkbox1 {
-    background: #70F570;
+    background: white;
   }
   
   label span.text-checkbox1 {
@@ -230,9 +226,9 @@ body {
   .password-shown-button1{
     border-style: none;
     background-color:white;
-    color: red;
+    color: grey;
     position: relative;
     right: 0;
-    left: 150px;
+    left: 140px;
     bottom: 30px;
   }

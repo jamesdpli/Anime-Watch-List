@@ -49,32 +49,31 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
       <form className="box-form">
         <div className="left">
           <div className="overlay1">
-            <h1>Hello User</h1>
-            <p> text goes here </p>
+            <h1>Hello there!</h1>
+            <p> Are you ready to make lists? </p>
           </div>
         </div>
 
         <div className="right">
         <h1>Login with</h1>
+        <br/>
         <p>Don't have an account? <a href="/account"> Create Your Account</a> it takes less than a minute</p>
         <div className="inputs">
 
         <p className="sign-up-input-title">Your Email</p>
-        <input type="text" ref={inputEmail} className="sign-up-input-box"/>
+        <input type="text" ref={inputEmail} className="sign-up-input-box-1"/>
         <p className="new-user-email"></p>
 
         <p className="sign-up-input-title">Password</p>
-        <input type={passwordShown? "text" : "password"} ref={inputPassword} className="sign-up-input-box"/><br/>
+        <input type={passwordShown? "text" : "password"} ref={inputPassword} className="sign-up-input-box-1"/><br/>
         <button onClick={handlePasswordShown} className="password-shown-button1">{passwordShown? <AiOutlineEye className="password-eye-1"/> : <AiOutlineEyeInvisible className="password-eye-1"/>}</button>
         <p className="new-user-password"></p>
         <br/>
         </div>
         <br></br>
         <div className="remember-me">
-          <label>
-            <input type="checkbox" name="item" checked/>
-            <span class="text-checkbox1"> Remember me</span>
-          </label>
+            {/* <input type="checkbox" name="item" checked/> */}
+            <span class="text-checkbox1">Remember me</span>
             <p>forget password?</p>
         </div>
           <br/>
