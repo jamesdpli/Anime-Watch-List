@@ -51,8 +51,10 @@ const SignUp = ({postUser}) => {
       <form className="box-form-1">
         <div className="left">
           <div className="overlay1">
-            <h1>Join us</h1>
+            <h1>Join Us</h1>
             <h1>today!</h1>
+            <br/>
+            <p>Be part of a big community!</p>
           </div>
         </div>
         
@@ -88,10 +90,8 @@ const SignUp = ({postUser}) => {
         <p className="new-user-password"></p>
         <br/>
 
-        <button className='sign-up-btn'>Sign up</button>
-    
-
-        <p>Do you already have an account? <br/><a href="/login" className="link-text-tag">Log in</a></p>
+        <button className='sign-up-btn'>Sign up</button><br/><br/>
+        <p>Do you already have an <a href="/login">account</a>?</p>
         </div>
         
 

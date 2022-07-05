@@ -60,6 +60,7 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
         <div className="right">
         <h1>Login with</h1>
         <br/>
+        <br/>
         <p>Don't have an account? <a href="/account"> Create Your Account</a> it takes less than a minute</p>
         <div className="inputs">
 
