@@ -1,4 +1,6 @@
 import './banner.css';
+import { Link } from "react-router-dom";
+
 
 const Banner = () => {
 
@@ -18,7 +20,10 @@ const Banner = () => {
         <h1 className="banner-title">Movie Name</h1>
         <div className="banner-buttons">
             <button className="banner-button">Play</button>
-            <button className="banner-button">My List</button>
+            
+
+            <Link to={'/userWatchList'}><button className="banner-button">My List</button></Link>
+
         </div>
         <h1 className="banner-description">
             {truncate('move description goes here', 150)}
