@@ -153,10 +153,10 @@ body {
   .box-form .right .inputs {
     overflow: hidden;
   }
-  .box-form .right .sign-up-input-box-1 {
+  .box-form .right input {
     width: 100%;
     padding: 10px;
-    margin-top: 5px;
+    margin-top: 25px;
     font-size: 16px;
     border: none;
     outline: none;
@@ -176,7 +176,7 @@ body {
     /* float: right; */
     color: #fff;
     font-size: 16px;
-    padding: 15px 80px;
+    padding: 10px 35px;
     border-radius: 50px;
     display: inline-block;
     border: 0;
@@ -192,23 +192,27 @@ body {
   }
   
   label::before {
-    position: relative;
+    content: ' \f00c';
+    position: absolute;
+    font-family: FontAwesome;
     background: transparent;
-    border: 3px solid black;
+    border: 3px solid #70F570;
+    border-radius: 4px;
     color: transparent;
     left: -30px;
     transition: all 0.2s linear;
   }
   
   label:hover::before {
-
+    font-family: FontAwesome;
+    content: ' \f00c';
     color: #fff;
     cursor: pointer;
     background: #70F570;
   }
   
   label:hover::before .text-checkbox1 {
-    background: white;
+    background: #70F570;
   }
   
   label span.text-checkbox1 {
@@ -223,27 +227,12 @@ body {
     display: none;
   }
 
-  /* .password-shown-button1{
+  .password-shown-button1{
     border-style: none;
     background-color:white;
-    color: grey;
+    color: red;
     position: relative;
     right: 0;
-    left: 140px;
+    left: 150px;
     bottom: 30px;
-  } */
-
-  /* -------- password visibility --------- */
-  .password-shown-button-1{
-    border-style: none;
-    background-color:white;
-    position: relative;
-    left: 40%;
-    bottom: 40px;
-  }
-  
-  .password-eye-1{
-    font-size: 25px;
-    font-weight: bold;
-    color:red;
   }
