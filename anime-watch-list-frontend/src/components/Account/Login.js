@@ -25,6 +25,7 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
 
     // to check if the email + password are the same in the dataloader -- alert will state if it is wrong
     const handleLogin = (event) =>{
+      console.log(event)
       const currentUser = allUsers.filter(user => user.email == inputEmail.current.value &&
         user.password == inputPassword.current.value);
         
@@ -44,6 +45,8 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
           setPasswordShown(!passwordShown);
       }
 
+      
+
   return (
     <div> 
       <form className="box-form">
@@ -60,13 +63,16 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
         <p>Don't have an account? <a href="/account"> Create Your Account</a> it takes less than a minute</p>
         <div className="inputs">
 
-        <p className="sign-up-input-title">Your Email</p>
-        <input type="text" ref={inputEmail} className="sign-up-input-box-1"/>
+        <p className="sign-up-input-title"></p>
+        <br/>
+        <input type="text" ref={inputEmail} placeholder="Email" className="sign-up-input-box-1"/>
         <p className="new-user-email"></p>
 
-        <p className="sign-up-input-title">Password</p>
-        <input type={passwordShown? "text" : "password"} ref={inputPassword} className="sign-up-input-box-1"/><br/>
-        <button onClick={handlePasswordShown} className="password-shown-button">{passwordShown ? <AiOutlineEye className="password-eye" /> : <AiOutlineEyeInvisible className="password-eye" />}</button>
+        <p className="sign-up-input-title"></p>
+        <br/>
+        <input type={passwordShown? "text" : "password"} ref={inputPassword} placeholder="Password" className="sign-up-input-box-1"/><br/>
+        <button onClick={handlePasswordShown} className="password-shown-button-1">{passwordShown ? <AiOutlineEye className="password-eye-1" /> : <AiOutlineEyeInvisible className="password-eye-1" />}</button>
+
         <p className="new-user-password"></p>
         <br/>
         </div>
@@ -75,6 +81,7 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
             {/* <input type="checkbox" name="item" checked/> */}
             <input type="checkbox" id='sign-up-condition-box' className='sign-up-terms-box' />
             <span class="text-checkbox1">Remember me</span>
+
             <p>forget password?</p>
         </div>
           <br/>

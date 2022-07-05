@@ -232,3 +232,18 @@ body {
     left: 140px;
     bottom: 30px;
   } */
+
+  /* -------- password visibility --------- */
+  .password-shown-button-1{
+    border-style: none;
+    background-color:white;
+    position: relative;
+    left: 40%;
+    bottom: 40px;
+  }
+  
+  .password-eye-1{
+    font-size: 25px;
+    font-weight: bold;
+    color:red;
+  }

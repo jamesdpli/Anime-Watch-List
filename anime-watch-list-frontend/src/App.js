@@ -11,13 +11,25 @@ import SigninForm from "./components/Account/SignUp";
 import AnimeContainer from "./containers/AnimeContainers";
 import usePersistedState from "./containers/usePersistedState";
 import RenderedAnimeList from "./components/RenderedAnime/RenderedAnimeList";
-import { React } from "react";
+import { React, useState } from "react";
 import WatchLists from "./components/UserWatchList/WatchLists";
+
 
 function App() {
 // is the user logged on - true or false
 const [isLogin, setIsLogin] = usePersistedState('isLogin',false);
 const [currentAnimeAcc, setCurrentAnimeAcc] = usePersistedState('currentAnimeAcc', {});
+
+const [users, setUsers] = useState([]);
+const postUser = (newUser) => {
+    fetch("http://localhost:8080/users", {
+        method:"POST",
+        headers: {"Content-Type": "application/json"},
+        body:JSON.stringify(newUser)
+    })
+    .then(response => response.json())
+    .then(savedUser => setUsers([...users, savedUser]))
+}
 
 return (
     <Router>
@@ -43,7 +55,7 @@ return (
                                                                     setCurrentAnimeAcc={setCurrentAnimeAcc}/>: 
                                                         <SigninForm isLogin={isLogin} setIsLogin={setIsLogin}
                                                                 currentAnimeAcc={currentAnimeAcc}
-                                                                setCurrentAnimeAcc={setCurrentAnimeAcc} />}/>
+                                                                setCurrentAnimeAcc={setCurrentAnimeAcc} postUser={postUser}/>}/>
                 <Route path='/login' element={<LoginPage isLogin={isLogin} setIsLogin={setIsLogin}
                                                             currentAnimeAcc={currentAnimeAcc}
                                                             setCurrentAnimeAcc={setCurrentAnimeAcc}/>}/>
