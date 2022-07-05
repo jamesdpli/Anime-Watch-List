@@ -7,6 +7,8 @@ import {AiOutlineEye, AiOutlineEyeInvisible} from "react-icons/ai"
 // import demonSlayer from "../assets/demonSlayer.mp4";
 // import zenitsu from "../FirstPage/zenitsu.mp4";
 import "./Login.css";
+import "./SignUp";
+
 
 const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
 
@@ -67,23 +69,28 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
 
         <div className="inputs">
 
-        <p className="sign-up-input-title">Your Email</p>
-        <input type="text" ref={inputEmail} className="sign-up-input-box"  />
+        <p className="sign-up-input-title"></p>
+        <br/>
+        <input type="text" ref={inputEmail} placeholder="Email" className="sign-up-input-box"  />
         <p className="new-user-email"></p>
 
-        <p className="sign-up-input-title">Password</p>
-        <input type={passwordShown? "text" : "password"} ref={inputPassword} className="sign-up-input-box" /><br/>
-        <button onClick={handlePasswordShown} className="password-shown-button1">{passwordShown? <AiOutlineEye className="password-eye-1"/> : <AiOutlineEyeInvisible className="password-eye-1"/>}</button>
+        <p className="sign-up-input-title"></p>
+        <br/>
+        <input type={passwordShown? "text" : "password"}  placeholder="Password" ref={inputPassword} className="sign-up-input-box" /><br/>
+        <button 
+            onClick={handlePasswordShown} 
+            className="password-shown-button">{passwordShown ? <AiOutlineEye className="password-eye" /> : <AiOutlineEyeInvisible className="password-eye" />}</button>
         <p className="new-user-password"></p>
         <br/>
         </div>
-        <br></br>
+
+        <br/>
         <div className="remember-me">
-
-
             {/* <input type="checkbox" name="item" checked/> */}
-            <input type="checkbox" id='sign-up-condition-box' className='sign-up-terms-box' />
+            {/* Redo the mini box -- not on the side of the remember me */}
+            <input type="checkbox" id='sign-up-condition-box' className='sign-up-terms-box'/>
             <span className="text-checkbox1">Remember me</span>
+            
 
             <p>forget password?</p>
         </div>
