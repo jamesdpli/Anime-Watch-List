@@ -12,6 +12,7 @@ import AnimeContainer from "./containers/AnimeContainers";
 import usePersistedState from "./containers/usePersistedState";
 import RenderedAnimeList from "./components/RenderedAnime/RenderedAnimeList";
 import { React } from "react";
+import WatchLists from "./components/UserWatchList/WatchLists";
 
 function App() {
 // is the user logged on - true or false
@@ -37,6 +38,7 @@ return (
                 <Route path='/' element={<Home/>}/>
                 <Route path='/home' element={<Home/>}/>
                 <Route exact path='/explore/' element={<Explore/>}/>
+                <Route exact path='/userWatchList' element={<WatchLists/>}/>
                 <Route path='/account' element={isLogin? <Account currentAnimeAcc={currentAnimeAcc}
                                                                     setCurrentAnimeAcc={setCurrentAnimeAcc}/>: 
                                                         <SigninForm isLogin={isLogin} setIsLogin={setIsLogin}
