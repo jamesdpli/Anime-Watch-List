@@ -5,11 +5,13 @@ import Home from "./components/Home";
 import Explore from "./components/Explore/Explore";
 import Account from "./components/Account/Account";
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoginPage from "./components/Account/Login";
 import SigninForm from "./components/Account/SignUp";
 import AnimeContainer from "./containers/AnimeContainers";
 import usePersistedState from "./containers/usePersistedState";
+import RenderedAnimeList from "./components/RenderedAnime/RenderedAnimeList";
+import { React } from "react";
 
 function App() {
 // is the user logged on - true or false
@@ -34,7 +36,7 @@ return (
             <Routes>
                 <Route path='/' element={<Home/>}/>
                 <Route path='/home' element={<Home/>}/>
-                <Route path='/explore' element={<Explore/>}/>
+                <Route exact path='/explore/' element={<Explore/>}/>
                 <Route path='/account' element={isLogin? <Account currentAnimeAcc={currentAnimeAcc}
                                                                     setCurrentAnimeAcc={setCurrentAnimeAcc}/>: 
                                                         <SigninForm isLogin={isLogin} setIsLogin={setIsLogin}
@@ -44,6 +46,7 @@ return (
                                                             currentAnimeAcc={currentAnimeAcc}
                                                             setCurrentAnimeAcc={setCurrentAnimeAcc}/>}/>
                 {/* <Route path='/signup' element={<SigninForm/>}/> */}
+                <Route path='/explore/:animeName' element={<RenderedAnimeList/>}/>
             </Routes>
         </div>
     </Router>
