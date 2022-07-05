@@ -1,4 +1,4 @@
-import "./SignUp.css";
+// import "./SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
 import { BsTwitter } from "react-icons/bs";
 import { useRef, useState, useEffect } from "react";
@@ -53,41 +53,32 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
       <form className="box-form">
         <div className="left">
           <div className="overlay1">
-            <h1>Hello there!</h1>
-            <p> Are you ready to make lists? </p>
+            <h1>Hello User</h1>
+            <p> text goes here </p>
           </div>
         </div>
 
         <div className="right">
         <h1>Login with</h1>
-
-        <br/>
-        <br/>
-        <p>Don't have an account? <Link href="/account"> Create Your Account</Link> it takes less than a minute</p>
-
+        <p>Don't have an account? <Link to="/account"> Create Your Account</  Link> it takes less than a minute</p>
         <div className="inputs">
 
-        <p className="sign-up-input-title"></p>
-        <br/>
-        <input type="text" ref={inputEmail} placeholder="Email" className="sign-up-input-box-1"/>
+        <p className="sign-up-input-title">Your Email</p>
+        <input type="text" ref={inputEmail} className="sign-up-input-box"  />
         <p className="new-user-email"></p>
 
-        <p className="sign-up-input-title"></p>
-        <br/>
-        <input type={passwordShown? "text" : "password"} ref={inputPassword} placeholder="Password" className="sign-up-input-box-1"/><br/>
-        <button onClick={handlePasswordShown} className="password-shown-button-1">{passwordShown ? <AiOutlineEye className="password-eye-1" /> : <AiOutlineEyeInvisible className="password-eye-1" />}</button>
-
+        <p className="sign-up-input-title">Password</p>
+        <input type={passwordShown? "text" : "password"} ref={inputPassword} className="sign-up-input-box" /><br/>
+        <button onClick={handlePasswordShown} className="password-shown-button1">{passwordShown? <AiOutlineEye className="password-eye-1"/> : <AiOutlineEyeInvisible className="password-eye-1"/>}</button>
         <p className="new-user-password"></p>
         <br/>
         </div>
         <br></br>
         <div className="remember-me">
-
-            {/* <input type="checkbox" name="item" checked/> */}
-            <input type="checkbox" id='sign-up-condition-box' className='sign-up-terms-box' />
-            <span class="text-checkbox1">Remember me</span>
-
-
+          <label>
+            <input type="checkbox" name="item"  />
+            <span className="text-checkbox1"> Remember me</span>
+          </label>
             <p>forget password?</p>
         </div>
           <br/>

@@ -6,7 +6,6 @@ const Footer = () => {
     return(
         <footer id="footer">
         <div id="footer-left-side">
-            <br/>
             <p className="random-words">
             Corporis ut aliquid qui molestiae. Sed laborum sunt recusandae
             animi dolore voluptates.
