@@ -37,6 +37,7 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
         setCurrentAnimeAcc(currentUser[0]);
         setIsLogin(!isLogin);
         navigate('/explore');
+        
         }
 
         // to show the password or not
@@ -59,9 +60,11 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
 
         <div className="right">
         <h1>Login with</h1>
+
         <br/>
         <br/>
-        <p>Don't have an account? <a href="/account"> Create Your Account</a> it takes less than a minute</p>
+        <p>Don't have an account? <Link href="/account"> Create Your Account</Link> it takes less than a minute</p>
+
         <div className="inputs">
 
         <p className="sign-up-input-title"></p>
@@ -79,9 +82,11 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
         </div>
         <br></br>
         <div className="remember-me">
+
             {/* <input type="checkbox" name="item" checked/> */}
             <input type="checkbox" id='sign-up-condition-box' className='sign-up-terms-box' />
             <span class="text-checkbox1">Remember me</span>
+
 
             <p>forget password?</p>
         </div>

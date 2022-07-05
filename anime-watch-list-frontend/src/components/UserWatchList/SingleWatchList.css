@@ -1,0 +1,66 @@
+.singleWatchList-container {
+    display: flex;
+    border-radius: 1.5rem;
+    margin: 1.5rem;
+    background-color: rgb(199, 199, 199);
+    width: 90%;
+}
+
+
+.anime-info-Container {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+}
+
+.headerAndRemoveBtn-container {
+    display: flex;
+    border-radius: 1.5rem;
+    width: 100%;
+}
+
+.headerAndRemoveBtn-container h2 {
+
+    display: flex;
+    justify-content: center;
+    flex: 12;
+}
+
+.headerAndRemoveBtn-container button {
+    border-radius: 1rem;
+    color: rgb(250, 61, 61);
+
+    font-size: 1.75rem;
+    background-color: rgb(199, 199, 199);
+    display: flex;
+    flex: 1;
+    border: 0;
+    width: 100%;
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.headerAndRemoveBtn-container button:hover {
+    font-size: 1.9rem;
+    color: rgb(165, 0, 0);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.image-container {
+    display: flex;
+
+
+}
+
+.image-container img {
+    width: 90%;
+    border-radius: 1rem;
+
+}
+
+.description{
+    margin: 2rem;
+}

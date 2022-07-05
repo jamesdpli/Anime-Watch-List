@@ -1,7 +1,9 @@
 import SingleWatchList from "./SingleWatchList";
 import { useState, useEffect } from 'react';
+import "./WatchListPage.css"
 
-const WatchLists = () => {
+const WatchLists = ({currentAnimeAcc}) => {
+
 
     const [watchListAnimes, setwatchListAnimes] = useState([]);
 
@@ -36,7 +38,7 @@ const WatchLists = () => {
         .then((response) => response.json())
         .then((users) => {
           setUsers(users)
-          setLoggedInUser(users[0])
+          setLoggedInUser(currentAnimeAcc)
         })
     }, [])
 
@@ -109,8 +111,6 @@ const WatchLists = () => {
                                 eachAnimeInWatchList ={eachWatchList.anime} 
                                 deleteWatchList = {deleteWatchList}
                                 watchListId = {eachWatchList.id}
-                                removeBtnState ={removeBtnState}
-                                setRemoveBtnState ={setRemoveBtnState}
                                 userWatchListAnimes ={userWatchListAnimes}
                                 setUserWatchListAnimes ={setUserWatchListAnimes}
  
@@ -123,8 +123,12 @@ const WatchLists = () => {
     
     return(
         <>
-        <h1>Hello from WatchLists</h1>
+        <h1 className="header">My WatchLists</h1>
+        <div className="watchListContainer">
         {eachWatchListAnime}
+
+
+        </div>
         </>
     )
 }

@@ -6,6 +6,7 @@ import "./Login.css";
 import { useRef, useState } from "react";
 
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { Link } from "react-router-dom";
 // import React, {useState} from "react";
 // import {BsTwitter} from 'react-icons/bs'; // npm install react-icons
 
@@ -91,13 +92,14 @@ const SignUp = ({postUser}) => {
         <br/>
 
         <button className='sign-up-btn'>Sign up</button><br/><br/>
-        <p>Do you already have an <a href="/login">account</a>?</p>
+        <p>Do you already have an <Link to="/login">account</Link>?</p>
         </div>
         
 
         {/* <input type="checkbox" id='sign-up-condition-box' className='sign-up-terms-box' />
         <label htmlFor="sign-up-condition-box" >I agree to terms & conditions.</label>
         <br /> */}
+
       </form>
     </div>
   );

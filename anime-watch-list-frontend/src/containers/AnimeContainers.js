@@ -25,8 +25,8 @@ const AnimeContainer = ({ isLogin, setIsLogin, currentAnimeAcc, setCurrentAnimeA
                 <div className="dropdown">
                 <button className="dropbtn"> Account</button>
                     <div className="dropdown-content" styleleft="left:0">
-                    <a><Link to='/account'>{isLogin ? "Account" : "Sign Up"}</Link></a>
-                    <a onClick={handleLogin}><Link to='/login'>{isLogin ? "Logout" : "Login"}</Link></a>
+                    <Link to='/account'>{isLogin ? "Account" : "Sign Up"}</Link>
+                   <Link to='/login'  onClick={handleLogin}>{isLogin ? "Logout" : "Login"}</Link>
                     </div>
                 </div>
             </ul>

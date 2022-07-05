@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import RenderedAnime from "./RenderedAnime"
 
-const RenderedAnimeList = () => {
+const RenderedAnimeList = ({currentAnimeAcc}) => {
   const [renderedAnime, setRenderedAnime] = useState([]);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const RenderedAnimeList = () => {
       .then((response) => response.json())
       .then((users) => {
         setUsers(users)
-        setLoggedInUser(users[0])
+        setLoggedInUser(currentAnimeAcc)
       })
   }, [])
 
