@@ -109,20 +109,37 @@ const SignUp = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
         <p className="or-line"><span>Or</span></p>
         <br/> */}
         <p className="sign-up-input-title">Your username</p>
-        <input type="text" ref={inputNewUsername} onChange={handleExisitedUserName} className="sign-up-input-box"/>
+        <input 
+            type="text" 
+            ref={inputNewUsername} 
+            onChange={handleExisitedUserName} 
+            className="sign-up-input-box"/>
         <p className="new-user-username"></p>
 
+{/* ADD DOB HERE */}
         <p className="sign-up-input-title">Your Email</p>
-        <input type="text" ref={inputNewEmail} onChange={handleCorrectEmail} className="sign-up-input-box"/>
+        <input 
+            type="text" 
+            ref={inputNewEmail} 
+            onChange={handleCorrectEmail} 
+            className="sign-up-input-box"/>
         <p className="new-user-email"></p>
 
         <p className="sign-up-input-title">Password</p>
-        <input type={passwordShown? "text" : "password"} ref={inputNewPassword} className="sign-up-input-box"/><br/>
-        <button onClick={handlePasswordShown} className="password-shown-button">{passwordShown ? <AiOutlineEye className="password-eye" /> : <AiOutlineEyeInvisible className="password-eye" />}</button>
+        <input 
+            type={passwordShown? "text" : "password"} 
+            ref={inputNewPassword} 
+            className="sign-up-input-box"/><br/>
+        <button 
+            onClick={handlePasswordShown} 
+            className="password-shown-button">{passwordShown ? <AiOutlineEye className="password-eye" /> : <AiOutlineEyeInvisible className="password-eye" />}</button>
         <p className="new-user-password"></p>
         <br/>
 
-        <input type="checkbox" id='sign-up-condition-box' className='sign-up-terms-box' />
+        <input 
+            type="checkbox" 
+            id='sign-up-condition-box' 
+            className='sign-up-terms-box' />
         <label htmlFor="sign-up-condition-box" >I agree to terms & conditions.</label>
         <br />
 
