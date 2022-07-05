@@ -8,20 +8,8 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const SignUp = ({postUser}) => {
 
-    // const inputNewEmail = useRef();
-    // const inputNewPassword = useRef();
-    // const inputNewUsername = useRef();
-    // const [allUsers, setAllUsers] = useState();
     const [allowedSignup, setAllowedSignup] = useState([false, false, false]);
     
-
-  //   // Getting all users
-  //   console.log(allowedSignup);
-  //   useEffect(() => {
-  //     fetch("http://localhost:8080/users")
-  //         .then(response => response.json())
-  //         .then(data => setAllUsers(data))
-  // }, []);
 
   const [passwordShown, setPasswordShown] = useState(false);
   const[stateUser, setStateUser] = useState({
@@ -46,77 +34,6 @@ const SignUp = ({postUser}) => {
     postUser(stateUser);
 }
 
-    // POST Mapping for creating a new user --- can change 
-    // const handleSignUp = (event) => {
-    //   console.log(event);
-    //   event.preventDefault();
-    //   postUser(stateUser);
-
-    //   if (allowedSignup.includes(false)) return;
-
-    //   const newUser = {
-    //       username: inputNewUsername.current.value,
-    //       password: inputNewPassword.current.value,
-    //       email: inputNewEmail.current.value,
-    //   };
-
-    // }
-    //   // POSTing the new user data into the db -- this does not function replaced xAnimeUser to xUser
-    //   fetch("http://localhost:8080/users",
-    //         {
-    //             method: 'POST',
-    //             headers: { 'Content-Type': 'application/json' },
-    //             body: JSON.stringify(newUser)
-    //         })
-    //         .then(response => response.json())
-    //         .then(savedUser => setAllUsers(...allUsers, savedUser))
-    //     setIsLogin(!isLogin);
-    // }
-
-
-  //     // Add an account and password checker with an action to say if it is wrong
-  //     const handleExisitedUserName = () => {
-  //       const allUserNames = allUsers.map(user => { return user.username; });
-  //       // initialise a checker, index 0
-  //       let userNameChecker = [false, allowedSignup[1], allowedSignup[2]];
-  //       if (allUserNames.includes(inputNewUsername.current.value)) {
-  //           document.querySelector('.new-user-username-input').innerHTML = "This username already exists";
-
-  //           // didn't pass the username checker
-  //           setAllowedSignup(userNameChecker);
-
-  //       }
-  //       else {
-  //           document.querySelector('.new-user-username-input').innerHTML = "";
-
-  //           // pass username checker
-  //           userNameChecker = [true, allowedSignup[1], allowedSignup[2]];
-  //           setAllowedSignup(userNameChecker);
-
-  //       }
-
-  //   }
-
-  //   const handleCorrectEmail = () => {
-  //     // initialise a checker, index 1
-  //     let userEmailChecker = [allowedSignup[0], false, allowedSignup[2]];
-
-  //     if (!inputNewEmail.current.value.includes("@")) {
-  //         document.querySelector('.new-user-email-input').innerHTML = "Please put in the correct email"
-
-  //         // didn't pass the email checker
-  //         setAllowedSignup(userEmailChecker);
-  //     }
-  //     else {
-  //         document.querySelector('.new-user-email-input').innerHTML = "";
-
-  //         // pass email checker
-  //         userEmailChecker = [allowedSignup[0], true, allowedSignup[2]];
-  //         setAllowedSignup(userEmailChecker);
-
-  //     }
-  // }
-
       // To show password or not
       
       const handlePasswordShown = (event) => {
@@ -128,15 +45,6 @@ const SignUp = ({postUser}) => {
     <div className="sign-up-container">
       <form onSubmit={handleFormSubmit} className="sign-up-form">
         <h1 className="sign-up-title">Sign Up with</h1>
-
-
-        {/* <p className="sign-up-input-title">Your username</p>
-        <input 
-            type="text" 
-            onChange={handleChange}
-            className="sign-up-input-box"
-            value={stateUser.name}  />
-        <p className="new-user-username"></p> */}
 
       <p className="sign-up-input-title">Your name <br/> 
         <input type="text"  name="name" onChange={handleChange} value={stateUser.name}  className="sign-up-input-box"
@@ -154,28 +62,11 @@ const SignUp = ({postUser}) => {
           />
         </p>
 
-
-        {/* <p className="sign-up-input-title">Your Email</p>
-        <input 
-            type="text" 
-            // ref={inputNewEmail}
-            onChange={handleChange}
-            className="sign-up-input-box"
-            value={stateUser.email}/>
-        <p className="new-user-email"></p> */}
-
       <p className="sign-up-input-title">Enter email: 
         <br/> 
         <input type="text" placeholder="email" name="email" onChange={handleChange} value={stateUser.email} className="sign-up-input-box"/>
       </p>
 
-        {/* <p className="sign-up-input-title">Password</p>
-        <input 
-            type={passwordShown? "text" : "password"}
-            // ref={inputNewPassword} 
-            className="sign-up-input-box"
-            onChange={handleChange}
-            value={stateUser.password}/> */}
         <p className="sign-up-input-title">Set password: </p>
        
         <input type={passwordShown? "text" : "password"} placeholder="new password" name="password" onChange={handleChange} value={stateUser.password} className="sign-up-input-box"   
