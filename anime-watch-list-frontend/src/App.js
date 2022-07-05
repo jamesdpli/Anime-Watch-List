@@ -11,12 +11,9 @@ import SigninForm from "./components/Account/SignUp";
 import AnimeContainer from "./containers/AnimeContainers";
 import usePersistedState from "./containers/usePersistedState";
 import RenderedAnimeList from "./components/RenderedAnime/RenderedAnimeList";
-<<<<<<< HEAD
 import { React, useState } from "react";
-=======
-import { React } from "react";
 import WatchLists from "./components/UserWatchList/WatchLists";
->>>>>>> main
+
 
 function App() {
 // is the user logged on - true or false
