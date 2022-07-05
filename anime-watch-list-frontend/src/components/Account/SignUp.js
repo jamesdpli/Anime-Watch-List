@@ -1,106 +1,124 @@
 // import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import "./SignUp.css";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 // import React, {useState} from "react";
 // import {BsTwitter} from 'react-icons/bs'; // npm install react-icons
 
 
-const SignUp = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
+const SignUp = ({postUser}) => {
 
     const inputNewEmail = useRef();
     const inputNewPassword = useRef();
     const inputNewUsername = useRef();
-    const [allUsers, setAllUsers] = useState();
-    const [passwordShown, setPasswordShown] = useState(false);
+    // const [allUsers, setAllUsers] = useState();
     const [allowedSignup, setAllowedSignup] = useState([false, false, false]);
+    
 
-    const[stateUser, setStateUser] = useState({
-      name: "",
-      dob: "",
-      email: "",
-      password: "",
-      watchLists: []
-    });
+  //   // Getting all users
+  //   console.log(allowedSignup);
+  //   useEffect(() => {
+  //     fetch("http://localhost:8080/users")
+  //         .then(response => response.json())
+  //         .then(data => setAllUsers(data))
+  // }, []);
 
-    // Getting all users
-    console.log(allowedSignup);
-    useEffect(() => {
-      fetch("http://localhost:8080/users")
-          .then(response => response.json())
-          .then(data => setAllUsers(data))
-  }, []);
+  const [passwordShown, setPasswordShown] = useState(false);
+  const[stateUser, setStateUser] = useState({
+    name: "",
+    dob: "",
+    email: "",
+    password: "",
+    watchLists: []
+  });
+
+
+  const handleChange = (event) => {
+    console.log(event);
+    let userName = event.target.name;
+    let copiedUser = {...stateUser}
+    copiedUser[userName] = event.target.value;
+    setStateUser(copiedUser);
+  }
+  
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    postUser(stateUser);
+}
 
     // POST Mapping for creating a new user --- can change 
-    const handleSignUp = (event) => {
-      console.log(event);
-      event.preventDefault();
+    // const handleSignUp = (event) => {
+    //   console.log(event);
+    //   event.preventDefault();
+    //   postUser(stateUser);
 
-      if (allowedSignup.includes(false)) return;
+    //   if (allowedSignup.includes(false)) return;
 
-      const newUser = {
-          username: inputNewUsername.current.value,
-          password: inputNewPassword.current.value,
-          email: inputNewEmail.current.value,
-      };
+    //   const newUser = {
+    //       username: inputNewUsername.current.value,
+    //       password: inputNewPassword.current.value,
+    //       email: inputNewEmail.current.value,
+    //   };
 
-    
-      // POSTing the new user data into the db -- this does not function replaced xAnimeUser to xUser
-      fetch("http://localhost:8080/users",
-            {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(newUser)
-            })
-            .then(response => response.json())
-            .then(savedUser => setCurrentAnimeAcc(savedUser))
-        setIsLogin(!isLogin);
-      }
+    // }
+    //   // POSTing the new user data into the db -- this does not function replaced xAnimeUser to xUser
+    //   fetch("http://localhost:8080/users",
+    //         {
+    //             method: 'POST',
+    //             headers: { 'Content-Type': 'application/json' },
+    //             body: JSON.stringify(newUser)
+    //         })
+    //         .then(response => response.json())
+    //         .then(savedUser => setAllUsers(...allUsers, savedUser))
+    //     setIsLogin(!isLogin);
+    // }
 
-      // Add an account and password checker with an action to say if it is wrong
-      const handleExisitedUserName = () => {
-        const allUserNames = allUsers.map(user => { return user.username; });
-        // initialise a checker, index 0
-        let userNameChecker = [false, allowedSignup[1], allowedSignup[2]];
-        if (allUserNames.includes(inputNewUsername.current.value)) {
-            document.querySelector('.new-user-username-input').innerHTML = "This username already exists";
 
-            // didn't pass the username checker
-            setAllowedSignup(userNameChecker);
+  //     // Add an account and password checker with an action to say if it is wrong
+  //     const handleExisitedUserName = () => {
+  //       const allUserNames = allUsers.map(user => { return user.username; });
+  //       // initialise a checker, index 0
+  //       let userNameChecker = [false, allowedSignup[1], allowedSignup[2]];
+  //       if (allUserNames.includes(inputNewUsername.current.value)) {
+  //           document.querySelector('.new-user-username-input').innerHTML = "This username already exists";
 
-        }
-        else {
-            document.querySelector('.new-user-username-input').innerHTML = "";
+  //           // didn't pass the username checker
+  //           setAllowedSignup(userNameChecker);
 
-            // pass username checker
-            userNameChecker = [true, allowedSignup[1], allowedSignup[2]];
-            setAllowedSignup(userNameChecker);
+  //       }
+  //       else {
+  //           document.querySelector('.new-user-username-input').innerHTML = "";
 
-        }
+  //           // pass username checker
+  //           userNameChecker = [true, allowedSignup[1], allowedSignup[2]];
+  //           setAllowedSignup(userNameChecker);
 
-    }
+  //       }
 
-    const handleCorrectEmail = () => {
-      // initialise a checker, index 1
-      let userEmailChecker = [allowedSignup[0], false, allowedSignup[2]];
+  //   }
 
-      if (!inputNewEmail.current.value.includes("@")) {
-          document.querySelector('.new-user-email-input').innerHTML = "Please put in the correct email"
+  //   const handleCorrectEmail = () => {
+  //     // initialise a checker, index 1
+  //     let userEmailChecker = [allowedSignup[0], false, allowedSignup[2]];
 
-          // didn't pass the email checker
-          setAllowedSignup(userEmailChecker);
-      }
-      else {
-          document.querySelector('.new-user-email-input').innerHTML = "";
+  //     if (!inputNewEmail.current.value.includes("@")) {
+  //         document.querySelector('.new-user-email-input').innerHTML = "Please put in the correct email"
 
-          // pass email checker
-          userEmailChecker = [allowedSignup[0], true, allowedSignup[2]];
-          setAllowedSignup(userEmailChecker);
+  //         // didn't pass the email checker
+  //         setAllowedSignup(userEmailChecker);
+  //     }
+  //     else {
+  //         document.querySelector('.new-user-email-input').innerHTML = "";
 
-      }
-  }
+  //         // pass email checker
+  //         userEmailChecker = [allowedSignup[0], true, allowedSignup[2]];
+  //         setAllowedSignup(userEmailChecker);
+
+  //     }
+  // }
 
       // To show password or not
+      
       const handlePasswordShown = (event) => {
         event.preventDefault();
         setPasswordShown(!passwordShown);
@@ -108,35 +126,54 @@ const SignUp = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
 
   return (
     <div className="sign-up-container">
-      <form className="sign-up-form">
+      <form onSubmit={handleFormSubmit} className="sign-up-form">
         <h1 className="sign-up-title">Sign Up with</h1>
+
+
         <p className="sign-up-input-title">Your username</p>
         <input 
             type="text" 
-            ref={inputNewUsername} 
-            onChange={handleExisitedUserName} 
+            onChange={handleChange}
             className="sign-up-input-box"/>
         <p className="new-user-username"></p>
 
-{/* ADD DOB HERE */}
+
+        <p className="sign-up-input-title">Enter DOB (YYYY-MM-DD): 
+        <br/>
+          <input 
+            type="text"  
+            name="dob" 
+            onChange={handleChange} 
+            className="sign-up-input-box" 
+            value={stateUser.dob}
+          />
+        </p>
+
+
         <p className="sign-up-input-title">Your Email</p>
         <input 
             type="text" 
-            ref={inputNewEmail} 
-            onChange={handleCorrectEmail} 
-            className="sign-up-input-box"/>
+            // ref={inputNewEmail}
+            onChange={handleChange}
+            className="sign-up-input-box"
+            value={stateUser.email}/>
         <p className="new-user-email"></p>
+
 
         <p className="sign-up-input-title">Password</p>
         <input 
-            type={passwordShown? "text" : "password"} 
-            ref={inputNewPassword} 
-            className="sign-up-input-box"/><br/>
+            type={passwordShown? "text" : "password"}
+            // ref={inputNewPassword} 
+            className="sign-up-input-box"
+            onChange={handleChange}
+            value={stateUser.password}/>
+            <br/>
         <button 
             onClick={handlePasswordShown} 
             className="password-shown-button">{passwordShown ? <AiOutlineEye className="password-eye" /> : <AiOutlineEyeInvisible className="password-eye" />}</button>
         <p className="new-user-password"></p>
         <br/>
+
 
         <input 
             type="checkbox" 
@@ -144,8 +181,7 @@ const SignUp = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
             className='sign-up-terms-box' />
         <label htmlFor="sign-up-condition-box" >I agree to terms & conditions.</label>
         <br />
-
-        <button onClick={handleSignUp} className='sign-up-btn'>Sign up</button>
+        <button className='sign-up-btn'>Sign up</button>
 
         <p>Do you already have an account? <br/><a href="/login" className="link-text-tag">Log in</a></p>
       </form>
