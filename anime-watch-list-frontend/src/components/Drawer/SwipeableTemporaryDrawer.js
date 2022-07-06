@@ -78,20 +78,20 @@ export default function SwipeableTemporaryDrawer() {
               <ListItemIcon>
                 <HomeIcon />
               </ListItemIcon>
-              <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+              <Link to="/home" style={{ textDecoration: "none", color: "black" }}>
                 <ListItemText primary={text} />
               </Link>
             </ListItemButton>
           </ListItem>
         ))}
-        {["Profile"].map((text, index) => (
+        {["Account"].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
                 <PersonIcon />
               </ListItemIcon>
               <Link
-                to="/profile"
+                to="/account"
                 style={{ textDecoration: "none", color: "black" }}
               >
                 <ListItemText primary={text} />
@@ -106,7 +106,7 @@ export default function SwipeableTemporaryDrawer() {
                 <PersonalVideoIcon />
               </ListItemIcon>
               <Link
-                to="/homepage"
+                to="/explore"
                 style={{ textDecoration: "none", color: "black" }}
               >
                 <ListItemText primary={text} />

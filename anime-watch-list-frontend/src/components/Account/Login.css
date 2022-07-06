@@ -62,8 +62,11 @@ video {
 }
 
 .login-form-container {
-  padding-top: 100px;
+  padding-top: 150px;
   padding-bottom: 100px;
+
+  left: 110px;
+  bottom: 35px;
 }
 
 /* -------------- login test -------------- */

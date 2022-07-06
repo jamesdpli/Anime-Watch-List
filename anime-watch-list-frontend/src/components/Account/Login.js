@@ -81,12 +81,12 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
             onClick={handlePasswordShown} 
             className="password-shown-button-1">{passwordShown ? <AiOutlineEye className="password-eye-1" /> : <AiOutlineEyeInvisible className="password-eye-1" />}</button>
         <p className="new-user-password"></p>
-        <br/>
+  
         </div>
         
         <div className="remember-me">
-        <input type="checkbox" className='click-me'/> 
-        <span className="click-me">Remember me</span>
+
+        <span className="click-me">Remember me  <input type="checkbox" className='click-me'/> </span>
         
             <br/>
             

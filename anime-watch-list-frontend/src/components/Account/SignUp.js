@@ -50,21 +50,19 @@ const SignUp = ({postUser}) => {
           <div className="overlay1">
             <h1>Join Us</h1>
             <h1>today!</h1>
-            <br/>
             <p>Be part of a big community!</p>
           </div>
         </div>
         
         <div className="right">
           <h1>Sign Up here</h1>
-          <br/>
-          <p className="sign-up-input-title"><br/> 
+          <p className="sign-up-input-title"> 
         <input type="text"  placeholder="Name" name="name" onChange={handleChange} value={stateUser.name}  className="sign-up-input-box"
         />
       </p>
 
         <p className="sign-up-input-title">
-        <br/>
+    
           <input 
             type="text" 
             placeholder="Enter DOB (YYYY-MM-DD)" 
@@ -75,28 +73,27 @@ const SignUp = ({postUser}) => {
           />
         </p>
 
-      <p className="sign-up-input-title">
-        <br/> 
+      <p className="sign-up-input-title"> 
         <input type="text" placeholder="Email" name="email" onChange={handleChange} value={stateUser.email} className="sign-up-input-box"/>
       </p>
 
         <p className="sign-up-input-title"></p>
-        <br/>
+  
         <input type={passwordShown? "text" : "password"} placeholder="Password" name="password" onChange={handleChange} value={stateUser.password} className="sign-up-input-box"   
         />
-        <br/>
+        
       
           
         <button 
             onClick={handlePasswordShown} 
             className="password-shown-button">{passwordShown ? <AiOutlineEye className="password-eye" /> : <AiOutlineEyeInvisible className="password-eye" />}</button>
         <p className="new-user-password"></p>
-        <br/>
+      
 
 
         <button className='sign-up-btn'>Sign up</button>
 
-        <p>Do you already have an <Link to="/login">account</Link>? <br/></p>
+        <p>Do you already have an <Link to="/login">account</Link>? </p>
       </div>
       </form>
         

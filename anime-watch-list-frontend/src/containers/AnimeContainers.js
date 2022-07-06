@@ -1,5 +1,5 @@
 import './AnimeContainers.css';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useRef } from 'react';
 import { useEffect, useState } from "react";
 import SwipeableTemporaryDrawer from "../components/Drawer/SwipeableTemporaryDrawer"
@@ -37,26 +37,26 @@ const AnimeContainer = ({ isLogin, setIsLogin, currentAnimeAcc, setCurrentAnimeA
       <div className={`nav ${show && "nav-black"}`}>
         <div className="nav-contents">
           <div className="nav-drawer">
-            <Link to="/">
+            <NavLink to="/">
               <img
                 className="nav-logo"
                 src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
                 alt="logo"
               />
-            </Link>
+            </NavLink>
             <SwipeableTemporaryDrawer/>
   
             
           </div>
           <nav className="nav-bar">
 <ul className="nar-ul">
-    <li><Link to='/home'>Home</Link></li>
-    <li><Link to='/explore'>Explore</Link></li>
+    <li><NavLink to='/home'>Home</NavLink></li>
+    <li><NavLink to='/explore'>Explore</NavLink></li>
     <div className="dropdown">
     <button className="dropbtn"> Account</button>
         <div className="dropdown-content" styleleft="left:0">
-        <Link to='/account'>{isLogin ? "Account" : "Sign Up"}</Link>
-       <Link to='/login'  onClick={handleLogin}>{isLogin ? "Logout" : "Login"}</Link>
+        <NavLink to='/account'>{isLogin ? "Account" : "Sign Up"}</NavLink>
+       <NavLink to='/login'  onClick={handleLogin}>{isLogin ? "Logout" : "Login"}</NavLink>
         </div>
     </div>
 </ul>
