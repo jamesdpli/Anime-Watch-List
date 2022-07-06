@@ -5,9 +5,13 @@ const RenderedAnimeList = ({currentAnimeAcc}) => {
   const [renderedAnime, setRenderedAnime] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/animes")
+    setTimeout(() =>{
+      fetch("http://localhost:8080/animes")
       .then((response) => response.json())
       .then((data) => setRenderedAnime(data));
+
+    }, 100)
+
    
   }, []);
 
@@ -121,7 +125,7 @@ const RenderedAnimeList = ({currentAnimeAcc}) => {
     
         })
 
-      }, 50)
+      }, 500)
    
         
     }
