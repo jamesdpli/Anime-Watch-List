@@ -13,10 +13,11 @@
 
     margin-left:100px;
     margin-right:100px;
+    margin-bottom: 40px;
     background-color:transparent;
-    color:rgb(34, 34, 34);
+    color:rgb(232, 225, 225);
     font-weight:900;
-    font-size:30px;
+    font-size:50px;
 
     background-repeat: no-repeat;
     background-position-x:90%;
@@ -25,9 +26,8 @@
 
 .welcome-back-div{
     list-style-type:none;
-    display: flex;
+    margin-right: 100px;
     justify-content: left;
-    padding-left: 0;
 }
 
 .user-name{
@@ -178,31 +178,13 @@ body.welcome {
 /* ------- avatar icon test ------- */
 .avatar {
   vertical-align: middle;
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
+  margin-right: 20px;
 }
 
 
-/* --------- testing expanding cards css project ----------- */
-/* Setting container to flex and width to 80% of view port */
-.container{
-	display: flex;
-	width: 80%;
-}
-/*Adding background image to each section*/
-.one{
-	background: url(https://www.comingsoon.net/assets/uploads/2021/10/mob-psycho-100-season-3.jpg);
-}
-.two{
-	background: url(https://nntheblog.b-cdn.net/wp-content/uploads/2021/09/magi-sinbad-1024x576.jpg);
-}
-.three{
-	background: url(https://theawesomeone.com/wp-content/uploads/2020/12/Solo-Leveling-Anime-1.jpg);
-}
-.four{
-	background: url(https://assets3.thrillist.com/v1/image/2855064/828x1500/flatten;scale;webp=auto;jpeg_quality=60.jpg);
-}
 /* Background properties and transition effect to section */
 .section{
 	background-size: cover;
@@ -223,7 +205,7 @@ body.welcome {
 
 
 .watched-link{
-  background-color: #4CAF50; /* Green */
+  background-color: red; /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -231,6 +213,7 @@ body.welcome {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  font-weight: 100px;
   margin: 4px 2px;
   cursor: pointer;
   -webkit-transition-duration: 0.4s; /* Safari */
@@ -238,7 +221,11 @@ body.welcome {
   z-index: 2;
 }
 
-.button2:hover {
-  box-shadow: 0 12px 16px 0 rgb(238, 235, 235);
-  z-index: 2;
+.anime-parent-container .watch-li > li {
+  text-decoration: none;
+}
+
+.watched-link:hover{
+  background-color: white;
+  color: red;
 }

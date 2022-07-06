@@ -31,11 +31,12 @@ section.addEventListener('click',()=>{
         <div className="account-container">
             <div className="welcomeback-title">
                 <ul className="welcome-back-div">
-                    <li>Welcome back&nbsp;&nbsp;{currentAnimeAcc.name}&nbsp;</li>
-                    <img src="http://pm1.narvii.com/6825/868e382ae2074d0fc7ae1c8a7bcf771e580e776av2_00.jpg" alt="Avatar" className="avatar"/>
+                
+                    <li><img src="http://pm1.narvii.com/6825/868e382ae2074d0fc7ae1c8a7bcf771e580e776av2_00.jpg" alt="Avatar" className="avatar"/>Welcome back&nbsp;&nbsp;{currentAnimeAcc.name}&nbsp;</li>
+                    
                 </ul>
             </div>
-            <div><h2>Explore here</h2></div>
+            
         <div className="anime-container">
         <div className="anime-parent-container">
         <div className="anime-text">
@@ -45,15 +46,19 @@ section.addEventListener('click',()=>{
             </h2>
         </div>
         {/* adding watched list function */}
-        <li className="watched-li"><Link to='/userWatchList'> <button  className="watched-link">My WatchList</button></Link></li>
+        <p className="watched-li"><Link to='/userWatchList'> <button  className="watched-link">My WatchList</button></Link></p>
         </div>
         </div>
+        <br/>
         {/* this bugged out -- does not move anymore */}
-        <div className="container">
-        <div className="section one active"></div>
-        <div className="section two"></div>
-        <div className="section three"></div>
-        <div className="section four"></div>
+        <div className="anime-container">
+        <div><h1>Find more of your favourite anime ....</h1></div>
+            <div className='anime-parent-container'>
+            <div className='anime-text'>
+                <h2>Click here</h2>
+            </div>
+            </div>
+        
         </div>
             {/* <div className="welcome">
             <span id="splash-overlay" class="splash"></span>
