@@ -1,4 +1,4 @@
-import "./SignUp.css";
+// import "./SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
 import { BsTwitter } from "react-icons/bs";
 import { useRef, useState, useEffect } from "react";
@@ -7,6 +7,8 @@ import {AiOutlineEye, AiOutlineEyeInvisible} from "react-icons/ai"
 // import demonSlayer from "../assets/demonSlayer.mp4";
 // import zenitsu from "../FirstPage/zenitsu.mp4";
 import "./Login.css";
+import "./SignUp";
+
 
 const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
 
@@ -53,8 +55,8 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
       <form className="box-form">
         <div className="left">
           <div className="overlay1">
-            <h1>Hello there!</h1>
-            <p> Are you ready to make lists? </p>
+            <h1>Hello User</h1>
+            <p> text goes here </p>
           </div>
         </div>
 
@@ -63,30 +65,32 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
 
         <br/>
         <br/>
-        <p>Don't have an account? <Link href="/account"> Create Your Account</Link> it takes less than a minute</p>
+        <p>Don't have an account? <Link to="/account"> Create Your Account</Link> it takes less than a minute</p>
 
         <div className="inputs">
 
         <p className="sign-up-input-title"></p>
         <br/>
-        <input type="text" ref={inputEmail} placeholder="Email" className="sign-up-input-box-1"/>
+        <input type="text" ref={inputEmail} placeholder="Email" className="sign-up-input-box"  />
         <p className="new-user-email"></p>
 
         <p className="sign-up-input-title"></p>
         <br/>
-        <input type={passwordShown? "text" : "password"} ref={inputPassword} placeholder="Password" className="sign-up-input-box-1"/><br/>
-        <button onClick={handlePasswordShown} className="password-shown-button-1">{passwordShown ? <AiOutlineEye className="password-eye-1" /> : <AiOutlineEyeInvisible className="password-eye-1" />}</button>
-
+        <input type={passwordShown? "text" : "password"}  placeholder="Password" ref={inputPassword} className="sign-up-input-box" /><br/>
+        <button 
+            onClick={handlePasswordShown} 
+            className="password-shown-button">{passwordShown ? <AiOutlineEye className="password-eye" /> : <AiOutlineEyeInvisible className="password-eye" />}</button>
         <p className="new-user-password"></p>
         <br/>
         </div>
-        <br></br>
+
+        <br/>
         <div className="remember-me">
-
             {/* <input type="checkbox" name="item" checked/> */}
-            <input type="checkbox" id='sign-up-condition-box' className='sign-up-terms-box' />
-            <span class="text-checkbox1">Remember me</span>
-
+            {/* Redo the mini box -- not on the side of the remember me */}
+            <input type="checkbox" id='sign-up-condition-box' className='sign-up-terms-box'/>
+            <span className="text-checkbox1">Remember me</span>
+            
 
             <p>forget password?</p>
         </div>
