@@ -10,7 +10,7 @@ const RenderedAnimeList = ({currentAnimeAcc}) => {
       .then((response) => response.json())
       .then((data) => setRenderedAnime(data));
 
-    }, 100)
+    }, 250)
 
    
   }, []);
