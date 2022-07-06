@@ -107,7 +107,7 @@ public class DataLoader implements ApplicationRunner {
                 4.5,500, false,"https://media.kitsu.io/anime/41071/poster_image/medium-a4eb2d884a8d4ff6498113309c97f0da.jpeg","https://media.kitsu.io/anime/cover_images/41071/original.jpg" );
         Anime blackClover = new Anime("Black Clover", LocalDate.of(2015,10,05),"test",
                 4.5,500, false,"https://media.kitsu.io/anime/poster_images/13209/medium.jpg",
-                "https://media.kitsu.io/anime/cover_images/789/original.jpeg");
+                "https://media.kitsu.io/anime/cover_images/13209/large.jpg");
         Anime dragonBall = new Anime("Dragon Ball", LocalDate.of(1986, 02, 26),
                 "Gokuu Son is a young boy who lives in the woods all alone—that is, until a girl named Bulma runs into" +
                 " him in her search for a set of magical objects called the \\\"Dragon Balls.\\",8.8,
