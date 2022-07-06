@@ -5,16 +5,16 @@ import "./searchBar.css";
 function SearchBar() {
   return (
     <div className="searchBar">
-      <h1 className="searchBar-title">Explore Animu</h1>
+      {/* <h1 className="searchBar-title">Explore Animu</h1>
       <div className="filter-container">
 
-        {/* Search functionality -- insert here */}
+        Search functionality -- insert here
         <div className="filter-input">
           <label className="filter-label">Search</label>
           <input />
         </div>
 
-        {/* Drop down list for filtering and searching genres -- insert here */}
+        Drop down list for filtering and searching genres -- insert here
         <div className="filter-input">
           <label className="filter-label">Genre</label>
           <input />
@@ -23,7 +23,7 @@ function SearchBar() {
           <label className="filter-label">?</label>
           <input />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
