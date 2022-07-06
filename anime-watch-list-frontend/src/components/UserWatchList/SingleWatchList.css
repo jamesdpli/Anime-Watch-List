@@ -4,6 +4,9 @@
     margin: 1.5rem;
     background-color: rgb(199, 199, 199);
     width: 90%;
+    box-shadow: 0 3px 0 5px gray;
+    box-shadow: linear-gradient(20deg, black, transparent 50%) bottom;
+
 }
 
 
@@ -11,12 +14,14 @@
     display: flex;
     flex: 2;
     flex-direction: column;
+
 }
 
 .headerAndRemoveBtn-container {
     display: flex;
     border-radius: 1.5rem;
     width: 100%;
+    margin: 1rem 0 1.5rem 0;
 }
 
 .headerAndRemoveBtn-container h2 {
@@ -63,4 +68,54 @@
 
 .description{
     margin: 2rem;
+    text-align: left;
+}
+
+.anime-info1{
+    display: flex;
+    margin-bottom: 1rem;
+
+}
+
+.anime-info1 h5{
+    border: 1px solid rgb(119, 119, 119);
+
+    flex:1;
+    margin-right: 1rem;
+}
+
+.anime-info1 h4{
+    flex:4;
+    text-align: left;
+    width: 100%;
+}
+
+.genre-container{
+
+    display: flex;
+}
+
+.genre-container h4{
+    padding-right:1rem;
+    display: flex;
+    align-items: center;
+}
+
+.genre-container h5{
+    display: flex;
+    align-items: center;
+ 
+
+    
+}
+
+.each-genre{
+    border: 1px solid rgb(109, 109, 109);
+    background-color: rgba(182, 182, 182, 0.555);
+    border-radius: 0.3rem;
+    padding:0.2rem;
+    display: flex;
+    margin-right: 0.5rem;
+    font-weight: bolder;
+   
 }
