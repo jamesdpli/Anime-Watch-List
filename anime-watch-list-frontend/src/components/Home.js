@@ -2,7 +2,7 @@
 import MoreInfo from "./MoreInfo";
 import demonSlayer from "../assets/demonSlayer.mp4";
 import "./Home.css";
-import Footer from "./Footer/Footer";
+
 
 
 const Home = () => {

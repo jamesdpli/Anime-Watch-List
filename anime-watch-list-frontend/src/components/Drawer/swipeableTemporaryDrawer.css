@@ -1,0 +1,7 @@
+.drawer-menu {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 0px;
+    padding-top: 20px;
+}

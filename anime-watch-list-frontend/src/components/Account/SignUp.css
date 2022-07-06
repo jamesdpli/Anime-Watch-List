@@ -214,7 +214,6 @@
 
 /* ---------- box stuff ------------ */
 body {
-  background-image: linear-gradient(135deg, #9f9c9f 10%, #1e1e23 100%);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

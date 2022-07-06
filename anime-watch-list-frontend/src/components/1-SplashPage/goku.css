@@ -1,0 +1,224 @@
+.animated-main{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+  }
+
+.animated-container {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding-left: 15%;
+    padding-top: 20%;
+}
+
+.body-textWriter2 {
+    font-family: "Source Sans Pro";
+    margin: 0;
+    padding-right: 80px;
+}
+
+.body-textWriter2 h1 {
+    font-size: 60px;
+}
+
+  
+  .animated-box {
+    width: 530px;
+    height: 626px;
+    background-image: url("https://archive.org/download/GokuSsjDios/GokuSsjDios.jpg");
+    position: absolute;
+    bottom: -100%;
+    left: 30%;
+    animation: anim 0s forwards, anim2 8s forwards;
+  }
+  
+  .animated-box:after {
+    content: '';
+    position: absolute;
+    width: 530px;
+    height: 625px;
+    background-image: url(GokuSsjGod.png);
+    left: 0px;
+    z-index: -1;
+  }
+  @keyframes anim{
+    from{
+      left: -100%;
+    }
+    to{
+      bottom: 0%;
+    }
+  }
+  @keyframes anim2{
+    from{
+      left:50%;
+      width:530px
+  
+    }
+    to{
+      width: 0px;
+      left: 50%;
+    }
+  }
+
+ 
+  
+/* TextWriter */
+
+
+.animated-h1{
+    width: max-content;
+}
+
+.animated-h2 {
+    font-size: clamp(0.5rem, 1.5vw + 0.5rem, 2rem);
+    position: relative;
+    font-family: 'Source Code Pro', monospace;
+    position: relative;
+    width: max-content;
+   
+    
+}
+
+.animated-h2::before,
+.animated-h2::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left:0;
+    
+
+}
+
+.animated-h2::before{
+    /* background: #87ceeb; */
+    background: white;
+    animation: typewriter 1.5s steps(13) 1s forwards;
+    
+}
+
+.animated-h2::after{
+    width: .125em;
+    animation: typewriter 1.5s steps(13) 1s forwards,
+    blink 750ms steps(4) 3.5;
+    
+
+}
+
+
+.button1 {
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 400;
+    opacity: 0;
+    /* transform: translateY(3rem); */
+    animation: fadeInUp 0.5s ease 3s forwards;
+
+    border: 1px solid transparent;
+    background: none;
+    padding: 10px 20px;
+    cursor: pointer;    
+    margin: 10px;
+    transition: 0.8s;
+    color: #3498db;
+    position: relative;
+    overflow: hidden;
+}
+
+.button1:hover {
+    color: #fff;
+}
+
+.button1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:#3498db ;
+    z-index: -1;
+    transition: 0.8s;
+    top: 0;
+    border-radius: 0 0 50% 50%;
+}
+
+.button1:hover::before{
+    height: 180%;
+}
+
+
+
+
+
+
+h3 {
+    opacity: 0;
+    transform: translateY(2rem);
+    animation: fadeInUph3 1s ease 0.5s forwards;
+}
+@keyframes fadeInUph3 {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+@keyframes typewriter {
+    to {
+        left: 100%
+    }
+}   
+
+@keyframes blink {
+    from {
+        background: black;
+    }
+    to {
+        background:transparent;
+    }
+}
+
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.mario {
+    position: absolute;
+    left: 0px;
+    height: 100px;
+    bottom: 150px;
+    animation: drive 5s;
+    animation-fill-mode: both;
+    
+}
+
+@keyframes drive {
+    from {transform: translatex(-100px);
+
+    }
+
+    to {transform: translatex(1540px)
+
+}
+}
+
+.goku {
+    position: absolute;
+    right:0px;
+    height: 300px;
+    bottom: 0px;
+}

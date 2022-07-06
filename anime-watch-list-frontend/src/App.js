@@ -14,6 +14,7 @@ import RenderedAnimeList from "./components/RenderedAnime/RenderedAnimeList";
 import { React, useState } from "react";
 import WatchLists from "./components/UserWatchList/WatchLists";
 import Footer from "./components/Footer/Footer";
+import Goku from "./components/1-SplashPage/Goku";
 
 
 function App() {
@@ -49,8 +50,8 @@ return (
             </ul> */}
 
             <Routes>
-                <Route path='/' element={<Home/>}/>
-                <Route path='/home' element={<Home/>}/>
+                <Route exact path='/' element={<Goku/>}/>
+                <Route path='/home/' element={<Home/>}/>
                 <Route exact path='/explore/' element={<><Explore/><Footer/></>}/>
                 <Route exact path='/userWatchList' element={<WatchLists currentAnimeAcc ={currentAnimeAcc}/>}/>
                 <Route path='/account' element={isLogin? <><Account currentAnimeAcc={currentAnimeAcc}

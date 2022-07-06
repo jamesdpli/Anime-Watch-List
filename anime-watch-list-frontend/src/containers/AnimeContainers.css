@@ -15,10 +15,9 @@
     justify-content: space-between;
     align-items: center;
     margin: 0;
-
+    gap: 40px;
     padding-right: 50px;
     padding-left: 50px;
-
     box-sizing: border-box;
 
 }
@@ -96,3 +95,53 @@ nav > ul > li > a:hover {
 } */
 
 
+/*Mani*/
+.homeScreen {
+    background: rgb(237,241,245);
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    height: 50px;
+    z-index: 1;
+
+    /* Animations */
+    transition-timing-function: ease-in;
+    transition: all 0.5s;
+}
+
+.nav-contents {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.nav-black {
+    background-color: rgb(237,241,245);
+}
+
+.nav-logo {
+    position: fixed;
+    padding-top: 16px;
+    left:10%;
+    width:80px;
+    height: 30px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.nav-avatar {
+    position: fixed;
+    right: 30px;
+    width:30px;
+    height: 30px;
+    cursor: pointer;
+}
+.nav-drawer{
+    display: flex;
+    min-width: 10%;
+    justify-content: center;
+}
