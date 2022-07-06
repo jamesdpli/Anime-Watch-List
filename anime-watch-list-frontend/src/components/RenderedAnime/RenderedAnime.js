@@ -24,8 +24,11 @@ const RenderedAnime = ({ renderedAnime,
         }
         return null;
       });
-      setSelectedAnime(filterChecker[0])
-      setchosenAnime(filterChecker);
+      setTimeout(()=>{
+        setSelectedAnime(filterChecker[0])
+        setchosenAnime(filterChecker);
+      },50)
+      
     }
   }, [renderedAnime, params.animeName]);
 
