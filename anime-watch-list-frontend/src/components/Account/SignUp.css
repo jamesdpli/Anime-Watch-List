@@ -145,11 +145,11 @@
 }
 
 /* terms tick box */
-.sign-up-terms-box{
+/* .sign-up-terms-box{
   border-radius: 20px;
   margin-right: 10px;
   margin-bottom: 20px;
-}
+} */
 
 /* The button */
 
@@ -185,11 +185,7 @@
   color: white;
 }
 
-/*  ------- img background ----------- */
 
-.sign-up-container{
-  background-image: url(https://i.redd.it/c3uhsgo1vx541.jpg);
-}
 
 /* --------- password visibility -------- */
 .password-shown-button{
@@ -317,7 +313,7 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.box-form-1 .right .remember-me--forget-password input {
+.box-form-1 .right .remember-me--forget-password {
   margin: 0;
   margin-right: 7px;
   width: auto;
@@ -335,49 +331,8 @@ body {
   background-image: linear-gradient(135deg, #da2727 10%, #9a1111 100%);
 }
 
-label {
-  display: block;
-  position: relative;
-  margin-left: 30px;
-}
 
-label::before {
-  content: ' \f00c';
-  position: absolute;
-  font-family: FontAwesome;
-  background: transparent;
-  border: 3px solid #70F570;
-  border-radius: 4px;
-  color: transparent;
-  left: -30px;
-  transition: all 0.2s linear;
-}
-
-label:hover::before {
-  font-family: FontAwesome;
-  content: ' \f00c';
-  color: #fff;
-  cursor: pointer;
-  background: #70F570;
-}
-
-label:hover::before .text-checkbox1 {
-  background: #70F570;
-}
-
-label span.text-checkbox1 {
-  display: inline-block;
-  height: auto;
-  position: relative;
-  cursor: pointer;
-  transition: all 0.2s linear;
-}
-
-label input[type="checkbox"] {
-  display: none;
-}
-
-.password-shown-button1{
+.password-shown-button{
   border-style: none;
   background-color:white;
   color: red;
@@ -390,4 +345,7 @@ label input[type="checkbox"] {
 .sign-up-form-container {
   padding-top: 100px;
   padding-bottom: 100px;
+
+  left: 110px;
+  bottom: 35px;
 }

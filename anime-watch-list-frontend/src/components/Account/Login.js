@@ -79,17 +79,16 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
         <input type={passwordShown? "text" : "password"}  placeholder="Password" ref={inputPassword} className="sign-up-input-box" /><br/>
         <button 
             onClick={handlePasswordShown} 
-            className="password-shown-button">{passwordShown ? <AiOutlineEye className="password-eye" /> : <AiOutlineEyeInvisible className="password-eye" />}</button>
+            className="password-shown-button-1">{passwordShown ? <AiOutlineEye className="password-eye-1" /> : <AiOutlineEyeInvisible className="password-eye-1" />}</button>
         <p className="new-user-password"></p>
         <br/>
         </div>
-
-        <br/>
+        
         <div className="remember-me">
-            {/* <input type="checkbox" name="item" checked/> */}
-            {/* Redo the mini box -- not on the side of the remember me */}
-            <input type="checkbox" id='sign-up-condition-box' className='sign-up-terms-box'/>
-            <span className="text-checkbox1">Remember me</span>
+        <input type="checkbox" className='click-me'/> 
+        <span className="click-me">Remember me</span>
+        
+            <br/>
             
 
             <p>forget password?</p>
