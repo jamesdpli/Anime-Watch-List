@@ -13,6 +13,7 @@ import usePersistedState from "./containers/usePersistedState";
 import RenderedAnimeList from "./components/RenderedAnime/RenderedAnimeList";
 import { React, useState } from "react";
 import WatchLists from "./components/UserWatchList/WatchLists";
+import Footer from "./components/Footer/Footer";
 
 
 function App() {
@@ -32,6 +33,7 @@ const postUser = (newUser) => {
 }
 
 return (
+    <>
     <Router>
         <div className="App">
         <AnimeContainer isLogin={isLogin} setIsLogin={setIsLogin}
@@ -49,22 +51,22 @@ return (
             <Routes>
                 <Route path='/' element={<Home/>}/>
                 <Route path='/home' element={<Home/>}/>
-                <Route exact path='/explore/' element={<Explore/>}/>
+                <Route exact path='/explore/' element={<><Explore/><Footer/></>}/>
                 <Route exact path='/userWatchList' element={<WatchLists currentAnimeAcc ={currentAnimeAcc}/>}/>
-                <Route path='/account' element={isLogin? <Account currentAnimeAcc={currentAnimeAcc}
-                                                                    setCurrentAnimeAcc={setCurrentAnimeAcc}/>: 
-                                                        <SigninForm isLogin={isLogin} setIsLogin={setIsLogin}
+                <Route path='/account' element={isLogin? <><Account currentAnimeAcc={currentAnimeAcc}
+                                                                    setCurrentAnimeAcc={setCurrentAnimeAcc}/><Footer/></>: 
+                                                        <><SigninForm isLogin={isLogin} setIsLogin={setIsLogin}
                                                                 currentAnimeAcc={currentAnimeAcc}
-                                                                setCurrentAnimeAcc={setCurrentAnimeAcc} postUser={postUser}/>}/>
-                <Route path='/login' element={<LoginPage isLogin={isLogin} setIsLogin={setIsLogin}
+                                                                setCurrentAnimeAcc={setCurrentAnimeAcc} postUser={postUser}/><Footer/></>}/>
+                <Route path='/login' element={<><LoginPage isLogin={isLogin} setIsLogin={setIsLogin}
                                                             currentAnimeAcc={currentAnimeAcc}
-                                                            setCurrentAnimeAcc={setCurrentAnimeAcc} postUser={postUser}/>}/>
+                                                            setCurrentAnimeAcc={setCurrentAnimeAcc} postUser={postUser}/><Footer/></>}/>
                 {/* <Route path='/signup' element={<SigninForm/>}/> */}
                 <Route path='/explore/:animeName' element={<RenderedAnimeList currentAnimeAcc ={currentAnimeAcc} />}/>
             </Routes>
         </div>
     </Router>
-        
+    </>
 
         );
     }

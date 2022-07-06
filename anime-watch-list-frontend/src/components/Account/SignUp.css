@@ -387,3 +387,8 @@ label input[type="checkbox"] {
   left: 150px;
   bottom: 30px;
 }
+
+.sign-up-form-container {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}

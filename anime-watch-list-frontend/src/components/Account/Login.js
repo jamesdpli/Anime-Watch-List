@@ -51,7 +51,7 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
       
 
   return (
-    <div> 
+    <div className="login-form-container"> 
       <form className="box-form">
         <div className="left">
           <div className="overlay1">

@@ -44,7 +44,7 @@ const SignUp = ({postUser}) => {
       }
 
   return (
-    <div>
+    <div className="sign-up-form-container">
       <form onSubmit={handleFormSubmit}className="box-form-1">
         <div className="left">
           <div className="overlay1">

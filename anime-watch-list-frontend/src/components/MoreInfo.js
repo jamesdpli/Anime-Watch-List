@@ -1,3 +1,5 @@
+import Footer from "./Footer/Footer";
+
 const MoreInfo = () => {
     return (<>
         <div className="anime-container">
@@ -68,6 +70,7 @@ const MoreInfo = () => {
           </div>
         </div>
       </div>
+      <Footer/>
       </>
     )
 }
