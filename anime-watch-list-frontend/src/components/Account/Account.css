@@ -190,12 +190,6 @@ body.welcome {
   height: 100px;
   border-radius: 50%;
   margin-right: 20px;
-  background: url("http://pm1.narvii.com/6825/868e382ae2074d0fc7ae1c8a7bcf771e580e776av2_00.jpg") no-repeat;
-}
-
-.avatar:hover{
-  background: url("https://static1.srcdn.com/wordpress/wp-content/uploads/2022/04/Saitama-in-darkness.jpg") no-repeat;
-  
 }
 
 

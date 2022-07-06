@@ -3,6 +3,7 @@
 import './Account.css';
 import { Link } from "react-router-dom";
 import Carousel from '../../assets/Carousel/Carousel';
+import demonSlayer from "../../assets/demonSlayer.mp4"
 
 const Account = ({currentAnimeAcc, setCurrentAnimeAcc}) => {
 
@@ -41,6 +42,7 @@ section.addEventListener('click',()=>{
         <div className="anime-container">
         <div className="anime-parent-container">
         <div className="anime-text">
+        
             <h1 className="anime-title">Popular Animes</h1>
             <h2 className="anime-subtitle">
             See what is popular right now!
@@ -60,7 +62,7 @@ section.addEventListener('click',()=>{
         <br/><br/>
 
             <div className='anime-container'>
-            <h2>Click here</h2>
+            <h2 className='click-me'><Link to="/explore">Click here</Link></h2>
             </div>
         
         </div>
