@@ -1,5 +1,6 @@
 // import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import "./SignUp.css";
+import "./Login.css";
 import { useRef, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { Link } from "react-router-dom";
@@ -43,19 +44,30 @@ const SignUp = ({postUser}) => {
       }
 
   return (
-    <div className="sign-up-container">
-      <form onSubmit={handleFormSubmit} className="sign-up-form">
-        <h1 className="sign-up-title">Sign Up with</h1>
-
-      <p className="sign-up-input-title">Your name <br/> 
-        <input type="text"  name="name" onChange={handleChange} value={stateUser.name}  className="sign-up-input-box"
+    <div>
+      <form onSubmit={handleFormSubmit}className="box-form-1">
+        <div className="left">
+          <div className="overlay1">
+            <h1>Join Us</h1>
+            <h1>today!</h1>
+            <br/>
+            <p>Be part of a big community!</p>
+          </div>
+        </div>
+        
+        <div className="right">
+          <h1>Sign Up here</h1>
+          <br/>
+          <p className="sign-up-input-title"><br/> 
+        <input type="text"  placeholder="Name" name="name" onChange={handleChange} value={stateUser.name}  className="sign-up-input-box"
         />
       </p>
 
-        <p className="sign-up-input-title">Enter DOB (YYYY-MM-DD): 
+        <p className="sign-up-input-title">
         <br/>
           <input 
-            type="text"  
+            type="text" 
+            placeholder="Enter DOB (YYYY-MM-DD)" 
             name="dob" 
             onChange={handleChange} 
             className="sign-up-input-box" 
@@ -63,14 +75,14 @@ const SignUp = ({postUser}) => {
           />
         </p>
 
-      <p className="sign-up-input-title">Enter email: 
+      <p className="sign-up-input-title">
         <br/> 
-        <input type="text" placeholder="email" name="email" onChange={handleChange} value={stateUser.email} className="sign-up-input-box"/>
+        <input type="text" placeholder="Email" name="email" onChange={handleChange} value={stateUser.email} className="sign-up-input-box"/>
       </p>
 
-        <p className="sign-up-input-title">Set password: </p>
-       
-        <input type={passwordShown? "text" : "password"} placeholder="new password" name="password" onChange={handleChange} value={stateUser.password} className="sign-up-input-box"   
+        <p className="sign-up-input-title"></p>
+        <br/>
+        <input type={passwordShown? "text" : "password"} placeholder="Password" name="password" onChange={handleChange} value={stateUser.password} className="sign-up-input-box"   
         />
         <br/>
       
@@ -82,17 +94,12 @@ const SignUp = ({postUser}) => {
         <br/>
 
 
-        <input 
-            type="checkbox" 
-            id='sign-up-condition-box' 
-            className='sign-up-terms-box' />
-        <label htmlFor="sign-up-condition-box" >I agree to terms & conditions.</label>
-        <br />
         <button className='sign-up-btn'>Sign up</button>
 
-        <p>Do you already have an account? <br/>
-       <Link to="/login" className="link-text-tag">Log in</Link></p>
+        <p>Do you already have an <Link to="/login">account</Link>? <br/></p>
+      </div>
       </form>
+        
     </div>
   );
 };
