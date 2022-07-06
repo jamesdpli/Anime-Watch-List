@@ -7,6 +7,10 @@
     background-position-y: 20%;
 }
 
+.account-container-1{
+  margin-bottom: 400px;
+}
+
 .welcomeback-title{
 
     padding-top:50px;
@@ -226,7 +230,7 @@ body.welcome {
 }
 
 /* --------- carousel images ---------- */
-.image-container {
+/* .image-container {
   position: relative;
   width: 320px;
   margin: 100px auto 0 auto;
@@ -296,7 +300,7 @@ span {
   to {
     transform: rotateY(-360deg);
   }
-}
+} */
 
 .watched-link:hover{
   background-color: white;

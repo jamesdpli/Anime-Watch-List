@@ -2,6 +2,7 @@
 // import Footer from "../Footer/Footer";
 import './Account.css';
 import { Link } from "react-router-dom";
+import Carousel from '../../assets/Carousel';
 
 const Account = ({currentAnimeAcc, setCurrentAnimeAcc}) => {
 
@@ -50,12 +51,12 @@ section.addEventListener('click',()=>{
         </div>
         </div>
         <br/>
-        {/* this bugged out -- does not move anymore */}
         <div>
-        <div>
+        <div className='account-container-1'>
             <h1>Find more of your favourite anime ....</h1>
+            <Carousel/>
         </div>
-        <div className='image-container'>
+        {/* <div className='image-container'>
             <div className='carousel'>
             <div class="carousel__face"><span>Sword Art Online</span></div>
     <div class="carousel__face"><span>Demon Slayer</span></div>
@@ -67,7 +68,7 @@ section.addEventListener('click',()=>{
     <div class="carousel__face"><span>JoJo's Bizarre Adventures</span></div>
     <div class="carousel__face"><span>Overlord</span></div>
             </div>
-        </div>
+        </div> */}
         <br/><br/>
 
             <div className='anime-container'>
