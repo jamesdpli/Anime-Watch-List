@@ -29,9 +29,29 @@
    
     height: 380px;
     width: 250px;
+    padding-bottom: 10px;
 
+}
+
+.content-left-dynamic p{
+    padding-bottom: 5px;
+    
+}
+
+.content-left-dynamic button{
+   cursor: pointer;
+    
 }
 
 .content-right-dynamic {
     padding-left: 5%;
+}
+
+.content-right-dynamic h1{
+    padding-bottom: 15px;
+}
+
+.content-right-dynamic p {
+    text-align: justify;
+  text-justify: inter-word;
 }

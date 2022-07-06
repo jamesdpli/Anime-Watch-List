@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "../axios";
 import { Link } from "react-router-dom";
 
-function Row({ title, fetchUrl }) {
+function Row({ fetchUrl }) {
   const [animeGenre, setAnimeGenre] = useState([]);
 
   useEffect(() => {
@@ -16,6 +16,8 @@ function Row({ title, fetchUrl }) {
 
     fetchData();
   }, [fetchUrl]);
+
+  
 
   return (
     <div className="row">
