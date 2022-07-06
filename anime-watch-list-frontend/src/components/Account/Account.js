@@ -2,7 +2,7 @@
 // import Footer from "../Footer/Footer";
 import './Account.css';
 import { Link } from "react-router-dom";
-import Carousel from '../../assets/Carousel';
+import Carousel from '../../assets/Carousel/Carousel';
 
 const Account = ({currentAnimeAcc, setCurrentAnimeAcc}) => {
 
@@ -33,7 +33,7 @@ section.addEventListener('click',()=>{
             <div className="welcomeback-title">
                 <ul className="welcome-back-div">
                 
-                    <li><img src="http://pm1.narvii.com/6825/868e382ae2074d0fc7ae1c8a7bcf771e580e776av2_00.jpg" alt="Avatar" className="avatar"/>Welcome back&nbsp;&nbsp;{currentAnimeAcc.name}&nbsp;</li>
+                    <li><img src="http://pm1.narvii.com/6825/868e382ae2074d0fc7ae1c8a7bcf771e580e776av2_00.jpg"alt="Avatar" className="avatar"/>Welcome back&nbsp;&nbsp;{currentAnimeAcc.name}&nbsp;</li>
                     
                 </ul>
             </div>
@@ -52,23 +52,11 @@ section.addEventListener('click',()=>{
         </div>
         <br/>
         <div>
+            <br/>
         <div className='account-container-1'>
-            <h1>Find more of your favourite anime ....</h1>
+            <h1 className='account-title'>Find more of your favourite anime ....</h1>
             <Carousel/>
         </div>
-        {/* <div className='image-container'>
-            <div className='carousel'>
-            <div class="carousel__face"><span>Sword Art Online</span></div>
-    <div class="carousel__face"><span>Demon Slayer</span></div>
-    <div class="carousel__face"><span>Blue Exorcist</span></div>
-    <div class="carousel__face"><span>Jujutsu Kaisen</span></div>
-    <div class="carousel__face"><span>The Rising of the Shield Hero</span></div>
-    <div class="carousel__face"><span>Violet Evergarden</span></div>
-    <div class="carousel__face"><span>Food Wars</span></div>
-    <div class="carousel__face"><span>JoJo's Bizarre Adventures</span></div>
-    <div class="carousel__face"><span>Overlord</span></div>
-            </div>
-        </div> */}
         <br/><br/>
 
             <div className='anime-container'>
