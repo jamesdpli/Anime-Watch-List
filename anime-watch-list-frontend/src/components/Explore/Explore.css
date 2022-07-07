@@ -10,7 +10,6 @@
     display: flex;
     flex-direction: column;
     width: 80%;
-    border: 1px solid rgb(156, 156, 156);
     align-items: center;
     justify-content: center;
     margin:auto;
