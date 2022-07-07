@@ -55,8 +55,8 @@ const Login = ({isLogin, setIsLogin, setCurrentAnimeAcc}) => {
       <form className="box-form">
         <div className="left">
           <div className="overlay1">
-            <h1>Hello User</h1>
-            <p> text goes here </p>
+            <h1>Welcome Back</h1>
+            {/* <p> </p> */}
           </div>
         </div>
 
