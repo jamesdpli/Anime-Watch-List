@@ -29,7 +29,7 @@
 }
 
 .row-poster:hover {
-    transform: scale(1.1);
+    transform: scale(1.04);
     opacity: 0.8;
     cursor: pointer;
 }
@@ -39,5 +39,9 @@
 }
 
 
-
+.row-text {
+    text-align: center;
+    margin-right: 28px;
+    color: rgba(92,114,138);
+}
     
