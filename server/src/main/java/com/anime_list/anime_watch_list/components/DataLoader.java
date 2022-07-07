@@ -338,6 +338,17 @@ public class DataLoader implements ApplicationRunner {
 //        MYSTERY
 
 //        SCI-FI
+        Anime codeGeass = new Anime("Code Geass", LocalDate.of(2006, 10, 05), "In the year 2010, the Holy Empire of Britannia is establishing itself"+
+                " as a dominant military nation, starting with the conquest of Japan. Japan has seen significant resistance against these tyrants in an attempt to regain independence.",
+                8.9, 25, true, "https://media.kitsu.io/anime/poster_images/1415/small.jpg", "https://media.kitsu.io/anime/cover_images/1415/large.jpg");
+        Anime doctorStone = new Anime("Dr. Stone", LocalDate.of(2019, 07, 05), "Several thousand years after a mysterious phenomenon that turns all of "+
+                "humanity to stone, the extraordinarily intelligent, science-driven boy, Senku Ishigami, awakens. Facing a world of stone and the total collapse of civilization,",
+                8.3, 24, true, "https://media.kitsu.io/anime/poster_images/42080/small.jpg", "https://media.kitsu.io/anime/cover_images/42080/large.jpg");
+        Anime guiltyCrown = new Anime("Guitly Crown", LocalDate.of(2011, 10, 13), "Japan, 2039. Ten years after the outbreak of the Apocalypse Virus,"+
+                " an event solemnly regarded as Lost Christmas, the once proud nation has fallen under the rule of the GHQ, an independent military force dedicated to restoring order.",
+                7.4, 22, true, "https://media.kitsu.io/anime/poster_images/6349/small.jpg", "https://media.kitsu.io/anime/cover_images/6349/large.jpg");
+
+
 
 
 
@@ -365,7 +376,8 @@ public class DataLoader implements ApplicationRunner {
                 gosick, mononoke, boogiepopPhantom));
         Genre suspense = new Genre("Suspense", Arrays.asList(deathNote, aPromisedNeverland, terrorInResonance, steinsGate, deathParade, psychoPass, another,
                 moriartyThePatriot, bTheBeginning, aoiBungakuSeries, denpaTekiNaKanojo));
-        Genre sciFi = new Genre("Sci-Fi", Arrays.asList(gintama, trigun, neonGenisisEvangelion, cowboyBebop, aPromisedNeverland));
+        Genre sciFi = new Genre("Sci-Fi", Arrays.asList(gintama, trigun, neonGenisisEvangelion, cowboyBebop, aPromisedNeverland, steinsGate, psychoPass,
+                codeGeass, doctorStone, guiltyCrown));
         Genre romance = new Genre("Romance", Arrays.asList(chihayafuru, inuyasha, sailorMoon, cardCaptorSakura, clannad, clannadAfterStory, violetEvergarden,
                 kimiNiTodoke, fruitsBasket, sayILoveYou, charlotte));
         Genre avantGarde = new Genre("Avant Garde", Arrays.asList(neonGenisisEvangelion));
@@ -424,7 +436,7 @@ public class DataLoader implements ApplicationRunner {
                 myHeroAcademia, terrorInResonance, hajimeNoIppo, free, yuriOnIce, pingPong, chihayafuru, sk8TheInfinity, another, theMelancholyOfHaruhiSuzumiya,
                 gosick, mononoke, boogiepopPhantom, bluePeriod, violetEvergarden, ninetyOneDays, claymore, steinsGate, tokyoRevengers,
                 angelBeats, saikiK, deathParade, clannad, clannadAfterStory, durarara, owariNoSeraph, kimiNiTodoke, fruitsBasket, sayILoveYou, charlotte, psychoPass,
-                moriartyThePatriot, bTheBeginning, aoiBungakuSeries, denpaTekiNaKanojo));
+                moriartyThePatriot, bTheBeginning, aoiBungakuSeries, denpaTekiNaKanojo, codeGeass, doctorStone, guiltyCrown));
         userRepository.saveAll(Arrays.asList(user1, user2, user3, user4, user5, user6, user7, user8, user9, user10,
                 user11, user12));
         watchListRepository.saveAll(Arrays.asList(watchList1,watchList2,watchList3,watchList4,watchList5, watchList6,
