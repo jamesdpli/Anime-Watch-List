@@ -11,7 +11,7 @@ function EachGenreButton({genre, setSelectedGenre}) {
 
     }
   return (
-    <button onClick={handleGenreButton} value ={genre.name}> {genre.name} </button>
+    <button className='genreButton' onClick={handleGenreButton} value ={genre.name}> {genre.name} </button>
   )
 }
 

@@ -45,7 +45,7 @@ const SingleWatchList = ({ eachAnimeInWatchList,
 
                         </div>
                         
-                        <div className="genre-container">
+                        <div className="genre-container2">
                             <h4>Genres: </h4>
                              {eachGenre}
 

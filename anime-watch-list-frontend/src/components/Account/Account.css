@@ -235,6 +235,6 @@ body.welcome {
 
 
 .watched-link:hover{
-  background-color: white;
+  background-color: rgb(226, 223, 223);
   color: red;
 }

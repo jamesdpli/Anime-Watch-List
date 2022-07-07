@@ -14,7 +14,12 @@ function SearchByGenre({setSelectedGenre, genres}) {
 
   return (
     <>
-    {eachGenre}
+    <div className='genre-container'>
+      <h2> Filter By Genre </h2>
+      <div className='genre-lists'> {eachGenre} </div>
+  
+    </div>
+   
     </>
   )
 }
