@@ -320,7 +320,21 @@ public class DataLoader implements ApplicationRunner {
                 7.5, 13, true, "https://media.kitsu.io/anime/poster_images/10103/small.jpg", "https://media.kitsu.io/anime/cover_images/10103/large.jpg");
 
 //        SUSPENSE
-
+        Anime psychoPass = new Anime("Psycho Pass", LocalDate.of(2012, 10, 12), "Justice and the enforcement of it has changed. In the 22nd century," +
+                " Japan enforces the Sibyl System an objective means of determining the threat level of each citizen by examining their mental state for signs of criminal intent known as their Psycho Pass",
+                8.4, 22, true, "https://media.kitsu.io/anime/poster_images/7000/small.jpg", "https://media.kitsu.io/anime/cover_images/7000/large.jpg");
+        Anime moriartyThePatriot = new Anime("Moriarty The Patriot", LocalDate.of(2020, 10, 11), "Based on a crime suspense historical manga written by Takeuchi Ryousuke and drawn by Miyoshi Hikaru. "+
+                "The story's protagonist is James Moriarty, the famous antagonist from Sir Arthur Conan Doyle's Sherlock Holmes series.",
+                8.1, 24, true, "https://media.kitsu.io/anime/poster_images/43448/small.jpg", "https://media.kitsu.io/anime/cover_images/43448/large.jpg");
+        Anime bTheBeginning = new Anime("B: The Beginning", LocalDate.of(2018, 03, 02), "In a world powered by advanced technology, crime and action unfold in the archipelagic nation of Cremona." +
+                " Koku, the protagonist. Keith, the legendary investigator of the royal police force RIS. A mysterious criminal organization.",
+                7.1, 12, true, "https://media.kitsu.io/anime/poster_images/11880/small.jpg", "https://media.kitsu.io/anime/cover_images/11880/large.jpg");
+        Anime aoiBungakuSeries = new Anime("Aoi Bungaku Series", LocalDate.of(2009, 10, 11), "The series consists of adaptations of six modern classics of Japanese literature: "+
+                "Osamu Dazai's No Longer Human (Ningen Shikkaku) &amp; Run, Melos! (Hashire, Melos!), Natsume Soseki’s Kokoro, Ryunosuke Akutagawa’s Hell Screen (Jigoku Hen) &amp.",
+                7.6, 12, true, "https://media.kitsu.io/anime/poster_images/4900/small.jpg", "https://media.kitsu.io/anime/cover_images/4900/large.jpg");
+        Anime denpaTekiNaKanojo = new Anime("Denpa-teki na Kanojo", LocalDate.of(2009, 05, 01), "Delinquent Juu Juuzawa is a lone wolf who does not see much use in befriending people." +
+                " So when a girl named Ame Ochibana claims they are linked together from their previous lives, he is highly skeptical and doesn't want anything to do with her.",
+                7.5, 2, true, "https://media.kitsu.io/anime/poster_images/3967/small.jpg", "https://media.kitsu.io/anime/cover_images/3967/large.jpg");
 //        MYSTERY
 
 //        SCI-FI
@@ -349,7 +363,8 @@ public class DataLoader implements ApplicationRunner {
                 cardCaptorSakura, gosick, kurokosBasketball, bluePeriod, violetEvergarden, ninetyOneDays, claymore, steinsGate, tokyoRevengers));
         Genre mystery = new Genre("Mystery", Arrays.asList(bungoStrayDogs2, aPromisedNeverland, another, theMelancholyOfHaruhiSuzumiya,
                 gosick, mononoke, boogiepopPhantom));
-        Genre suspense = new Genre("Suspense", Arrays.asList(deathNote, aPromisedNeverland, terrorInResonance));
+        Genre suspense = new Genre("Suspense", Arrays.asList(deathNote, aPromisedNeverland, terrorInResonance, steinsGate, deathParade, psychoPass, another,
+                moriartyThePatriot, bTheBeginning, aoiBungakuSeries, denpaTekiNaKanojo));
         Genre sciFi = new Genre("Sci-Fi", Arrays.asList(gintama, trigun, neonGenisisEvangelion, cowboyBebop, aPromisedNeverland));
         Genre romance = new Genre("Romance", Arrays.asList(chihayafuru, inuyasha, sailorMoon, cardCaptorSakura, clannad, clannadAfterStory, violetEvergarden,
                 kimiNiTodoke, fruitsBasket, sayILoveYou, charlotte));
@@ -408,7 +423,8 @@ public class DataLoader implements ApplicationRunner {
                 trigun, neonGenisisEvangelion, cowboyBebop, aPromisedNeverland, sailorMoon, cardCaptorSakura, fairyTale, goldenBoy,
                 myHeroAcademia, terrorInResonance, hajimeNoIppo, free, yuriOnIce, pingPong, chihayafuru, sk8TheInfinity, another, theMelancholyOfHaruhiSuzumiya,
                 gosick, mononoke, boogiepopPhantom, bluePeriod, violetEvergarden, ninetyOneDays, claymore, steinsGate, tokyoRevengers,
-                angelBeats, saikiK, deathParade, clannad, clannadAfterStory, durarara, owariNoSeraph, kimiNiTodoke, fruitsBasket, sayILoveYou, charlotte));
+                angelBeats, saikiK, deathParade, clannad, clannadAfterStory, durarara, owariNoSeraph, kimiNiTodoke, fruitsBasket, sayILoveYou, charlotte, psychoPass,
+                moriartyThePatriot, bTheBeginning, aoiBungakuSeries, denpaTekiNaKanojo));
         userRepository.saveAll(Arrays.asList(user1, user2, user3, user4, user5, user6, user7, user8, user9, user10,
                 user11, user12));
         watchListRepository.saveAll(Arrays.asList(watchList1,watchList2,watchList3,watchList4,watchList5, watchList6,
