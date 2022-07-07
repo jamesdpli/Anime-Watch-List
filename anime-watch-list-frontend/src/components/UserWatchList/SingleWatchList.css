@@ -1,4 +1,4 @@
-.singleWatchList-container {
+/* .singleWatchList-container {
     display: flex;
     border-radius: 1.5rem;
     margin: 1.5rem;
@@ -118,4 +118,86 @@
     margin-right: 0.5rem;
     font-weight: bolder;
    
+} */
+
+.singleWatchList-container {
+    width: 100%;
+    display: flex;
+    background-color: rgba(237,241,245);
+    box-shadow: 0 0 20px 6px #12121685;
+    margin-bottom: 5%;
+    border-radius: 15px;
+    height: 250px;
 }
+
+.watchList-image-container{
+    width: 25%;
+}
+
+.anime-info-container{
+    width: 70%;
+}
+
+.btn-container{
+    width:5%
+}
+
+
+.watchList-image-container img{
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.btn-container{
+    padding-top: 10px;
+}
+
+.btn-container button{
+    width: 20px;
+    border: none;
+
+}
+
+.btn-container button:hover{
+    cursor: pointer;
+    
+}
+.anime-info-parentContainer{
+    display: flex;
+}
+
+.anime-info-leftContainer{
+    padding-left: 20px;
+}
+
+.anime-info-container h2{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.anime-info1 h4{
+    padding-bottom: 20px;
+}
+
+.anime-info1 h5{
+    padding-bottom: 20px;
+}
+
+.anime-info-rightContainer{
+    text-align: justify;
+  text-justify: inter-word;
+  padding-left: 10%;
+  padding-right: 30px;
+}
+
+.anime-info-rightContainer{
+    height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .anime-info-rightContainer .description {
+        font-size: 12px;
+    }
+  }

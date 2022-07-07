@@ -123,7 +123,7 @@ const WatchLists = ({currentAnimeAcc}) => {
     
     return(
         <>
-        <h1 className="header">My WatchLists</h1>
+        <h1 className="watch-list-header">My WatchLists</h1>
         <div className="watchListContainer">
         {eachWatchListAnime}
 

@@ -27,35 +27,42 @@ const SingleWatchList = ({ eachAnimeInWatchList,
         <>
             <div className="singleWatchList-container">
 
-                <div className="image-container">
+                <div className="watchList-image-container">
                     <img src={eachAnimeInWatchList.imageUrl}/>
                     </div>
 
-                    <div className="anime-info-Container">
+                    <div className="anime-info-container">
 
-                        <div className="headerAndRemoveBtn-container">
+                     
                             <h2> {eachAnimeInWatchList.name}</h2>
-                            <button onClick={handleRemoveWatchList}>X</button>
-                        </div>
-
+                            
+                        <div className="anime-info-parentContainer">
+                        <div className="anime-info-leftContainer">
                         <div className="anime-info1">
-                            <h5>Sub/Dub/R/HD</h5>
+                            {/* <h5>Sub/Dub/R/HD</h5> */}
                             <h4> Episodes: {eachAnimeInWatchList.numberOfEps}/{eachAnimeInWatchList.numberOfEps} </h4>
-                            <h5>  • 24mins/Ep </h5>
+                            <h5> 24mins/Ep </h5>
 
                         </div>
-                        
+                      
                         <div className="genre-container2">
                             <h4>Genres: </h4>
                              {eachGenre}
 
                         </div>
-
+                        </div>
+                        <div className="anime-info-rightContainer">
                         <div className="description">
-                            <h4>{eachAnimeInWatchList.description}</h4>
+                            <h4>Description: {eachAnimeInWatchList.description}</h4>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        <div className="btn-container">
+                        <button onClick={handleRemoveWatchList}>X</button>
                         </div>
 
-                    </div>
+                    
             
                
 

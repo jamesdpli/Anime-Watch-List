@@ -130,12 +130,13 @@ nav > ul > li > a:hover {
 
 .nav-logo {
     position: fixed;
-    padding-top: 16px;
-    left:7.5%;
-    width:80px;
-    height: 30px;
+    left:7%;
+    width:100px;
+    height: 100px;
     object-fit: contain;
     cursor: pointer;
+    top: 0;
+
 }
 
 .nav-avatar {
