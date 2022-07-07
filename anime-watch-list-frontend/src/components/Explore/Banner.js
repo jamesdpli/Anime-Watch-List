@@ -19,7 +19,7 @@ const Banner = () => {
         backgroundPosition: "center, center",
         }}>
         <div className="banner-contents">
-        <h1 className="banner-title">Movie Name</h1>
+        <h1 className="banner-title">Explore Anime</h1>
         <div className="banner-buttons">
             <button className="banner-button">Play</button>
             
@@ -28,7 +28,7 @@ const Banner = () => {
 
         </div>
         <h1 className="banner-description">
-            {truncate('move description goes here', 150)}
+            {truncate('', 150)}
         </h1>
         </div>
 
