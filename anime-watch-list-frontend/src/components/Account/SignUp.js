@@ -91,7 +91,7 @@ const SignUp = ({postUser}) => {
       
 
 
-        <button className='sign-up-btn'>Sign up</button>
+        <button className='sign-up-btn'><Link to="/login" style={{textDecoration: "none", color: "black"}}>Sign up</Link></button>
 
         <p>Do you already have an <Link to="/login">account</Link>? </p>
       </div>
