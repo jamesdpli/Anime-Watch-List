@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Anime-Watch-List.iml" filepath="$PROJECT_DIR$/.idea/Anime-Watch-List.iml" />
-      <module fileurl="file://$PROJECT_DIR$/server/anime_watch_list.iml" filepath="$PROJECT_DIR$/server/anime_watch_list.iml" />
     </modules>
   </component>
 </project>
