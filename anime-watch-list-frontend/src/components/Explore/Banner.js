@@ -21,7 +21,7 @@ const Banner = () => {
         <div className="banner-contents">
         <h1 className="banner-title">Explore Anime</h1>
         <div className="banner-buttons">
-            <button className="banner-button">Play</button>
+            {/* <button className="banner-button">Play</button> */}
             
 
             <Link to={'/userWatchList'}><button className="banner-button">My List</button></Link>
