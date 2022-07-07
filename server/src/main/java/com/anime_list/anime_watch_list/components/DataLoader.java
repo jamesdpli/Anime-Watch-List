@@ -314,7 +314,7 @@ public class DataLoader implements ApplicationRunner {
                 "Mei Tachibana was once a regular girl who enjoyed hanging out with her friends. " +
                         "But after a traumatic incident where all her so-called friends suddenly turned their backs on her, Mei's idea of friendship changed forever.",
                 7.3, 13, true, "https://media.kitsu.io/anime/poster_images/7109/small.jpg", "https://media.kitsu.io/anime/cover_images/7109/large.jpg");
-        Anime charlotte = Anime("Charlotte", LocalDate.of(2015, 07, 04),
+        Anime charlotte = new Anime("Charlotte", LocalDate.of(2015, 07, 04),
                         "Very few adolescent boys and girls have an onset of special abilities. Yu Otosaka is one such" +
                                 " man who uses his ability unbeknownst to others in order to lead a satisfying school life. Then one day, a girl named Nao Tomori suddenly appears before him.",
                 7.5, 13, true, "https://media.kitsu.io/anime/poster_images/10103/small.jpg", "https://media.kitsu.io/anime/cover_images/10103/large.jpg");
