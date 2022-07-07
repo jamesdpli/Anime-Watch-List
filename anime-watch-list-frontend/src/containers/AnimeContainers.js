@@ -3,6 +3,9 @@ import { NavLink } from "react-router-dom";
 import { useRef } from 'react';
 import { useEffect, useState } from "react";
 import SwipeableTemporaryDrawer from "../components/Drawer/SwipeableTemporaryDrawer"
+import Logo1 from "../images/logo1.png"
+import Logo2 from "../images/logo2.png"
+
 
 const AnimeContainer = ({ isLogin, setIsLogin, currentAnimeAcc, setCurrentAnimeAcc}) =>{
 
@@ -40,8 +43,8 @@ const AnimeContainer = ({ isLogin, setIsLogin, currentAnimeAcc, setCurrentAnimeA
             <NavLink to="/">
               <img
                 className="nav-logo"
-                src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
-                alt="logo"
+                src={Logo1}
+                alt="Animu logo"
               />
             </NavLink>
             <SwipeableTemporaryDrawer/>
