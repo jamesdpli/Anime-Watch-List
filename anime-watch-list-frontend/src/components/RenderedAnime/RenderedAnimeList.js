@@ -44,9 +44,11 @@ const RenderedAnimeList = ({currentAnimeAcc}) => {
   //--------------------------   Initially  Getting ALL Watchlists -------------
 
   // 
-  let currentUsersWatchList = watchListAnimes.filter(eachWatchList => {
-    return eachWatchList.user.name === loggedInUser.name
-  })
+  let currentUsersWatchList = setTimeout(() =>{
+    watchListAnimes.filter(eachWatchList => {
+      return eachWatchList.user.name === loggedInUser.name
+  }) 
+  }, 250)
 
   useEffect(() => {
 
