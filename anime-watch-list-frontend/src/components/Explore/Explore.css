@@ -1,3 +1,7 @@
 .homeScreen{
     background-color: white;
 }
+
+.selectedGenre{
+    margin: 7rem 0 5rem 0;
+}

@@ -10,7 +10,7 @@ const RenderedAnimeList = ({currentAnimeAcc}) => {
       .then((response) => response.json())
       .then((data) => setRenderedAnime(data));
 
-    }, 250)
+    }, 200)
 
    
   }, []);
@@ -44,9 +44,11 @@ const RenderedAnimeList = ({currentAnimeAcc}) => {
   //--------------------------   Initially  Getting ALL Watchlists -------------
 
   // 
-  let currentUsersWatchList = watchListAnimes.filter(eachWatchList => {
-    return eachWatchList.user.name === loggedInUser.name
-  })
+  let currentUsersWatchList = setTimeout(() =>{
+    watchListAnimes.filter(eachWatchList => {
+      return eachWatchList.user.name === loggedInUser.name
+  }) 
+  }, 250)
 
   useEffect(() => {
 
@@ -125,7 +127,7 @@ const RenderedAnimeList = ({currentAnimeAcc}) => {
     
         })
 
-      }, 500)
+      }, 200)
    
         
     }

@@ -1,8 +1,10 @@
 import './banner.css';
 import { Link } from "react-router-dom";
+import { useState } from 'react';
 
 
 const Banner = () => {
+
 
     const truncate = (string, n) => {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
