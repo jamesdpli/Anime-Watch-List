@@ -307,8 +307,17 @@ public class DataLoader implements ApplicationRunner {
                         " This is due to her resemblance to the ghost girl from The Ring",
                 7.8, 37, true, "https://media.kitsu.io/anime/poster_images/4397/small.jpg", "https://media.kitsu.io/anime/cover_images/4397/large.jpg");
         Anime fruitsBasket = new Anime("Fruits Basket", LocalDate.of(2019, 04, 05),
-                "",
-                8.6, 63, true, "", "");
+                "The Sohma family has been cursed for generations. When a member of the clan is embraced by a person of the opposite sex,"+
+                        " they transform into an animal from the Chinese Zodiac! After keeping their secret hidden for years,",
+                8.6, 63, true, "https://media.kitsu.io/anime/poster_images/99/small.jpg", "https://media.kitsu.io/anime/cover_images/99/large.jpg");
+        Anime sayILoveYou = new Anime("Say I Love You", LocalDate.of(2012, 10, 06),
+                "Mei Tachibana was once a regular girl who enjoyed hanging out with her friends. " +
+                        "But after a traumatic incident where all her so-called friends suddenly turned their backs on her, Mei's idea of friendship changed forever.",
+                7.3, 13, true, "https://media.kitsu.io/anime/poster_images/7109/small.jpg", "https://media.kitsu.io/anime/cover_images/7109/large.jpg");
+        Anime charlotte = Anime("Charlotte", LocalDate.of(2015, 07, 04),
+                        "Very few adolescent boys and girls have an onset of special abilities. Yu Otosaka is one such" +
+                                " man who uses his ability unbeknownst to others in order to lead a satisfying school life. Then one day, a girl named Nao Tomori suddenly appears before him.",
+                7.5, 13, true, "https://media.kitsu.io/anime/poster_images/10103/small.jpg", "https://media.kitsu.io/anime/cover_images/10103/large.jpg");
 
 //        SUSPENSE
 
@@ -342,7 +351,8 @@ public class DataLoader implements ApplicationRunner {
                 gosick, mononoke, boogiepopPhantom));
         Genre suspense = new Genre("Suspense", Arrays.asList(deathNote, aPromisedNeverland, terrorInResonance));
         Genre sciFi = new Genre("Sci-Fi", Arrays.asList(gintama, trigun, neonGenisisEvangelion, cowboyBebop, aPromisedNeverland));
-        Genre romance = new Genre("Romance", Arrays.asList(chihayafuru, inuyasha, sailorMoon, cardCaptorSakura, clannad, clannadAfterStory));
+        Genre romance = new Genre("Romance", Arrays.asList(chihayafuru, inuyasha, sailorMoon, cardCaptorSakura, clannad, clannadAfterStory, violetEvergarden,
+                kimiNiTodoke, fruitsBasket, sayILoveYou, charlotte));
         Genre avantGarde = new Genre("Avant Garde", Arrays.asList(neonGenisisEvangelion));
 
 //      Add User
@@ -398,7 +408,7 @@ public class DataLoader implements ApplicationRunner {
                 trigun, neonGenisisEvangelion, cowboyBebop, aPromisedNeverland, sailorMoon, cardCaptorSakura, fairyTale, goldenBoy,
                 myHeroAcademia, terrorInResonance, hajimeNoIppo, free, yuriOnIce, pingPong, chihayafuru, sk8TheInfinity, another, theMelancholyOfHaruhiSuzumiya,
                 gosick, mononoke, boogiepopPhantom, bluePeriod, violetEvergarden, ninetyOneDays, claymore, steinsGate, tokyoRevengers,
-                angelBeats, saikiK, deathParade, clannad, clannadAfterStory, durarara, owariNoSeraph));
+                angelBeats, saikiK, deathParade, clannad, clannadAfterStory, durarara, owariNoSeraph, kimiNiTodoke, fruitsBasket, sayILoveYou, charlotte));
         userRepository.saveAll(Arrays.asList(user1, user2, user3, user4, user5, user6, user7, user8, user9, user10,
                 user11, user12));
         watchListRepository.saveAll(Arrays.asList(watchList1,watchList2,watchList3,watchList4,watchList5, watchList6,
