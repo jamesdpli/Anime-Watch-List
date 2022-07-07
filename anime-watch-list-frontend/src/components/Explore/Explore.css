@@ -20,8 +20,12 @@
 }
 
 .genre-container h2{
-    margin:1rem;
-    
+    /* margin: 1rem; */
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 30px;
+    /* font-weight: 100; */
+    font-size: 2rem;
+    color: rgb(79, 98, 118);
 
 }
 

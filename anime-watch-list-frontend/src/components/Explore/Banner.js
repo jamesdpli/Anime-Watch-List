@@ -15,7 +15,7 @@ const Banner = () => {
         className="banner"
         style={{
         backgroundSize: "cover",
-        backgroundImage: "url(https://wallpaperaccess.com/full/4203243.jpg)",
+        backgroundImage: "url(https://wallpaperaccess.com/full/6384210.jpg)",
         backgroundPosition: "center, center",
         }}>
         <div className="banner-contents">
