@@ -88,7 +88,7 @@ const Explore = () => {
 
             <Row title="Comedy" fetchUrl={Request.fetchComedyAnimes} />
             <Row title="Action" fetchUrl={Request.fetchActionAnimes} />
-            <Row title="Ecchi" fetchUrl={Request.fetchEcchiAnimes} />
+            {/* <Row title="Ecchi" fetchUrl={Request.fetchEcchiAnimes} /> */}
             <Row title="Sports" fetchUrl={Request.fetchSportsAnimes} />
             <Row title="Adventure" fetchUrl={Request.fetchAdventureAnimes} />
             <Row title="Super Natural" fetchUrl={Request.fetchSupernaturalAnimes} />
@@ -98,7 +98,7 @@ const Explore = () => {
             <Row title="ScFi" fetchUrl={Request.fetchSciFiAnimes} />
             <Row title="Suspense" fetchUrl={Request.fetchSuspenseAnimes} />
             <Row title="Romance" fetchUrl={Request.fetchRomanceAnimes} />
-            <Row title="Avant Garde" fetchUrl={Request.fetchAvantGardeAnimes} />
+            {/* <Row title="Avant Garde" fetchUrl={Request.fetchAvantGardeAnimes} /> */}
         </div>
     );
 

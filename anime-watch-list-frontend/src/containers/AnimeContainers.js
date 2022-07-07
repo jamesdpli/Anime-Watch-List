@@ -43,7 +43,7 @@ const AnimeContainer = ({ isLogin, setIsLogin, currentAnimeAcc, setCurrentAnimeA
             <NavLink to="/">
               <img
                 className="nav-logo"
-                src={Logo1}
+                src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
                 alt="Animu logo"
               />
             </NavLink>
