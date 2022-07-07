@@ -62,7 +62,7 @@ section.addEventListener('click',()=>{
         <br/><br/>
 
             <div className='anime-container'>
-            <h2 className='click-me'><Link to="/explore">Click here</Link></h2>
+            <h2 className='click-me'><Link to="/explore" style={{textDecoration: "none", color: "black"}}>Back to explore</Link></h2>
             </div>
         
         </div>
