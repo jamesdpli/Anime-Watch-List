@@ -2,6 +2,10 @@
 Bright Network Techonolgy Academy Cohort 5a members: [James](https://github.com/jamesdpli), [Amber](https://github.com/aakamara), [Asiha](https://github.com/aisha-png), [Sujan](https://github.com/kagami7410) and [Mani](https://github.com/Kozmo119) present **Animu** a website where you can store your favourite anime into your personal watch-list.
 
 ### App images and gifs below ...
+<img src="gifs/splashHomeShowcase.gif"/>
+<img src="gifs/exploreShowcase.gif"/>
+<img src="gifs/horizontalScrollShowcase.gif"/>
+<img src="gifs/genreFilterShowcase.gif"/>
 
 ### Front end stuff ...
 Excalidraw wire frame
