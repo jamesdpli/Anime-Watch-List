@@ -30,7 +30,7 @@ Bright Network Techonolgy Academy Cohort 5a members: [James](https://github.com/
 
 ### How You Can Download This Project
 1. Clone this repo -> `git clone git@github.com:jamesdpli/Anime-Watch-List.git`
-2. Open the **server** folder in intelliJ IDEA
+2. Open the **server** folder in intelliJ IDEA (If you open up the server folder, and it is not compiling run `mvn clean install`)
 3. Run the **AnimeWatchListApplication.java** file
 4. Make sure Apache Tomcat has started on port 8080
 5. Type `localhost:8080/animes` into your browser -> you should see a json format returned
@@ -38,8 +38,6 @@ Bright Network Techonolgy Academy Cohort 5a members: [James](https://github.com/
 7. Type `npm install` hit enter
 8. Type `npm start` hit enter
 9. Enjoy!
-
-**If you open up the server folder, and it is not compiling run `mvn clean install` **
 
 ### Acknowledgement
 Massive shout out to the Bright Network Technology Team especially Richard & Anna!
