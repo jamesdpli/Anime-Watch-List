@@ -1,5 +1,5 @@
 # Anime-Watch-List
-Bright Network Techonolgy Academy Cohort 5a members: [James](https://github.com/jamesdpli), [Amber](https://github.com/aakamara), [Asiha](https://github.com/aisha-png), [Sujan](https://github.com/kagami7410) and [Mani](https://github.com/Kozmo119) present **Animu** a website where you can store your favourite anime into your personal watch-list.
+Bright Network Techonolgy Academy Cohort 5a members: [James](https://github.com/jamesdpli), [Amber](https://github.com/aakamara), [Aisha](https://github.com/aisha-png), [Sujan](https://github.com/kagami7410) and [Mani](https://github.com/Kozmo119) present **Animu** a website where you can store your favourite anime into your personal watch-list.
 
 ### See Animu In Action!
 <img src="readmeGifsAndImages/splashHomeShowcase.gif"/>
