@@ -34,7 +34,7 @@ Bright Network Techonolgy Academy Cohort 5a members: [James](https://github.com/
 3. Run the **AnimeWatchListApplication.java** file
 4. Make sure Apache Tomcat has started on port 8080
 5. Type `localhost:8080/animes` into your browser -> you should see a json format returned
-6. Navigate into **anime-watch-list-frontend** using your terminal
+6. Navigate into **client** using your terminal
 7. Type `npm install` hit enter
 8. Type `npm start` hit enter
 9. Enjoy!
